@@ -1,0 +1,67 @@
+% !TEX root = ../../proyect.tex
+
+\chapter{Introducción}\label{introduccion}
+\section{Justificación del proyecto}\label{sec:justificacion}
+
+Todos hemos observado cómo ha evolucionado Internet. Ahora, en unos minutos, cualquiera puede hacer un blog sobre cualquier tema. Ese mismo, además, suele accesible desde cualquier parte del Globo las 24 horas del día, los 365 días del año. Esto ha llevado a la enorme especialización en muchísimos temas, a la transmisión de información de manera inmediata, justo en el momento, así como a una globalización cada vez más plástica, si cabe.
+
+Si a esto le sumamos la cantidad de periódicos que se encuentran accesibles en internet, podemos llegar a la conclusión de que estamos ante un mar insondable de información. Así, un usuario que quiere estar al día de una cantidad notable de temas, se encontrará que ha de estar pegado a una pantalla recargando quizá una decena de webs para conseguirlo. Cosa sencilla, pero que puede agotar a cualquiera.
+
+¿Cómo solucionar esto? Sería ideal una herramienta que me permitiese unir todas las fuentes de información que sigo o me interesan para no recurrir a todas las webs, sino a una sola. Esto es un problema que ya se solucionó en 1995 con la sindicación de contenido1. Gracias a estándares como RSS (aparecido en 1999) o Atom (2003), un usuario podía y puede reunir todo el contenido de sus periódicos o blogs favoritos en una página web, una aplicación o u programa.
+
+Una vez que conseguimos esto, nos encontramos con que no siempre nuestros feeds, que es el nombre que recibe el archivo que genera la web con las últimas noticias, nos sorprenden con noticias interesantes. Puede llegar incluso el momento en que entre toda la información que veamos en nuestro lector RSS nos interese solo una pequeña minoría. ¿Cómo saber lo que nos gusta entre tanta cantidad de información?
+
+Esto es el problema que viene a resolver nuestro proyecto. Este será un lector RSS enriquecido, que sepa descubrir los gustos del usuario, que sepa relacionar las noticias. En definitiva, analizar lo que se le muestra al usuario, e incluso a este mismo. No encuentro mejor forma de explicarlo que con una cita del profesor Lev Manovich.
+
+	\begin{quote}
+		\small Tras la novela, y posteriormente la narrativa cinematográfica como forma clave de expresión cultural de la era moderna, la era digital introduce su correlato: las bases de datos. Es natural, entonces, que queramos desarrollar una poética, una estética y una ética de los datos.
+		\begin{flushright}
+			\citeA{manovich}
+		\end{flushright}
+	\end{quote}
+
+Esto es lo que quiere hacer LT-News: \emph{una poética de los datos}.
+
+
+\section{Objetivos}\label{sec:objetivos}
+
+Dentro de los objetivos, los englobo en dos categorías. En la primera categoría agrupo todo aquello que me propongo que haga la aplicación resultante. En la segunda, lo que quiero aprender llevando a cabo dicho trabajo.
+
+\subsection{Objetivos funcionales}
+
+El objetivo principal del proyecto es hacer un lector RSS enriquecido; esto es, que de un valor añadido a los que ya existen. En concreto, me propongo tres características a alto nivel que, creo, puedan dar este nuevo valor:
+
+\begin{itemize}
+	\item Ver las noticias de los periódicos que elija el usuario.
+	\item Buscar las noticias en base a distintos filtros que el usuario quiera.
+	\item Recomendar noticias a los usuarios.
+\end{itemize}
+
+El primer objetivo, como vemos, es, y debe ser, común a todos los lectores RSS. Es por ello, que nuestro sistema debe ser capaz de extraer las noticias regularmente de los medios que estén en la base de datos y de mostrar dichas noticias de una manera clara y atractiva. El segundo objetivo es claro: nuestra aplicación debe analizar las noticias para permitir su búsqueda.
+
+Por último, se propone un valor añadido sobre los demás lectores: la capacidad de recomendar noticias a los usuarios. Para ello, es necesario un doble aspecto. El primero es que, gracias al punto anterior, tenemos analizadas las noticias que poseemos. Gracias a esto, podemos relacionar noticias entre sí según los temas que traten. El segundo aspecto es el análisis de los usuarios de la aplicación: se extraerá un perfil del mismo según sus gustos. Gracias a esta relación entre usuarios-temas, y noticias-temas, podemos relacionar usuarios con noticias, es decir, recomendar.
+
+\subsection{Objetivos docentes}
+
+Bajo este punto de vista englobo tres grandes objetivos que me planteo a conseguir gracias al trabajo, desde un punto de vista docente.
+
+El primero es el aprendizaje de la técnica web scraping. Gracias a esta se podrá obtener una noticia de cualquier periódico, incluyendo, además de los datos que obtengamos del feed, su cuerpo principal o la imagen de la noticia.
+
+La segunda meta es la capacidad de trabajar con texto libre. A través de este trabajo quiero entrar, aunque sea un poco, dentro del Procesamiento de Lenguaje Natural. Gracias a esto, extraeré las keywords en base al texto de la noticia y podré relacionar noticias.
+
+El tercer objetivo es la implementación de un sistema de recomendación. Gracias a esto, podré recomendar a los usuarios noticias en base a sus gustos, tal y como se ha explicado anteriormente.
+
+
+\section{Alcance}\label{sec:alcance}
+
+Con este proyecto quiero realizar una aplicación web capaz de leer feeds RSS. Tendrá una vista que permita la búsqueda de noticias de los diarios, en base a múltiples filtros. Además, deberá extraer los gustos de cada usuario en base al uso que haga de la aplicación, para, más tarde, recomendarle noticias. Se quiere hacer también uso de la relación que haya entre noticias, por ejemplo, agrupándolas según sus temas.
+
+La aplicación que se desee hacer deberá ser accesible desde la web y será compatible con los principales navegadores y con los diferentes dispositivos (ordenadores, tabletas o smartphones). Además, tendrá soporte de feeds multilingüe, en el sentido que se podrán añadir medios en diferentes idiomas, funcionando igual de bien la aplicación. Por último, la página deberá estar, como mínimo, en dos idiomas: español e inglés.
+
+
+\section{Estado del arte}\label{sec:arte}
+
+Como se ha dicho a lo largo de la introducción, nuestro sistema de información viene a resolver un problema actual: navegar por la enorme cantidad de información disponible en la red. Por eso se ha dicho es un lector RSS enriquecido. Para ver qué significa ese término de enriquecido, veamos cuáles son y qué hacen los principales lectores RSS.
+
+
+ 
