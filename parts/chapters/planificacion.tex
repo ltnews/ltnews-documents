@@ -219,7 +219,7 @@ Para todos los casos, se considerará que un año pose<e 250 días hábiles, que
     \item Tester: su sueldo mínimo es de 11.773,02\$ que a la hora hace 5,89\$
 \end{itemize}
 
-Además, a estos costes, hemos de aplicar impuestos que paga la empresa para cualquier trabajador en España. Todos son porcentajes que se aplican a la base de cotización. Estos son los siguiente:
+Además, a estos costes, se han de aplicar los impuestos que paga la empresa para cualquier trabajador en España. Todos son porcentajes que se aplican a la base de cotización. Estos son los siguiente:
 \begin{itemize}
     \item Contingencias comunes
     \begin{itemize}
@@ -243,4 +243,75 @@ Además, a estos costes, hemos de aplicar impuestos que paga la empresa para cua
     \end{itemize}
 \end{itemize}
 
-Teniendo en cuenta todos los porcentajes, nos queda para aplicar a la base de cotización una suma de los anteriores porcentajes: 32,2\%.
+Teniendo en cuenta todos los porcentajes, queda para aplicar a la base de cotización una suma de los anteriores porcentajes: 32,2\%.
+
+\subsection{Costes indirectos}
+En este tipo de costes, se incluyen los materiales utilizados para realizar el proyecto, que en este caso se dividen entre hardware y software. Sobre cada material, independientemente de su tipología, se aplicará una base de amortización. Esto es así ya que no se adquiere un material concreto exclusivamente para un proyecto, sino que su coste deberá aparecer reflejado en los distintos proyectos en los que se utilice hasta que termine su vida útil.
+
+\subsubsection{Hardware}
+Dentro de este apartado se consideran dos dispositivos: un ordenador portátil y un móvil. Ambos han servido para desarrollar el proyecto y para sus respectivas pruebas.
+El ordenador utilizado ha sido un \textit{ASUS A55L}, valorado en 789,99\$. Se considera que la vida útil de cualquier portátil es de cuatro años. Así, cada mes utilizándolo, supondrá uno gasto de 16,46\$. Este ha sido utilizado durante todo el proyecto.
+El smartphone que se utilizará para comprobar la interfaz gráfica será un \textit{Xiaomi Mi A2 Lite}, valorado en 189,99\$. Considerando en este caso una vida útil de dos años, supondrá un gasto del mes utilizado por 7,92\$. Este ha sido utilizado durante la mitad del proyecto: los meses finales para visualizar la interfaz gráfica móvil.
+
+\subsubsection{Software}
+Dentro de este, se engloban las licencias de los programas utilizados, así como los costes del servidor.
+Las licencias, como el hardware, requieren también de una amortización. Así, las utilizadas para llevar a cabo el proyecto y su coste han sido los siguientes:
+\begin{itemize}
+    \item Windows 10 Home
+    \begin{itemize}
+        \item 135\$ en pago único, amortizable en 8 años.
+        \item 1,41\$/mes.
+    \end{itemize}
+    \item Office 365 Personal
+    \begin{itemize}
+        \item Posee pago mensual.
+        \item 7,00\$/mes.
+    \end{itemize}
+    \item PyCharm
+    \begin{itemize}
+        \item 199\$ por año utilizado.
+        \item 16,58\$/mes.
+    \end{itemize}
+    \item WebStorm
+    \begin{itemize}
+        \item Al igual que PyCharm, 199\$ por año utilizado.
+        \item 16,58\$/mes.
+    \end{itemize}
+\end{itemize}
+
+Para el servidor, hemos adoptado el plan más básico de DigitalOcean. Esto hace unos 5\$/mes, que en euros son 4,45\$/mes.
+
+\subsection{Presupuesto}
+Con el conocimiento de los gastos, se procederá a dar un presupuesto del proyecto. Antes, se consideran que es necesario un colchón para pagos no previstos. Este será de un 15\% del subtotal. Además de esto, hemos de tener en cuenta el I.V.A. Por ello, la cantidad resultante será la siguiente.
+
+\cuadro{lrrr}{Presupuesto económico}{tab:presupuesto}
+{
+    & \textbf{Tiempo} & \textbf{Coste unitario} & \textbf{Coste total} \\
+
+    \textbf{Personal} & \textbf{horas} & & \textbf{3.755,47} \\
+    \hline
+    Jefe de proyecto & 25 & 24,19 & 604,82 \\ 
+    Analista & 100 & 14,25 & 1.425,12 \\
+    Desarrollador & 150 & 10,21 & 1.530,88 \\ 
+    Tester & 25 & 7,79 & 194,66 \\
+
+    \textbf{Hardware} & \textbf{meses} & & \textbf{309,58} \\
+    \hline
+    ASUS A555L & 14 & 16,46 & 230,41 \\ 
+    Xiaomi Mi A2 Lite & 10 & 7,92 & 79,16 \\
+
+    \textbf{Software} & \textbf{meses} & & \textbf{471,61} \\
+    \hline
+    Windows 10 Home & 14 & 1,41 & 19,69 \\ 
+    Office 365 Professional & 14 & 7,00 & 98,00 \\
+    PyCharm & 10 & 16,58 & 165,83 \\
+    WebStorm & 10 & 16,58 & 165,83 \\ 
+    Digital Ocean & 5 & 4,45 & 22,25 \\
+    
+    \hline
+    & & \textbf{Subtotal} & \textbf{4.536,65} \\
+    & & Contingencias & 680,50 \\
+    & & \textbf{Total} & \textbf{5.217,15} \\
+   
+
+}
