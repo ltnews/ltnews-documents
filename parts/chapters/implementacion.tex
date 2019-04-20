@@ -1,7 +1,21 @@
 % !TEX root = ../../proyect.tex
 
 \chapter{Implementación}\label{implementacion}
-\section{Tecnologías}\label{sec:tecnologia}
+\section{Tecnologías}\label{sec:tecnologias}
+
+A continuación se definirán las tecnologías usadas para llevar a cabo el Producto Mínimo Viable.
+
+\subsubsection{\textit{Web Scrapping}}
+El aspecto fundamental del producto es la recolección de noticias de periódicos. Esta, como se ha ido diciendo a lo largo del documento, se realiza a través de RSS. Sin esta característica, no tendría utilidad la aplicación. Sin embargo, esto solo se queda corto. Normalmente, cada medio solo publica un titular y una pequeña descripción vía RSS. Esto les sirve de gancho al usuario para que pase del lector de sindicación de contenido a la web de su medio.
+
+Como se ha dicho, otro pilar fundamental para el buen funcionamiento del producto es el análisis de noticias. Por tanto, si no se posee más que un pequeño texto acompañado de cada noticia, poco podrá aportar este. Es por ello imprescindible conseguir el texto original del artículo para poder procesarlo correctamente. Dado que los medios no poseen esta característica, hemos de realizarla a través del \textit{Web Scrapping}.
+
+El \textit{Web Scrapping} es una técnica que permite extraer información de cualquier sitio en Internet. La información en la web se encuentra en diferentes formatos dependiendo de su misión para con el receptor. Resumidamente se encuentran dos tipos de datos: estructurados, como pueden ser ficheros XML o APIs, y no estructurados, como los ficheros HTML. Estos últimos abundan ya que, en un principio, van destinados al usuario final directamente, con la idea de ser leídos o vistos sin más.
+
+Por lo dicho, esta técnica posee diferentes implementaciones, dependiendo del nivel de automatización que desee. Un primer nivel sería el de extraer el fichero HTML y trabajar con él, utilizando, por ejemplo, expresiones regulares; otro sería, utilizar parsers o minería de datos, para extraer el contenido principal; y otro, el de analizar una página en concreto, para saber cómo se estructura el contenido realmente interesante.
+
+Como última consideración, se ha informar que antes de trabajar con la información extraída del \textit{Web Scrapping}, hay que saber que esta tiene implicaciones legales. Estas, en la mayoría de los casos, se encuentran en un vacío legal. En la práctica, si los datos se usan para un uso personal, no hay problema añadido. La cosa cambia si es para un uso comercial. De hecho, actualmente, hay varios juicios por un uso fraudulento de esta técnica en Australia o Estados Unidos, como se puede ver en el artículo publicado por \citeA{web_scrapping}.
+
 
 \section{Herramientas}\label{sec:herramientas}
 
