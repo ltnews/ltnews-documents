@@ -40,6 +40,18 @@ Como se ha dicho al inicio del apartado, interesa que este índice creado trate 
 
 Esto dará una versatilidad a esta \textit{base de datos no relacional} mucho mayor, ya que estará especializada en el dominio del problema concreto. Mientras tanto, en una base de datos clásica, la información se guarda siempre de manera homogénea y genérica para cualquier dato que se quiera albergar.
 
+\subsubsection{Sistemas de recomendación}
+
+Una vez obtenidas las noticias y analizadas y albergadas en el sistema habrá que dar uso a los metadatos albergados. Esta, como se ha dicho a la hora de explicar el producto, será el valor diferencial a cualquier lector de noticias: la capacidad de extraer el perfil del usuario y recomendar noticias en base a sus intereses. Esto, por tanto, se consigue con un sistema de recomendación especializado.
+
+\figura{0.5}{img/desarrollo/recommendation_system}{Muestra de sistemas de recomendación}{fig:recommendation_system}{}
+
+Es la técnica de filtrado de información dependiendo del interés del usuario en los mismos. En definitiva, se encarga de comparar el perfil del usuario con los ítems en concreto para, finalmente, recomendarle uno que no haya visto previamente. Para realizar esta técnica, tenemos la capacidad de elección entre diversas implementaciones. Como se puede apreciar, es importante analizar tanto a usuarios como ítems a recomendar.
+
+Analizar el perfil del usuario significa, en definitiva, extraer características de su interactuación con los ítems. El método de extracción de sus características puede ser implícito o explícito. Dentro del primero encontramos aquellos sistemas a los que el sistema solicita al usuario que valore un determinado producto, o, directamente, seleccione sus intereses. Dentro del segundo, a aquellos en los que, en base a visitas a un ítem, al tipo de interacción con el mismo, al tiempo que está viéndolo, u otras técnicas, saca información del usuario.
+
+Ambos tienen aspectos positivos y negativos. En el primero, el usuario dice al sistema expresamente qué le gusta o disgusta, mientras el segundo, la aplicación ha de suponerlo. Esto último puede llevar a numerosos fallos de interpretación frente a la certeza que proporciona el primero. Por otro lado, el método implícito extrae dicha información sin necesidad de la intervención del usuario, cosa que el primero no puede. Esto puede hacer que en el método explícito el usuario nunca complete sus preferencias, por el poco uso de la aplicación. Sin embargo, hay soluciones intermedias entre ambas técnicas, uniendo, por ejemplo, ambas.
+
 \section{Herramientas}\label{sec:herramientas}
 
 \subsection{Backend}
