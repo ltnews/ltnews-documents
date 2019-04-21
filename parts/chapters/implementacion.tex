@@ -18,6 +18,27 @@ Por lo dicho, esta técnica posee diferentes implementaciones, dependiendo del n
 
 Como última consideración, se ha informar que antes de trabajar con la información extraída del \textit{Web Scrapping}, hay que saber que esta tiene implicaciones legales. Estas, en la mayoría de los casos, se encuentran en un vacío legal. En la práctica, si los datos se usan para un uso personal, no hay problema añadido. La cosa cambia si es para un uso comercial. De hecho, actualmente, hay varios juicios por un uso fraudulento de esta técnica en Australia o Estados Unidos, como se puede ver en el artículo publicado por \citeA{web_scrapping}.
 
+\subsubsection{Recuperación de información}
+
+Una vez extraída la información de los medios, es imprescindible tratarla correctamente. No basta el guardarla en una base de datos sin más, sino que es necesario usar medios de albergar la información especializado para ello. Si se usa, por ello, ténicas de Búsqueda y Recuperación de Información (ISR, por sus siglar en inglés, en adelante) podemos tratar cada noticia como un documento y así extraer metadatos de cada uno.
+
+\figura{0.75}{img/desarrollo/information_retrieval}{Muestra de Recuperación de Información}{fig:information_retrieval}{}
+
+Esta técnica, por tanto, permite recuperar documentos en base a búsqueda de sus metadatos guardados en un índice. Esta información no suele estar estructurada y su misión es la de buscar información relevante en base a diferentes filtros. Hay diferentes técnicas, dependiendo del grado de exactitud que se requiera teniendo en cuenta la consulta. Algunas de las más importantes son las siguientes.
+
+\begin{itemize}
+    \item \textbf{Sistemas de recuperación de lógica difusa}: las búsquedas sobre la información son de tipo fuzzy, es decir, frases normales, que el sistema transforma en frases lógicas. Así, la información que se consegue, se basa en proposiciones lógicas, teniendo en cuenta si los términos buscados aparecen o no.
+    \item \textbf{Técnicas de ponderación de términos}: dado que hay términos de búsqueda que tienen más relevancia que otros, es lógico que se pondere dichos términos. Así, los documentos más pertinentes, serán los que contengan todos los términos y que se repita más el que más valor tenga.
+    \item \textbf{Técnicas de clustering}: es un modelo probabilístico sobre la frecuencia de los términos de búsqueda. Se clasifican los documentos por valores que, finalmente, representan los pesos.
+    \item \textbf{Técnicas de retroalimentación por relevancia}: una vez hecha una búsqueda utilizando una de las técnicas anteriores, se vuelve a buscar pero con términos relacionados con los primeros documentos resultantes.
+    \item \textbf{Técnicas de stemming}: usa la técnica de Stemming para la búsqueda, es decir, trunca los términos de búsqueda quitante posibles prefijos o sufijos. En fin, evita ambigüedades léxicas.
+\end{itemize}
+
+Como se puede observar, estas técnicas se pueden combinar entre sí dentro de una implementación concreta, aunque siempre el funcionamiento es el presentado en la imagen \ref{fig:information_retrieval}: se procesan los documentos, se indexan y se busca sobre el índice.
+
+Como se ha dicho al inicio del apartado, interesa que este índice creado trate correctamente la información guardardada. Esta es, por tanto, la mayor ventaja de usar un ISR: se pueden elegir técnicas y tratamientos concretos por cada campo, así como por cada índice de documentos. En el ejemplo de guardar noticias se puede decir que extraiga las palabras claves, que de más importancia al cuerpo de la noticia, que obvie mayúsculas y tildes en el índice y para el análisis, que no tenga en cuenta artículos y preposiciones.
+
+Esto dará una versatilidad a esta \textit{base de datos no relacional} mucho mayor, ya que estará especializada en el dominio del problema concreto. Mientras tanto, en una base de datos clásica, la información se guarda siempre de manera homogénea y genérica para cualquier dato que se quiera albergar.
 
 \section{Herramientas}\label{sec:herramientas}
 
