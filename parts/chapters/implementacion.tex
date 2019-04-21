@@ -19,7 +19,6 @@ Por lo dicho, esta técnica posee diferentes implementaciones, dependiendo del n
 Como última consideración, se ha informar que antes de trabajar con la información extraída del \textit{Web Scrapping}, hay que saber que esta tiene implicaciones legales. Estas, en la mayoría de los casos, se encuentran en un vacío legal. En la práctica, si los datos se usan para un uso personal, no hay problema añadido. La cosa cambia si es para un uso comercial. De hecho, actualmente, hay varios juicios por un uso fraudulento de esta técnica en Australia o Estados Unidos, como se puede ver en el artículo publicado por \citeA{web_scrapping}.
 
 \subsubsection{Recuperación de información}
-
 Una vez extraída la información de los medios, es imprescindible tratarla correctamente. No basta el guardarla en una base de datos sin más, sino que es necesario usar medios de albergar la información especializado para ello. Si se usa, por ello, ténicas de Búsqueda y Recuperación de Información (ISR, por sus siglar en inglés, en adelante) podemos tratar cada noticia como un documento y así extraer metadatos de cada uno.
 
 \figura{0.75}{img/desarrollo/information_retrieval}{Muestra de Recuperación de Información}{fig:information_retrieval}{}
@@ -41,7 +40,6 @@ Como se ha dicho al inicio del apartado, interesa que este índice creado trate 
 Esto dará una versatilidad a esta \textit{base de datos no relacional} mucho mayor, ya que estará especializada en el dominio del problema concreto. Mientras tanto, en una base de datos clásica, la información se guarda siempre de manera homogénea y genérica para cualquier dato que se quiera albergar.
 
 \subsubsection{Sistemas de recomendación}
-
 Una vez obtenidas las noticias y analizadas y albergadas en el sistema habrá que dar uso a los metadatos albergados. Esta, como se ha dicho a la hora de explicar el producto, será el valor diferencial a cualquier lector de noticias: la capacidad de extraer el perfil del usuario y recomendar noticias en base a sus intereses. Esto, por tanto, se consigue con un sistema de recomendación especializado.
 
 \figura{0.5}{img/desarrollo/recommendation_system}{Muestra de sistemas de recomendación}{fig:recommendation_system}{}
@@ -66,7 +64,38 @@ Aquí, igual que anteriormente con el perfil del usuario, es posible combinar am
 
 \section{Herramientas}\label{sec:herramientas}
 
+Para el desarrollo del producto y las tecnologías previamente mencionadas, se han usado las siguientes herramientas.
+
 \subsection{Backend}
+Para el desarrollo del servidor se han usado Python con el framework web Django, ambos en sus últimas versiones, además, de librerías que permitan implementar los requisitos de la aplicación.
+
+\subsubsection{Python}
+Python es un lenguaje interpretado y multiparadigma. Esto último se debe a que soporta tanto programación orientada a objetos como programación imperativa, además de programación funcional. Actualmente está administrado por la fundación \textit{Python Software Foundation} y posee una licencia de código abierto denominada \textit{Python Software Foundation License}. Esta nos permite hacer modificaciones de su código fuente y la creación todo trabajo derivado de este, sin necesidad de que este sea también código abierto.
+
+Se ha decidido utilizar este lenguaje de programación en el lado del servidor debido a la cantidad y facilidad de uso de herramientas que implementan las tecnologías previamente mencionadas. Es la referencia en temas de \textit{Web Scrapping} e Inteligencia Articial, como se puede apreciar en el artículo de \citeA{python}.
+
+\subsubsection{Django}
+Django es un framework de desarrollo web, también open source y que posee el patrón de diseño Modelo-Vista-Controlador. Ya no se habla de \textit{Model-View-Controller}, sino de \textit{Model-Template-View}. Sin embargo, hacen referencia a los mismos conceptos. El Modelo es la capa de accesos a los datos; la Plantilla, es la capa de presentación; la Vista posee la lógica de negocio de la aplicación y, por tanto, hace de puente entre ambos. Vemos, por tanto, que es en esencia lo mismo.
+
+Su misión es la facilitar la creación de aplicaciones web complejas. Pone el acento en la conectividad, reutilización y la extensión de todos y cada uno de sus componentes. Tiene, además, como principal característica desde el punto de vista del desarrollo, el que todo esté hecho en Python.
+
+Se ha decidido utilizar este framework por la facilidad de uso, y la potencia que posee sin configuración previa, es decir, posee integrado desde el primer momento aspectos avanzados de seguridad (evita inyecciones SQL, validaciones de los formularios, autentificación en cada página, entre otros), gestión en cada momento las sesiones, así como la transparencia en multitud de aspectos: la base de datos utilizada, la localización de los archivos estáticos, el despliegue…
+
+\subsubsection{Librerías}
+Los módulos son gestionados por Python a través del CLI \textit{pip}. Estos se añaden automáticamente al software a través de este. Las libreías usadas son las siguientes:
+
+\begin{itemize}
+    \item \textbf{django-rest-framework}: es la herramienta que permite ofrecer una API usando Django. Esta convierte las vistas de Django en un endpoint para publicitar contenido a través de los verbos HTTP.
+    \item \textbf{django-rest-auth}: ofrece sobre la API implementada una capa de autenticación usando el modelo de usuarios de Django usando diferentes técnicas, como extracción completa de la información de usuarios o registro por redes sociales.
+    \item \textbf{django-cron}: crea operaciones que se ejecutan sobre el CLI propio de Django para poder ser ejecutadas de manera recurrente. Estos métodos interaccionarán con todos los módulos de Django.
+    \item \textbf{gunicorn}: es un servidor HTTP que soporta WSGI. Este ofrece a través de peticiones HTTP las aplicaciones de Django. 
+    \item \textbf{beautifulsoup}: es una herramienta que permite tratar con archivos HTML para extraer información.
+    \item \textbf{feedparser}: permite descargar y parsear todo tipo de Feed RSS. Además, es compatible con muchísimos formatos: desde RSS 0.9 hasta RSS 2.0; desde Atom 0.3, hasta Atom 1.0.
+    \item \textbf{newspaper3k}: es una herramienta de obtención de noticias. Analiza una web y calcula la localización del contenido principal. Además, soporta la mayoría de lenguajes principales y posee herramientas de Procesamiento de Lenguaje Natural en algunos idiomas.
+    \item \textbf{python-dateutil}: facilita el tratamiento con fechas en Python y su conversión a diferentes formatos.
+\end{itemize}
+
+Para elegir cada una, se ha realizado un pequeño estudio entre sus posibles alternativas. Dado que son módulos enormemente usados, son la referencia en su tema, y rara vez hay alguna alternativa de la misma embergadura que haga dudar al desarrollador.
 
 \subsection{Frontend}
 
