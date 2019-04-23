@@ -141,6 +141,38 @@ Todas estas libreías son usadas por la gran mayoría de la comunidad y no posee
 
 \subsection{Servidor}
 
+En este apartado se mencionarán las tecnologías usadas en la parte del servidor, de manera conjunta a las de Cliente y Servidor previamente mencionadas.
+
+\subsubsection{PostgreSQL}
+
+Es imprescindible usar en este tipo de proyectos una base de datos consistente. Además, dada la naturaleza de la aplicación en cuestión, esta ha de ser Relacional. De todas las posibilidades que ofrece este gran mundo, Django recomienda usar esta debido a su naturaleza y fuerte interconexión.
+
+Postgres es un sistema gestor de base de batos de tipo relacional, como se ha dicho. Posee una gran escalabilidad, al usar una infraestructura propia de paralelización: multiprocesos en vez de multihilos. Esto implica que desacopla los posibles errores propios de la gestión de hilos, como son las condiciones de carrera.
+
+\subsubsection{Elasticsearch}
+
+Para implementar la Búsqueda y Recuperación de Información, descrito en el punto \ref{sec:tecnologias}, referente a las tecnologías, es necesario usar un Índice.
+
+Elasticsearch es un servidor de búsqueda, distribuido y accesible a través de una interfaz de tipo RESTful. Está desarrollado en Java, basándose en Lucene y es de código abierto. Propone una sintáxis basada en JSON para las búsquedas.
+
+Se ha decidido usar sobre Índice como Algolia o Solr por dos motivos principales. El primero se debe a su coste, nulo en proyectos con implantación propia de dicha herramienta. El segundo es que se está poniendo a la cabeza en el desarrollo de índices generales en la comunidad.
+
+\subsubsection{Nginx}
+
+Una vez albergado y desarrollada la aplicación, es necesario hacerla accesible a través de Internet de manera segura y consistente. Para ello nos hace falta un servidor web o proxy inverso. Las dos grandes alternativas en este punto son Nginx y Apache.
+
+Nginx es un tipo de servidor web ligero y con alto rendimiento. Es open source y permite, además, integración de servidor SMTP, así como soporte de HTTP, HTTP2, IPv6 y demás protocolos.
+
+Se ha decidido usar este por el gran rendimiento que ofrece sobre el Servidor HTTP Apache. Por otra parte, ofrece una gran comunicación y facilidad en la configuración en aplicaciones Full Stack.
+
+\subsubsection{Docker}
+
+Para hacer toda esta arquitectura independiente a cualquier sistema y con la configuración similar a entornos de desarollo y producción es necesaria la virtualización de los servicios. Esto ha marcado un nuevo hito en el mundo del software: la abstracción entre sistemas operativos y la concentración de la configuración en un único fichero. Esto es Docker.
+
+Docker automatiza el despliegue de cualquier software en contenedores. Estos poseerán toda la configuración que necesita el desarrollo para funcionar. Es la evolución de la máquina virtual: se convierten en instancias Linux ligeras y aisladas.
+
+Actualmente, no hay una alternativa clara a Docker. De hecho, tecnologías de orquestación de contenedores, tales como Swarm o Kubernetes, se basan en esta.
+
 \subsection{Gestión}
 
 \section{Estructura del proyecto}\label{sec:estructra_proyecto}
