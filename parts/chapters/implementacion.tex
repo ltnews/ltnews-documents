@@ -111,6 +111,19 @@ Se ha utilizado este sobre otros lenguajes de mayor alto nivel basados en JavaSc
 
 \subsubsection{VueJS}
 
+Una vez decidido que se pretende realizar un frontend desacoplado del lado del servidor, solo queda la elección del framework a utilizar. Realmente, esta decisión en nuestros días se reduce a tres posibles alternativas: React, Angular y VueJS. Esa afirmación se basa en los datos y dirección de la comunidad, como se puede observar en el ya citado \citeA{state_js}.
+
+Si se observa, aparecen, junto a estos tres, dos framework en cuanto a utilización actual: VanillaJS y AngularJS. Sin embargo, estos dos van quedando en desuso en cuanto a framework frontend de una aplicación web como tal. VanillaJS utiliza JavaScript en su estado puro, por lo que, realmente, no se le puede considerar un framework; consiste en una librería se usa cuando se quiere tener en cuenta velocidad y espacio. AngularJS, por su parte, es el predecesor de Angular (también conocido como Angular 2). Cambia por completo su funcionamiento, siendo esta primera versión una librería y la segunda y posteriores, un framework. Google, autor del mismo, ha dejado de actualizar AngularJS, por lo que no ha de tenerse en cuenta para desarrollos actuales.
+
+Visto lo anterior, comparemos los tres frameworks mencionados para ilustrar el motivo de elegir VueJS sobre los demás, perteneciente al estudio realizado por \citeA{frameworks_js}.
+
+\begin{itemize}
+    \item \textbf{React}: es la librería de Facebook centrada en la creación de vistas. Su gran virtud son los patrones de eventos, ya que estos permiten actualizar en tiempo real las vistas con los datos. Realmente no es un framework, por lo que es posible utilizarlo anexo a Angular o VueJS. Si embargo, debido a su potencial, puede ser usado exclusivamente para realizar la capa de presentación.
+    \item \textbf{Angular}: es el framework de Google diseñado sobre su primera versión y hecho para ser totalmente independiente y funcional. Usando HTML, CSS y TypeScript consigue crear vistas, componentes independientes y rutas, todas relacionados entre sí. Trabaja sobre el concepto \textit{Single Page Application} (SPA) utilizado para ello Webpack, esto es, una vez desarrollada la aplicación, se compila en un fichero HTML (\textit{index.html}), un fichero CSS y varios ficheros JS.
+    \item \textbf{VueJS}: es el framework creado por la comunidad que une las ventajas de los desarrollos anteriores, a destacar: el ciclo de vida de los componentes propio de React y las directivas de Angular. La curva de aprendizaje es más reducida que Angular y el proyecto poseerá menos ficheros que este, ya que aglutina HTML, CSS y JS en un fichero \textit{.vue}. Además, es totalmente versatil: se puede utilizar como librería para un desarollo pequeño hasta como framework en un aplicación SPA o SSR completa.
+\end{itemize}
+
+Son estos motivos por los que se ha optado por VueJS, aunque sinceramente, debido a su similitud con Angular, se podría haber optado por cualquiera. Además, el ecosistema que ofrece Vue, como se verá en el siguiente punto, es único.
 
 \subsection{Servidor}
 
