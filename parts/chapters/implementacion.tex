@@ -199,6 +199,28 @@ Waffle es la implementación concreta del tablero convas mencionado en el punto 
 
 \section{Estructura del proyecto}\label{sec:estructra_proyecto}
 
+Como se ha ido dicendo a lo largo del documento, el proyecto utiliza Git. Así, se ha estructurado el trabajo en ramas según la metodología Git Flow. Este estructura el cualquier proyecto software con cinco ramas principales:
+
+\begin{itemize}
+    \item \textbf{master}: el código en esta rama es la versión estable y funcional que se encuentra funcionando en producción.
+    \item \textbf{hostfix}: cualquier fallo detectado en producción se arregla aquí y se lleva a \textit{master} uuna vez solucionado: no antes.
+    \item \textbf{release}: sobre los cambios agrupados del desarrollo, se prueba integralmente antes de ser subidos a \textit{master}.
+    \item \textbf{development}: agrupa los cambios en las diferentes características que se van trabajando.
+    \item \textbf{feature}: cada una de las funcionalidades a añadir en el sistema.
+\end{itemize}
+
+Esto se puede ver gráficamente en la siguiente imagen.
+
+\figura{0.75}{img/estructura/git_flow}{\textit{Git Flow}}{fig:git_flow}{}
+
+Teniendo esto en cuenta, se mostrará cómo se ha estructura cada repositorio de manera general en GitHub, para luego descender, de manera individual, a cada uno.
+
+\subsection{GitHub}
+
+De manera general, se poseen estos respositorios estos proyectos en la plataforma de código abierto GitHub.
+
+\figura{0.75}{img/estructura/github_repositories}{Respositorios en GitHub}{fig:github_repositories}{}
+
 \subsection{Backend}
 
 \subsection{Frontend}
