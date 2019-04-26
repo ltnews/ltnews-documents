@@ -175,6 +175,28 @@ Actualmente, no hay una alternativa clara a Docker. De hecho, tecnologías de or
 
 \subsection{Gestión}
 
+En cuanto a la gestión del proyecto se refiere, podemos hablar de dos grandes ámbitos: desarrollo y seguimiento del proyecto.
+
+\subsubsection{Desarrollo}
+
+Para el desarrollo del proyecto han sido necesarias las herramientas que se mencionarán adelante. La preferencia general de dicha elección se basa en dos premisas. La primera es la orientación de la comunidad del desarrollo y la segunda es la disponibilidad real de dichas herramientas. Además de utilizar tecnologías gratuitas, la universidad nos ofrece plataformas y programas en periodo de prueba.
+
+En primer lugar son necesarios los programas para el desarrollo de las diferentes partes de la aplicación. Dado que cada módulo se desarrolla en un lenguaje concreto, se ha apostado por usar IDEs personalizados. Así, y debido a su potencial, se han usado todos aquellos necesarios creados por JetBrains. En el caso de no existir, se ha decidido acudir a Visual Studio Code.
+
+Se ha usado también una herramienta para la realización de diagramas llamada Astah. Esto permite analizar lo que se necesita antes de implementarlo. Gracias a esta se harán todo tipo de diagramas: desde estados hasta clases. Se ha usado esta gracias a su gratuidad a estudiantes.
+
+Para mantener una trazabilidad y respaldo del código, se han usado tecnologías de control de versiones. En concreto, la elegida ha sido Git, debido a su posición en la comunidad del desarrollo y a su funcionalidad y robustez. La plataforma remota donde se alojará dicho código sobre Git es GitHub. Ha sido elegida por ser la principal usada por la comunidad.
+
+En cuanto a la comunicación y despliegue por el servidor, se ha elegido como VPS: Digital Ocean. Posee un enorme potencial y un periodo de prueba más que suficiente para la distribución de la aplicación. Además, para la comunicación con este, se ha usado WinSCP y PuTTY, como herramientas SSH principalmente usadas en Windows.
+
+\subsubsection{Seguimiento}
+
+Una vez llegado a las decisiones convenientes para desarrollar el producto, es necesario seguir una serie de pautas, marcarse unos hitos y tener la posibilidad de comprobar el avance del proyecto. Así, han de usarse una serie de herramientas para medir la evolución y seguir con acierto.
+
+Se han usado grosso modo dos: Toggl para la gestión del tiempo y Waffle para la gestión de las tareas. La primera permite comprobar las horas que lleva cada tarea. Esta permite etiquetar cada una, por lo que se podrá comprobar el tiempo dedicado a cada tipo de tarea (gestión, documentación, desarrollo, despliegue o investigación), así como el total dedicado al proyecto. Con la segunda se consigue agrupar las tareas en hitos y asociarlos a funcionalidades dentro del código. Además, ambas están relacionadas, por lo que simplifica dicha gestión, siendo esta la principal motivación para su uso.
+
+Waffle es la implementación concreta del tablero convas mencionado en el punto \ref{sec:metodologia_lean}. Si se aprecia la imagen \ref{fig:scrum_github}, vemos que es GitHub la plataforma mencionada para el tablero. Lo ocurrido se puede apreciar en el artículo de \citeA{waffle}. Esta herramienta deja de mantenerse por falta de recursos y recomienda su migración a GitHub.
+
 \section{Estructura del proyecto}\label{sec:estructra_proyecto}
 
 \subsection{Backend}
