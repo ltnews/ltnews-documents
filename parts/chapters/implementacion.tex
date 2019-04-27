@@ -243,10 +243,50 @@ A la vez, como se ha dicho, se pueden utilizar diferentes etiquetas para relacio
 
 \figura{0.5}{img/estructura/github_milestones}{\textit{Milestones} en Github}{fig:github_milestones}{}
 
-Por último, se agrupan también las tareas o \textit{issues} en hitos, llamadas \textit{milestones}. Esto sirve para indicar las fases del proyecto y la fecha de finalización de cada sprint.
+En la última entidad, se agrupan también las tareas o \textit{issues} en hitos, llamadas \textit{milestones}. Esto sirve para indicar las fases del proyecto y la fecha de finalización de cada sprint.
 
+A nivel más operativo, que un repositorio esté en GitHub conlleva a que estén presentes los siguientes archivos:
+
+\begin{itemize}
+    \item \underline{.gitignore}: es el archivo que contiene los elementos que deberá ignorar git en su proceso de control de versiones.
+    \item \underline{LICENCE}: es la licencia del proyecto, que en el presente caso es MIT Licence: esta es una licencia de software permisiva, que posee pocas limitaciones en la reutilización.
+    \item \underline{README.md}: contiene la información imprescindible del proyecto que aparecerá reflejada en GitHub.
+\end{itemize}
 
 \subsection{Backend}
+
+En cuanto al código del servidor, se ha estructurado el código siguiendo las pautas recomendadas tanto por Python, como por Django. Así, la estructuración en carpetas es la que aparece en la imagen \ref{fig:estructura_pycharm}. Está se irá desgranando para explicar su lógica.
+
+\figura{}{img/estructura/estructura_pycharm}{Estructura en PyCharm}{fig:estructura_pycharm}{}
+
+\begin{itemize}
+    \item \textbf{ltnews}: contiene la lógica de funcionamiento de Django.
+    \begin{itemize}
+        \item \underline{cron.py}: archivo que contiene las tareas recurrentes de la aplicación, entre ellas, la que actualiza las noticias y la que calcula el perfil del usuario.
+        \item \underline{settings.py}: archivo que contiene las propiedades principales de nuestra aplicación.
+        \item \underline{urls.py}: archivo con los accesos a las direcciones accesibles a nuestro proyecto; relaciona controlador con url.
+        \item \underline{wsgi.py}: archivo que tiene la información y propiedades del despliegue del servidor Django.
+    \end{itemize}
+    \item \textbf{news}: contiene la lógica de la aplicación implementada.
+    \begin{itemize}
+        \item \textbf{migrations}: contiene las migraciones hechas del modelo de Django.
+        \item \textbf{service}: contiene los servicios de las entidades por cada entidad del modelo y son intermediarios entre el modelo y el controlador, ya que extraen la información de la base de datos ya ordenada y útil de utilizar en los controladores.
+        \item \textbf{test}: contiene los tests agrupados en las entidades del sistema.
+        \item \textbf{utility}: contiene las clases de utilidad que han sido necesarias desarrollar la el correcto funcionamiento del sitema.
+        \item \textbf{view}: contiene los controladores por entidad, en concreto, la implementación de cada API publicada.
+        \item \underline{admin.py}: archivo en el que se declara el nombre de las entidades del sistema.
+        \item \underline{apps.py}: archivo con nombre y características de la aplicación.
+        \item \underline{documents.py}: archivo que contiene la comunicación de Elasticsearch con la aplicación así como la implementación de los documentos.
+        \item \underline{models.py}: archivo que contiene las entidades del modelo.
+        \item \underline{serializers.py}: archivo que contiene la implementación de serialización de cada entidad del modelo a través de la API.
+        \item \underline{services.py}: archivo con los servicios genéricos que usan todas las entidades.
+        \item \underline{tests.py}: archivos que contiene las pruebas generales del sistema.
+    \end{itemize}
+    \item \textbf{static}: alberga los ficheros estáticos generados para el panel de administración.
+    \item \underline{.travis.yml}: los comandos que se ejecutarán en la herramienta de pruebas de integración continua Travis.
+    \item \underline{manage.py}: es el archivo principal de Django, el archivo de ejecución principal.
+    \item \underline{requirements.txt}: contiene todos los componentes que usa el proyecto de Python, así como sus versiones.
+\end{itemize}
 
 \subsection{Frontend}
 
