@@ -290,4 +290,30 @@ En cuanto al código del servidor, se ha estructurado el código siguiendo las p
 
 \subsection{Frontend}
 
+El código del cliente se estructura siguiendo las directrices del CLI de Vue. Estas no son más que una implmentación concreta y ordenada de las pautas de Node y Webpack. Así, la organización ense muestra en la imagen \ref{fig:estructura_webstorm}.
+
+\figura{}{img/estructura/estructura_webstorm}{Estructura en WebStorm}{fig:estructura_webstorm}{}
+
+\begin{itemize}
+    \item \textbf{dist}: contiene la construcción de la aplicación en formato SPA realizada por \textit{npm} o \textit{yarn}.
+    \item \textbf{node\_modules}: contiene los paquetes necesarios por \textit{npm} para la construcción y ejecución de la aplicación.
+    \item \textbf{public}: contiene los ficheros globales de la aplicación tales como el índice o el favicon.
+    \item \textbf{src}: contiene la lógica general de la aplicación siguiendo la estructuración de Webpack.
+    \begin{itemize}
+        \item \textbf{api}: contiene las llamadas generales a la API y la configuración de estas por \textit{axios}.
+        \item \textbf{assets}: contiene las imágens y ficheros estáticos usados por la aplicación.
+        \item \textbf{components}: contiene los componentes de la aplicación: estos funcionan de manera independiente y pueden ser usados en cualquier vista.
+        \item \textbf{plugins}: contiene la configuración de algunos módulos usados por la aplicación, como en el caso de \textit{Vuetify}.
+        \item \textbf{stores}: contiene la configuración de estados de las diferentes entidades creadas; don gestionadas por \textit{vuex}.
+        \item \textbf{views}: contiene las vistas que posee la aplicación con la lógica implementada en cada una.
+        \item \underline{App.vue}: archivo con la arquitectura visual que presenta la aplicación.
+        \item \underline{main.js}: archivo con la configución general de la aplicación Vue.
+        \item \underline{router.js}: archivo con la navegabilidad entre las diferentes vistas así como su relación con las URLs.
+        \item \underline{store.js}: archivo con la relación de estados y mutaciones específicados en la carpeta \textbf{stores}.
+    \end{itemize}
+    \item \underline{babel.config.js}: archivo con la configuración de Babel.
+    \item \underline{package.json}: archivo con el fichero de configuración de la aplicación con la información general y de librerías necesarias y uso específico de estas.
+    \item \underline{yarn.lock}: archivo con la configuración generada por las herramientas de node antes mencionadas.
+\end{itemize}
+
 \section{Detalles de implementación}\label{sec:detalles_implementacion}
