@@ -217,9 +217,34 @@ Teniendo esto en cuenta, se mostrará cómo se ha estructura cada repositorio de
 
 \subsection{GitHub}
 
-De manera general, se poseen estos respositorios estos proyectos en la plataforma de código abierto GitHub.
+De manera general, se poseen estos respositorios de proyectos en la plataforma de código abierto GitHub. Cada uno de los cuales alberga un desarrollo concreto.
 
 \figura{0.75}{img/estructura/github_repositories}{Respositorios en GitHub}{fig:github_repositories}{}
+
+Los repositorios que muestra la imagen son los siguientes:
+
+\begin{itemize}
+    \item \textbf{ltnews-documents}: es el proyecto LaTeX donde se desarrollan los documentos a presentar, tanto la presente memoria como la presentación del trabajo.
+    \item \textbf{ltnews-docker}: alberga la arquitectura de la aplicación en docker y se relaciona con los demás respositorios de código.
+    \item \textbf{ltnews-backend}: es el proyecto de Django para el servidor de la aplicación.
+    \item \textbf{ltnews-frontend}: es la capa de presentación de la aplicación
+     realizada en VueJS.
+\end{itemize}
+
+Gracias a la integración que realiza GitHub, se ha añadido metacontenido a los commits que se van realizando. En concreto, se han utilizado tres entidades: \textit{issues}, \textit{labels} y \textit{milestones}.
+
+\figura{0.5}{img/estructura/github_issues}{\textit{Issues} en Github}{fig:github_issues}{}
+
+Del primero, los \textit{issues}, comentar que GitHub permite usar esta como una herramienta integrada de gestión de incidencias. Como aparece en la siguiente imagen, cada \textit{issue} viene relacionado con: proyectos, hitos, encargado o etiqueta. Además, posee una traza de comentarios y commits relacionados. Es este el motivo de su uso como gestor de tareas del proyecto.
+
+\figura{0.5}{img/estructura/github_labels}{\textit{Labels} en Github}{fig:github_labels}{}
+
+A la vez, como se ha dicho, se pueden utilizar diferentes etiquetas para relacionar las incidencias. Estas son las que aparecen en la imagen \ref{fig:github_labels}. La idea general es poder clasificar cada tarea según su entidad correspondiente: plataforma relacionada o tipo de tarea. De esta manera, es fácilmente clasificable cada una de las tareas.
+
+\figura{0.5}{img/estructura/github_milestones}{\textit{Milestones} en Github}{fig:github_milestones}{}
+
+Por último, se agrupan también las tareas o \textit{issues} en hitos, llamadas \textit{milestones}. Esto sirve para indicar las fases del proyecto y la fecha de finalización de cada sprint.
+
 
 \subsection{Backend}
 
