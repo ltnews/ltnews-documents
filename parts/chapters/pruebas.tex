@@ -13,13 +13,20 @@ En total se han realizado en torno a 20 prueba unitarias de dos entidades exclus
 
 Como se ha dicho, los tests unitarios comprueban una funcionalidad concreta del sistema. Aunque hubiera pruebas sobre cada característica concreta del sistema, esto no implicaría la comprobación total de la aplicación. Es por ello importante la comprobación de todas las funcionalidades en su conjunto. Estos son las pruebas integradas.
 
+\figura{0.5}{img/pruebas/travis}{Muestra de logs de Travis}{fig:travis}{}
+
 Estas se realizan en la aplicación utilizando un sistema externo: Travis. Este, con un fichero de configuración, visto en el apartado \ref{sec:estructra_proyecto}, compone la arquitectura del sistema y realiza todo el conjunto de pruebas de manera global. Así, se consigue integrar toda la funcionalidad en una misma ejecución.
 
 La siguiente imagen muestra los diferentes logs de las últimas ejecuciones de Travis. Se puede ver que hay algunos en error. Esto es debido a el cambio de composición de la aplicación: pasa de el montaje de cada componente individualmente a una servicios interconcectados y virtualizados con Docker.
 
-\figura{0.5}{img/pruebas/travis}{Muestra de logs de Travis}{fig:travis}{}
-
-
 \section{Pruebas de aceptación}\label{sec:pruebas_aceptacion}
+
+Se ha hablado anteriormente de la figura del \textit{early adopter} como una pieza fundamental dentro del estudio y comprobación de la idea. Estas personas selectas, debido a su rol, se han encargado también de ir testando paultatinamente la aplicación. No de manera fría y accidentada, buscando fallos o faltas de usabilidad. Más bien han intentado usar la aplicación desde un primer momento en aras a convertirla en su futura referencia en cuanto a noticias se refiere.
+
+Dicha utilización ha sido regular, aunque diferente en cada uno de ellos. En algunos consitía en un uso esporádico cada varios días. En otros se ha convertido casi en una costumbre semanal o mensual. Esto ha servido de acicate para la mejora de la calidad de los resultados y el acabado desde el punto de vista del diseño.
+
+Estos, además, daban su opinión de cambios acontecidos en la aplicación. Gracias a esto, se ha podido ir modificando las diferentes características del sistema y se ha tenido en un periodo de tiempo corto el feedback de estos perfiles. Como botón de muestra de su aportación encontramos: el diseño de los colores, la latencia de determinadas vistas o la sugerencia del resumen de noticias.
+
+Esto ha proporcionado al sistema de un flujo de comunicación directa con los clientes. En un futuro se estandarizará dicho proceso y se ampliará a cualquier usuario. Se hará como herramienta de feedback imprescindible para un desarrollo basado en la metodología Running Lean, como el indicaba en el punto \ref{sec:metodologia_lean}. Así, será el flujo completo: desde el lanzamiento de una nueva característica hasta el estudio de la recepción de la misma para controlar la gestión del cambio.
 
 \section{Estándares de código}\label{sec:estandares_codigo}
