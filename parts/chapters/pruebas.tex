@@ -3,7 +3,22 @@
 \chapter{Pruebas}\label{pruebas}
 \section{Pruebas unitarias}\label{sec:pruebas_unitarias}
 
+Los test unitarios prueban una funcionalidad en toda su completitud y tipología de casuísticas. Debido a la complejidad y gran tiempo que conlleva la realización de las pruebas, se han recudido estas a una parte representativa y en la parte del servidor.
+
+Para desarrollarlas, por tanto, se ha utilizado el framework de pruebas que proporciona Django. Con él, solamente haciendo uso de la función \textit{Test}, se pueden ejecutar todas las pruebas a la vez. Se han comprobado principalmente los usos principales sobre una parte de la aplicación.
+
+En total se han realizado en torno a 20 prueba unitarias de dos entidades exclusivamente: \textit{Section} y \textit{Profile}. Estas poseen toda la lógica que se ofrece por la API probadas, haciendo uso de una nueva base de datos para ello. Además, contienen tanto las pruebas positivas y negativas. Eto quiere decir que de estas entidades de comprueban el correcto funcionamiento, así como los posibles que podrían acontecer.
+
 \section{Pruebas integradas}\label{sec:pruebas_integradas}
+
+Como se ha dicho, los tests unitarios comprueban una funcionalidad concreta del sistema. Aunque hubiera pruebas sobre cada característica concreta del sistema, esto no implicaría la comprobación total de la aplicación. Es por ello importante la comprobación de todas las funcionalidades en su conjunto. Estos son las pruebas integradas.
+
+Estas se realizan en la aplicación utilizando un sistema externo: Travis. Este, con un fichero de configuración, visto en el apartado \ref{sec:estructra_proyecto}, compone la arquitectura del sistema y realiza todo el conjunto de pruebas de manera global. Así, se consigue integrar toda la funcionalidad en una misma ejecución.
+
+La siguiente imagen muestra los diferentes logs de las últimas ejecuciones de Travis. Se puede ver que hay algunos en error. Esto es debido a el cambio de composición de la aplicación: pasa de el montaje de cada componente individualmente a una servicios interconcectados y virtualizados con Docker.
+
+\figura{0.5}{img/pruebas/travis}{Muestra de logs de Travis}{fig:travis}{}
+
 
 \section{Pruebas de aceptación}\label{sec:pruebas_aceptacion}
 
