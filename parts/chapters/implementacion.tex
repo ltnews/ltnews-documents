@@ -19,23 +19,23 @@ Por lo dicho, esta técnica posee diferentes implementaciones, dependiendo del n
 Como última consideración, se ha informar que antes de trabajar con la información extraída del \textit{Web Scrapping}, hay que saber que esta tiene implicaciones legales. Estas, en la mayoría de los casos, se encuentran en un vacío legal. En la práctica, si los datos se usan para un uso personal, no hay problema añadido. La cosa cambia si es para un uso comercial. De hecho, actualmente, hay varios juicios por un uso fraudulento de esta técnica en Australia o Estados Unidos, como se puede ver en el artículo publicado por \citeA{web_scrapping}.
 
 \subsubsection{Recuperación de información}
-Una vez extraída la información de los medios, es imprescindible tratarla correctamente. No basta el guardarla en una base de datos sin más, sino que es necesario usar medios de albergar la información especializado para ello. Si se usa, por ello, ténicas de Búsqueda y Recuperación de Información (ISR, por sus siglar en inglés, en adelante) podemos tratar cada noticia como un documento y así extraer metadatos de cada uno.
+Una vez extraída la información de los medios, es imprescindible tratarla correctamente. No basta el guardarla en una base de datos sin más, sino que es necesario usar medios de albergar la información especializado para ello. Si se usa, por ello, técnicas de Búsqueda y Recuperación de Información (ISR, por sus siglas en inglés, en adelante) podemos tratar cada noticia como un documento y así extraer metadatos de cada uno.
 
 \figura{0.75}{img/desarrollo/information_retrieval}{Muestra de Recuperación de Información}{fig:information_retrieval}{}
 
 Esta técnica, por tanto, permite recuperar documentos en base a búsqueda de sus metadatos guardados en un índice. Esta información no suele estar estructurada y su misión es la de buscar información relevante en base a diferentes filtros. Hay diferentes técnicas, dependiendo del grado de exactitud que se requiera teniendo en cuenta la consulta. Algunas de las más importantes son las siguientes.
 
 \begin{itemize}
-    \item \textbf{Sistemas de recuperación de lógica difusa}: las búsquedas sobre la información son de tipo fuzzy, es decir, frases normales, que el sistema transforma en frases lógicas. Así, la información que se consegue, se basa en proposiciones lógicas, teniendo en cuenta si los términos buscados aparecen o no.
+    \item \textbf{Sistemas de recuperación de lógica difusa}: las búsquedas sobre la información son de tipo fuzzy, es decir, frases normales, que el sistema transforma en frases lógicas. Así, la información que se consigue, se basa en proposiciones lógicas, teniendo en cuenta si los términos buscados aparecen o no.
     \item \textbf{Técnicas de ponderación de términos}: dado que hay términos de búsqueda que tienen más relevancia que otros, es lógico que se pondere dichos términos. Así, los documentos más pertinentes, serán los que contengan todos los términos y que se repita más el que más valor tenga.
     \item \textbf{Técnicas de clustering}: es un modelo probabilístico sobre la frecuencia de los términos de búsqueda. Se clasifican los documentos por valores que, finalmente, representan los pesos.
     \item \textbf{Técnicas de retroalimentación por relevancia}: una vez hecha una búsqueda utilizando una de las técnicas anteriores, se vuelve a buscar pero con términos relacionados con los primeros documentos resultantes.
-    \item \textbf{Técnicas de stemming}: usa la técnica de Stemming para la búsqueda, es decir, trunca los términos de búsqueda quitante posibles prefijos o sufijos. En fin, evita ambigüedades léxicas.
+    \item \textbf{Técnicas de stemming}: usa la técnica de Stemming para la búsqueda, es decir, trunca los términos de búsqueda quitando posibles prefijos o sufijos. En fin, evita ambigüedades léxicas.
 \end{itemize}
 
 Como se puede observar, estas técnicas se pueden combinar entre sí dentro de una implementación concreta, aunque siempre el funcionamiento es el presentado en la imagen \ref{fig:information_retrieval}: se procesan los documentos, se indexan y se busca sobre el índice.
 
-Como se ha dicho al inicio del apartado, interesa que este índice creado trate correctamente la información guardardada. Esta es, por tanto, la mayor ventaja de usar un ISR: se pueden elegir técnicas y tratamientos concretos por cada campo, así como por cada índice de documentos. En el ejemplo de guardar noticias se puede decir que extraiga las palabras claves, que de más importancia al cuerpo de la noticia, que obvie mayúsculas y tildes en el índice y para el análisis, que no tenga en cuenta artículos y preposiciones.
+Como se ha dicho al inicio del apartado, interesa que este índice creado trate correctamente la información guardada. Esta es, por tanto, la mayor ventaja de usar un ISR: se pueden elegir técnicas y tratamientos concretos por cada campo, así como por cada índice de documentos. En el ejemplo de guardar noticias se puede decir que extraiga las palabras claves, que de más importancia al cuerpo de la noticia, que obvie mayúsculas y tildes en el índice y para el análisis, que no tenga en cuenta artículos y preposiciones.
 
 Esto dará una versatilidad a esta \textit{base de datos no relacional} mucho mayor, ya que estará especializada en el dominio del problema concreto. Mientras tanto, en una base de datos clásica, la información se guarda siempre de manera homogénea y genérica para cualquier dato que se quiera albergar.
 
@@ -72,17 +72,17 @@ Para el desarrollo del servidor se han usado Python con el framework web Django,
 \subsubsection{Python}
 Python es un lenguaje interpretado y multiparadigma. Esto último se debe a que soporta tanto programación orientada a objetos como programación imperativa, además de programación funcional. Actualmente está administrado por la fundación \textit{Python Software Foundation} y posee una licencia de código abierto denominada \textit{Python Software Foundation License}. Esta nos permite hacer modificaciones de su código fuente y la creación todo trabajo derivado de este, sin necesidad de que este sea también código abierto.
 
-Se ha decidido utilizar este lenguaje de programación en el lado del servidor debido a la cantidad y facilidad de uso de herramientas que implementan las tecnologías previamente mencionadas. Es la referencia en temas de \textit{Web Scrapping} e Inteligencia Articial, como se puede apreciar en el artículo de \citeA{python}.
+Se ha decidido utilizar este lenguaje de programación en el lado del servidor debido a la cantidad y facilidad de uso de herramientas que implementan las tecnologías previamente mencionadas. Es la referencia en temas de \textit{Web Scrapping} e Inteligencia Artificial, como se puede apreciar en el artículo de \citeA{python}.
 
 \subsubsection{Django}
-Django es un framework de desarrollo web, también open source y que posee el patrón de diseño Modelo-Vista-Controlador. Ya no se habla de \textit{Model-View-Controller}, sino de \textit{Model-Template-View}. Sin embargo, hacen referencia a los mismos conceptos. El Modelo es la capa de accesos a los datos; la Plantilla, es la capa de presentación; la Vista posee la lógica de negocio de la aplicación y, por tanto, hace de puente entre ambos. Vemos, por tanto, que es en esencia lo mismo.
+Django es un framework de desarrollo web, también open source y que posee el patrón de diseño Modelo-Vista-Controlador. Ya no se habla de \textit{Model-View-Controller}, sino de Modelo-Plantilla-Vista. Sin embargo, hacen referencia a los mismos conceptos. El Modelo es la capa de accesos a los datos; la Plantilla, es la capa de presentación; la Vista posee la lógica de negocio de la aplicación y, por tanto, hace de puente entre ambos. Vemos, por tanto, que es en esencia lo mismo.
 
 Su misión es la facilitar la creación de aplicaciones web complejas. Pone el acento en la conectividad, reutilización y la extensión de todos y cada uno de sus componentes. Tiene, además, como principal característica desde el punto de vista del desarrollo, el que todo esté hecho en Python.
 
-Se ha decidido utilizar este framework por la facilidad de uso, y la potencia que posee sin configuración previa, es decir, posee integrado desde el primer momento aspectos avanzados de seguridad (evita inyecciones SQL, validaciones de los formularios, autentificación en cada página, entre otros), gestión en cada momento las sesiones, así como la transparencia en multitud de aspectos: la base de datos utilizada, la localización de los archivos estáticos, el despliegue…
+Se ha decidido utilizar este framework por la facilidad de uso, y la potencia que posee sin configuración previa, es decir, posee integrado desde el primer momento aspectos avanzados de seguridad (evita inyecciones SQL, validaciones de los formularios, autenticación en cada página, entre otros), gestión en cada momento las sesiones, así como la transparencia en multitud de aspectos: la base de datos utilizada, la localización de los archivos estáticos, el despliegue…
 
 \subsubsection{Librerías}
-Los módulos son gestionados por Python a través del CLI \textit{pip}. Estos se añaden automáticamente al software a través de este. Las libreías usadas son las siguientes:
+Los módulos son gestionados por Python a través del CLI \textit{pip}. Estos se añaden automáticamente al software a través de este. Las librerías usadas son las siguientes:
 
 \begin{itemize}
     \item \textbf{django-rest-framework}: es la herramienta que permite ofrecer una API usando Django. Esta convierte las vistas de Django en un endpoint para publicitar contenido a través de los verbos HTTP.
@@ -101,9 +101,9 @@ Para elegir cada una, se ha realizado un pequeño estudio entre sus posibles alt
 Para el desarrollo de la interfaz de usuario se ha escogido JavaScript y el framework de desarrollo VueJS.
 
 \subsubsection{JavaScript}
-Desde el inicio del desarollo web hasta hoy en día solo han exisistido tres lenguajes en el mundo del frontend: HTML, CSS y JS. El primero para la estructuración de la información, el segundo para el diseño y el tercero para la interacción del usuario. Es sobre este tercero donde mayores avances ha habido.
+Desde el inicio del desarrollo web hasta hoy en día solo han existido tres lenguajes en el mundo del frontend: HTML, CSS y JS. El primero para la estructuración de la información, el segundo para el diseño y el tercero para la interacción del usuario. Es sobre este tercero donde mayores avances ha habido.
 
-Ni que decir tiene que JavaScript se ha convertido en el lenguaje de referencia en el desarrollo web si se quiere una interfaz desacoplada, asíncrona y elegante, como revela la encuesta mundial de \citeA{state_js}. Son estos los mótivos por los que se ha escogido.
+Ni que decir tiene que JavaScript se ha convertido en el lenguaje de referencia en el desarrollo web si se quiere una interfaz desacoplada, asíncrona y elegante, como revela la encuesta mundial de \citeA{state_js}. Son estos los motivos por los que se ha escogido.
 
 De hecho, si se quiere realizar una \textit{Single Page Application} (SPA en adelante), no hay otra opción plausible. Esta permite tener un simple fichero HTML e ir interactuando con él a través de JavaScript exclusivamente. Esto da al usuario una visión limpia y rápida de la aplicación en cuestión.
 
@@ -120,7 +120,7 @@ Visto lo anterior, comparemos los tres frameworks mencionados para ilustrar el m
 \begin{itemize}
     \item \textbf{React}: es la librería de Facebook centrada en la creación de vistas. Su gran virtud son los patrones de eventos, ya que estos permiten actualizar en tiempo real las vistas con los datos. Realmente no es un framework, por lo que es posible utilizarlo anexo a Angular o VueJS. Si embargo, debido a su potencial, puede ser usado exclusivamente para realizar la capa de presentación.
     \item \textbf{Angular}: es el framework de Google diseñado sobre su primera versión y hecho para ser totalmente independiente y funcional. Usando HTML, CSS y TypeScript consigue crear vistas, componentes independientes y rutas, todas relacionados entre sí. Trabaja sobre el concepto \textit{Single Page Application} (SPA) utilizado para ello Webpack, esto es, una vez desarrollada la aplicación, se compila en un fichero HTML (\textit{index.html}), un fichero CSS y varios ficheros JS.
-    \item \textbf{VueJS}: es el framework creado por la comunidad que une las ventajas de los desarrollos anteriores, a destacar: el ciclo de vida de los componentes propio de React y las directivas de Angular. La curva de aprendizaje es más reducida que Angular y el proyecto poseerá menos ficheros que este, ya que aglutina HTML, CSS y JS en un fichero \textit{.vue}. Además, es totalmente versatil: se puede utilizar como librería para un desarollo pequeño hasta como framework en un aplicación SPA o SSR completa.
+    \item \textbf{VueJS}: es el framework creado por la comunidad que une las ventajas de los desarrollos anteriores, a destacar: el ciclo de vida de los componentes propio de React y las directivas de Angular. La curva de aprendizaje es más reducida que Angular y el proyecto poseerá menos ficheros que este, ya que aglutina HTML, CSS y JS en un fichero \textit{.vue}. Además, es totalmente versátil: se puede utilizar como librería para un desarrollo pequeño hasta como framework en un aplicación SPA o SSR completa.
 \end{itemize}
 
 Son estos motivos por los que se ha optado por VueJS, aunque sinceramente, debido a su similitud con Angular, se podría haber optado por cualquiera. Además, el ecosistema que ofrece Vue, como se verá en el siguiente punto, es único.
@@ -130,14 +130,14 @@ Son estos motivos por los que se ha optado por VueJS, aunque sinceramente, debid
 Los módulos usados están relacionados con el ecosistema que ofrece Vue así como por la comunidad de JavaScript. Estos se gestionan a través de \textit{npm}.
 
 \begin{itemize}
-    \item \textbf{vue-router}: gestiona la navegabilidad entre las vistas, compartiendo datos entre sí y haciendolas accesibles desde la URL del navegador.
+    \item \textbf{vue-router}: gestiona la navegabilidad entre las vistas, compartiendo datos entre sí y haciéndolas accesibles desde la URL del navegador.
     \item \textbf{vuex}: administra los estados de determinados objetos a lo largo de toda la aplicación. Ofrece de manera general un almacén de estados que pueden ser mutados y consultados desde cualquier módulo.
     \item \textbf{vuetify}: implementa un ecosistema basado en Material Design, el diseño propuesto por Google, usado componentes Vue.
     \item \textbf{axios}: gestiona las peticiones HTTP en JavaScript ofreciendo una interfaz completa y simple.
     \item \textbf{moment}: convierte cualquier campo de tipo fecha al formato deseado por el usuario.
 \end{itemize}
 
-Todas estas libreías son usadas por la gran mayoría de la comunidad y no poseen alternativas claras y robustas: los desarrolladores prefieres mejorarlas a enfrentarse a ser competencia directa.
+Todas estas librerías son usadas por la gran mayoría de la comunidad y no poseen alternativas claras y robustas: los desarrolladores prefieres mejorarlas a enfrentarse a ser competencia directa.
 
 \subsection{Servidor}
 
@@ -153,7 +153,7 @@ Postgres es un sistema gestor de base de batos de tipo relacional, como se ha di
 
 Para implementar la Búsqueda y Recuperación de Información, descrito en el punto \ref{sec:tecnologias}, referente a las tecnologías, es necesario usar un Índice.
 
-Elasticsearch es un servidor de búsqueda, distribuido y accesible a través de una interfaz de tipo RESTful. Está desarrollado en Java, basándose en Lucene y es de código abierto. Propone una sintáxis basada en JSON para las búsquedas.
+Elasticsearch es un servidor de búsqueda, distribuido y accesible a través de una interfaz de tipo RESTful. Está desarrollado en Java, basándose en Lucene y es de código abierto. Propone una sintaxis basada en JSON para las búsquedas.
 
 Se ha decidido usar sobre Índice como Algolia o Solr por dos motivos principales. El primero se debe a su coste, nulo en proyectos con implantación propia de dicha herramienta. El segundo es que se está poniendo a la cabeza en el desarrollo de índices generales en la comunidad.
 
@@ -167,7 +167,7 @@ Se ha decidido usar este por el gran rendimiento que ofrece sobre el Servidor HT
 
 \subsubsection{Docker}
 
-Para hacer toda esta arquitectura independiente a cualquier sistema y con la configuración similar a entornos de desarollo y producción es necesaria la virtualización de los servicios. Esto ha marcado un nuevo hito en el mundo del software: la abstracción entre sistemas operativos y la concentración de la configuración en un único fichero. Esto es Docker.
+Para hacer toda esta arquitectura independiente a cualquier sistema y con la configuración similar a entornos de desarrollo y producción es necesaria la virtualización de los servicios. Esto ha marcado un nuevo hito en el mundo del software: la abstracción entre sistemas operativos y la concentración de la configuración en un único fichero. Esto es Docker.
 
 Docker automatiza el despliegue de cualquier software en contenedores. Estos poseerán toda la configuración que necesita el desarrollo para funcionar. Es la evolución de la máquina virtual: se convierten en instancias Linux ligeras y aisladas.
 
@@ -195,15 +195,15 @@ Una vez llegado a las decisiones convenientes para desarrollar el producto, es n
 
 Se han usado grosso modo dos: Toggl para la gestión del tiempo y Waffle para la gestión de las tareas. La primera permite comprobar las horas que lleva cada tarea. Esta permite etiquetar cada una, por lo que se podrá comprobar el tiempo dedicado a cada tipo de tarea (gestión, documentación, desarrollo, despliegue o investigación), así como el total dedicado al proyecto. Con la segunda se consigue agrupar las tareas en hitos y asociarlos a funcionalidades dentro del código. Además, ambas están relacionadas, por lo que simplifica dicha gestión, siendo esta la principal motivación para su uso.
 
-Waffle es la implementación concreta del tablero convas mencionado en el punto \ref{sec:metodologia_lean}. Si se aprecia la imagen \ref{fig:scrum_github}, vemos que es GitHub la plataforma mencionada para el tablero. Lo ocurrido se puede apreciar en el artículo de \citeA{waffle}. Esta herramienta deja de mantenerse por falta de recursos y recomienda su migración a GitHub.
+Waffle es la implementación concreta del tablero canvas mencionado en el punto \ref{sec:metodologia_lean}. Si se aprecia la imagen \ref{fig:scrum_github}, vemos que es GitHub la plataforma mencionada para el tablero. Lo ocurrido se puede apreciar en el artículo de \citeA{waffle}. Esta herramienta deja de mantenerse por falta de recursos y recomienda su migración a GitHub.
 
 \section{Estructura del proyecto}\label{sec:estructra_proyecto}
 
-Como se ha ido dicendo a lo largo del documento, el proyecto utiliza Git. Así, se ha estructurado el trabajo en ramas según la metodología Git Flow. Este estructura el cualquier proyecto software con cinco ramas principales:
+Como se ha ido diciendo a lo largo del documento, el proyecto utiliza Git. Así, se ha estructurado el trabajo en ramas según la metodología Git Flow. Este estructura el cualquier proyecto software con cinco ramas principales:
 
 \begin{itemize}
     \item \textbf{master}: el código en esta rama es la versión estable y funcional que se encuentra funcionando en producción.
-    \item \textbf{hostfix}: cualquier fallo detectado en producción se arregla aquí y se lleva a \textit{master} uuna vez solucionado: no antes.
+    \item \textbf{hostfix}: cualquier fallo detectado en producción se arregla aquí y se lleva a \textit{master} una vez solucionado: no antes.
     \item \textbf{release}: sobre los cambios agrupados del desarrollo, se prueba integralmente antes de ser subidos a \textit{master}.
     \item \textbf{development}: agrupa los cambios en las diferentes características que se van trabajando.
     \item \textbf{feature}: cada una de las funcionalidades a añadir en el sistema.
@@ -217,7 +217,7 @@ Teniendo esto en cuenta, se mostrará cómo se ha estructura cada repositorio de
 
 \subsection{GitHub}
 
-De manera general, se poseen estos respositorios de proyectos en la plataforma de código abierto GitHub. Cada uno de los cuales alberga un desarrollo concreto.
+De manera general, se poseen estos repositorios de proyectos en la plataforma de código abierto GitHub. Cada uno de los cuales alberga un desarrollo concreto.
 
 \figura{0.75}{img/estructura/github_repositories}{Respositorios en GitHub}{fig:github_repositories}{}
 
@@ -225,7 +225,7 @@ Los repositorios que muestra la imagen son los siguientes:
 
 \begin{itemize}
     \item \textbf{ltnews-documents}: es el proyecto LaTeX donde se desarrollan los documentos a presentar, tanto la presente memoria como la presentación del trabajo.
-    \item \textbf{ltnews-docker}: alberga la arquitectura de la aplicación en docker y se relaciona con los demás respositorios de código.
+    \item \textbf{ltnews-docker}: alberga la arquitectura de la aplicación en docker y se relaciona con los demás repositorios de código.
     \item \textbf{ltnews-backend}: es el proyecto de Django para el servidor de la aplicación.
     \item \textbf{ltnews-frontend}: es la capa de presentación de la aplicación
      realizada en VueJS.
@@ -272,7 +272,7 @@ En cuanto al código del servidor, se ha estructurado el código siguiendo las p
         \item \textbf{migrations}: contiene las migraciones hechas del modelo de Django.
         \item \textbf{service}: contiene los servicios de las entidades por cada entidad del modelo y son intermediarios entre el modelo y el controlador, ya que extraen la información de la base de datos ya ordenada y útil de utilizar en los controladores.
         \item \textbf{test}: contiene los tests agrupados en las entidades del sistema.
-        \item \textbf{utility}: contiene las clases de utilidad que han sido necesarias desarrollar la el correcto funcionamiento del sitema.
+        \item \textbf{utility}: contiene las clases de utilidad que han sido necesarias desarrollar la el correcto funcionamiento del sistema.
         \item \textbf{view}: contiene los controladores por entidad, en concreto, la implementación de cada API publicada.
         \item \underline{admin.py}: archivo en el que se declara el nombre de las entidades del sistema.
         \item \underline{apps.py}: archivo con nombre y características de la aplicación.
@@ -290,7 +290,7 @@ En cuanto al código del servidor, se ha estructurado el código siguiendo las p
 
 \subsection{Frontend}
 
-El código del cliente se estructura siguiendo las directrices del CLI de Vue. Estas no son más que una implmentación concreta y ordenada de las pautas de Node y Webpack. Así, la organización ense muestra en la imagen \ref{fig:estructura_webstorm}.
+El código del cliente se estructura siguiendo las directrices del CLI de Vue. Estas no son más que una implementación concreta y ordenada de las pautas de Node y Webpack. Así, la organización se muestra en la imagen \ref{fig:estructura_webstorm}.
 
 \figura{}{img/estructura/estructura_webstorm}{Estructura en WebStorm}{fig:estructura_webstorm}{}
 
@@ -301,15 +301,15 @@ El código del cliente se estructura siguiendo las directrices del CLI de Vue. E
     \item \textbf{src}: contiene la lógica general de la aplicación siguiendo la estructuración de Webpack.
     \begin{itemize}
         \item \textbf{api}: contiene las llamadas generales a la API y la configuración de estas por \textit{axios}.
-        \item \textbf{assets}: contiene las imágens y ficheros estáticos usados por la aplicación.
+        \item \textbf{assets}: contiene las imágenes y ficheros estáticos usados por la aplicación.
         \item \textbf{components}: contiene los componentes de la aplicación: estos funcionan de manera independiente y pueden ser usados en cualquier vista.
         \item \textbf{plugins}: contiene la configuración de algunos módulos usados por la aplicación, como en el caso de \textit{Vuetify}.
         \item \textbf{stores}: contiene la configuración de estados de las diferentes entidades creadas; don gestionadas por \textit{vuex}.
         \item \textbf{views}: contiene las vistas que posee la aplicación con la lógica implementada en cada una.
         \item \underline{App.vue}: archivo con la arquitectura visual que presenta la aplicación.
-        \item \underline{main.js}: archivo con la configución general de la aplicación Vue.
+        \item \underline{main.js}: archivo con la configuración general de la aplicación Vue.
         \item \underline{router.js}: archivo con la navegabilidad entre las diferentes vistas así como su relación con las URLs.
-        \item \underline{store.js}: archivo con la relación de estados y mutaciones específicados en la carpeta \textbf{stores}.
+        \item \underline{store.js}: archivo con la relación de estados y mutaciones especificados en la carpeta \textbf{stores}.
     \end{itemize}
     \item \underline{babel.config.js}: archivo con la configuración de Babel.
     \item \underline{package.json}: archivo con el fichero de configuración de la aplicación con la información general y de librerías necesarias y uso específico de estas.
