@@ -27,6 +27,7 @@
 \RequirePackage{amsmath,amsthm,amssymb,latexsym}%s{\'\i}mbolos matem{\'a}ticos
 \usepackage{url}%Para direcciones web
 \RequirePackage[spanish,activeacute]{babel}%Traducci{\'o}n al espa{\~n}ol
+\RequirePackage {float}%Para situar los objetos
 
 %DIFERENTES TIPOS DE LETRA
 %\usepackage{palatino}
