@@ -251,7 +251,7 @@
 %4---> contenido de la tabla separando columnas con & y filas con \\
 
 \newcommand{\cuadro}[4]{
-		\begin{table}[hbtp]
+		\begin{table}[H]
 			\centering
 				\begin{tabular}{#1}
 					\hline

@@ -27,6 +27,56 @@ El sistema posee dos actores, que consiste en usuarios autenticados o anónimos.
 
 La diferencia radicará en el acceso a contenido que requiera de poseer un usuario adociado. No obstante, se ha intentado, en la medida de lo posible dar el mayor acceso posible al usuario anónimo en la aplicación.
 
+En resumen, los actores serán: \textbf{Anónimo} y \textbf{Usuario}.
+
 \section{Catálogo de requisitos}\label{sec:catalogo_requisitos}
+
+Dado que se ha usando una metodología ágil, como se indica en el punto \ref{sec:metodologia_scrum}, se representan los requisitos como historias de usuario, ya que suponen un forma clara y sencilla de representarlos. En apartado se englobarán los requisitos funcionales del sistema, dentro de las historias épicas correspondientes, y los no funcionales.
+
+\subsection{Requisitos funcionales}
+
+\subsubsection{Historias épicas}
+
+\cuadro{lp{0.8\linewidth}}{HE1 - Acceso aplicación}{tab:he1}
+{
+    \multicolumn{2}{c}{\textbf{HE1 - Acceso aplicación}} \\
+    \hline
+    \textbf{Usuario} & Anónimo  \\
+    \textbf{Descripción} & El sistema deberá proveer el registro de cualquiera, así como el acceso a los usuarios ya registrados.  \\
+}
+
+\cuadro{lp{0.8\linewidth}}{HE2 – Gestión de perfil}{tab:he2}
+{
+    \multicolumn{2}{c}{\textbf{HE2 – Gestión de perfil}} \\
+    \hline
+    \textbf{Usuario} & Usuario  \\
+    \textbf{Descripción} & El sistema deberá almacenar toda la información perteneciente al usuario registrado, así como la posibilidad de que este la cambie. \\
+}
+
+\cuadro{lp{0.8\linewidth}}{HE3 – Gestión de secciones}{tab:he3}
+{
+    \multicolumn{2}{c}{\textbf{HE3 – Gestión de secciones}} \\
+    \hline
+    \textbf{Usuario} & Usuario  \\
+    \textbf{Descripción} & El sistema deberá almacenar todas las secciones que el usuario cree, así como dejarle la posibilidad de que este la cambie. De igual manera con los feeds asociados a dicha sección. \\
+}
+
+\cuadro{lp{0.8\linewidth}}{HE4 – Gestión de noticias}{tab:he4}
+{
+    \multicolumn{2}{c}{\textbf{HE4 – Gestión de noticias}} \\
+    \hline
+    \textbf{Usuario} & Usuario  \\
+    \textbf{Descripción} & El sistema deberá almacenar todas las noticias actualizadas de los feeds del usuario, así como dejarle interaccionar con ellas. \\
+}
+
+\cuadro{lp{0.8\linewidth}}{HE5 – Gestión de intereses}{tab:he5}
+{
+    \multicolumn{2}{c}{\textbf{HE5 – Gestión de intereses}} \\
+    \hline
+    \textbf{Usuario} & Usuario  \\
+    \textbf{Descripción} & El sistema deberá almacenar todas las preferencias del usuario del usuario para recomendarle noticias. \\
+}
+
+
 
 \section{Diagrama de secuencia}\label{sec:diagrama_secuencia}
