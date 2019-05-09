@@ -1,9 +1,31 @@
 % !TEX root = ../../proyect.tex
 
 \chapter{Análisis}\label{analisis}
+\section{Modelo conceptual}\label{sec:modelo_conceptual}
+
+El modelo conceptual consiste en las entidades principales del sistema y sus relaciones. Por ello, se explicará a partir de la imagen \ref{fig:class_diagram}.
+
+\figura{}{img/diagram/class_diagram}{Diagrama de clases}{fig:class_diagram}{}
+
+Los elementos centrales del sistema son \textit{UserProfile} e \textit{Item}. Esto se puede apreciar a simple vista, debido a la cantidad de las relaciones con las diferentes entidades.
+
+En primer lugar, \textit{UserProfile} gestiona más relaciones que atributos posee. Esto es debido a que la lógica y datos del usuario se encontrarán en \textit{User}. Así, entre ellos habrá una relación directa y bidireccional, en concreto, una relación \textit{One To One}. Un usuasio, así, poseerá secciones asociadas, tendrá estados a noticias, publicará comentarios en noticias y estará representado por temas que le interesa.
+
+En segundo lugar, como punto neurálgico de la aplicación se encuentran las noticias, \textit{Item} en el modelo. El usuario, por lo comentado anteriormente, posee cuatro relaciones indirectas hacia este, y que representarán las diferentes funcionalidades de la aplicación.
+
+\begin{itemize}
+    \item \textit{UserProfile-Section-Feed-Item}. Este camino quiere representar la condición natural de noticia con respecto al usuario. Las noticias están agrupadas en feeds de sindicación de contenido. Estos, a su vez, asociados a secciones. Por último, es el usuario el que crea dicha secciones. Con esto, se puede agrupadar las noticias en base a dos criterios: secciones o feeds asociados. Esta será la navegabilidad principal de un usuario para leer noticias.
+    \item \textit{UserProfile-Status-Item}. En segundo lugar, se guardará la interacción del usuario con dicha noticia. Con esto se consigue guardar los estados por los que pasa la noticia para el usuario y poder valorar cuánto gusta a un usuario una determinada noticia. Así, se mantiene guardado si un usuario ha visto ya una noticia, para así no volver a mostrársela; si la ha leído, le ha gustado o ha accedido al link original, así sabremos que ese tipo de noticias le interesa; o si la quiere guardar para leerla más tarde.
+    \item \textit{UserProfile-Comment-Item}. Se da también la posibilidad a los usuarios de comentar las noticias para poder dar su opinión. Por ello, es necesario mantener dicha entidad como clase de asociación.
+    \item \textit{UserProfile-Keyword-Item}. Por último lugar, el sistema analiza cada noticia y extrae las palabras claves de la misma. Con estas \textit{keywords} se definen las noticias y es posible relacionarlas entre sí. Además, al usuario también se le asignan palabras claves, que definirán sus gustos. Es por ello que se usa esta entidad y su relación \textit{Many To Many}, para albergar el fruto del análisis de ambas entidades.
+\end{itemize}
+
+
 \section{Actores del sistema}\label{sec:actores del sistema}
 
-\section{Modelo conceptual}\label{sec:modelo_conceptual}
+El sistema posee dos actores, que consiste en usuarios autenticados o anónimos. Los primeros son aquellos que han accedido a la aplicación, están registados en el sistema y han accedido con sus credenciales. Los segundos son los que el sistema no puede identificarlos unívocamente, ya que no están registrados, o si lo están, no se han identificado.
+
+La diferencia radicará en el acceso a contenido que requiera de poseer un usuario adociado. No obstante, se ha intentado, en la medida de lo posible dar el mayor acceso posible al usuario anónimo en la aplicación.
 
 \section{Catálogo de requisitos}\label{sec:catalogo_requisitos}
 
