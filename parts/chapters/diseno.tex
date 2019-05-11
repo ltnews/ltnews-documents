@@ -34,6 +34,15 @@ La segunda misión del servicio es ofrecer unos datos acordes para trabajar con 
 En aras a lo cual, el Controlador usa al servicio para toda la gestión con la base de datos. Con esta delegación, solo es necesaria la manipulación de los datos y la entrega a la Vista. Además, el construir una API interna aporta al código mayor versatilidad y cohesión, ya que se encontrarán agrupados los ficheros concernientes a la relación con la base de datos.
 
 \subsubsection{Deacoplamiento Cliente-Servidor}
+Ha sido un tema bastante estudiado la interacción entre lenguajes de programación de servidor en el cliente. Desde el inicio de las aplicaciones web, este problema se solucionó integrando herramientas al servidor que permitiesen añadir en tiempo de ejecución código al cliente. De esta filosofía, por ejemplo, nace PHP, lenguaje que se integra completamente dentro del HTML. Al igual ocurre con Java y sus JPA o con Python y sus Jinja Template.
+
+Sin embargo, a medida que evoluciona el frontend, este se va aportado valor a sí mismo. Se empiezan a utilizar herramientas de servidor, pero para la construcción del mismo. Dicho de otro modo, es ahora en la compilación donde se consigue un código de cliente coherente y funcional. Es este el motivo, por el que se empiezan a construir aplicaciones de cliente de manera hermética a cualquier servidor.
+
+La herramienta de servidor por excelencia, como se ha llamado, es Node. Esta consigue construir aplicaciones de cliente independientes trabajando exclusivamente con las tecnologías de cliente: HTML, CSS y JavaScript. Sin embargo, a estas se les da un valor añadido al poseer este doble aspecto: tecnologías de servidor en tiempo de compilación y tecnologías de cliente en tiempo de ejecución. Por ello, todo el código que se va construyendo se transforma y empaqueta (que no compila) para que sea ejecutado por el navegador.
+
+Como se ve, este hecho cada vez más recurrente hace más clara esta división entre cliente y servidor. En primer motivo, dada su naturaleza; en segundo, dada su finalidad. Aunque desde el principio la naturaleza de ambos fuera diferentes, había puntos de unión que podían confundir. Ahora, que están totalmente diferenciados, es necesario respetar su esencia.
+
+Con vistas al respeto a la naturaleza, se observa un cambio diametral: su finalidad. Mientras el servidor ofrece una API, es el cliente quien la consume. Como se puede observar, ahora puede haber más de un cliente asociado a un servidor. Además, todos poseerán el mismo punto de entrada a esta. Esto, hará más mantenible el código, así como aportará más frescura al mismo.
 
 \section{Modelo de datos}\label{sec:modelo_datos}
 
@@ -128,7 +137,7 @@ A continuación, se irá mencionando cada una de las clases de nuestro modelo y 
         \end{itemize}
     \end{itemize}
     \item \underline{Status}: entidad que representa que estado posee una noticia para un usuario concreto. Todos sus atributos son booleanos; por defecto, se inicializarán a falso.
-    \item \begin{itemize}
+    \begin{itemize}
         \item Atributos
         \begin{itemize}
             \item \underline{view}: el usuario ha visto la noticia.
