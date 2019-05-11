@@ -3,6 +3,152 @@
 \chapter{Diseño}\label{diseno}
 \section{Patrones}\label{sec:patrones}
 
+\subsubsection{Modelo-Vista-Controlador}
+El Modelo-Vista-Controlador, MVC en adelante, es un patrón de diseño que estructura el código en tres componentes principales: datos, lógica de negocio e interfaz de usuario. Para ello, propone la construcción del software diferenciando bien estos tres elementos.
+
+\begin{itemize}
+    \item \textbf{Modelo}: su misión es la representación de la información con la que se opera que incluirá tanto los datos como la lógica para operar con ellos.
+    \item \textbf{Vista}: se encarga de presentar los datos de forma adecuada para interactuar con el mismo desde la interfaz de usuario.
+    \item \textbf{Controlador}: tiene como fin el hacer de intermediario entre los dos otros componentes antes mencionados.
+\end{itemize}
+
+Este patrón es enormemente eficaz para la reutilización del código entre distintos módulos del sistema y la separación del software por su misión. Esto maximiza la cohesión y reduce el acoplamiento. Además, hace que el código sea más comprensible y facilita la labor de mantenimiento. Es por estos motivos por los que se ha escogido dicho patrón.
+
+\subsubsection{Controlador-Servicio}
+
+\subsubsection{Deacoplamiento Cliente-Servidor}
+
 \section{Modelo de datos}\label{sec:modelo_datos}
 
-\section{Prototipos}\label{sec:protoripos}
+El modelo de datos utilizado para la base de datos se ha basado en el definido en el punto anterior: \ref{sec:modelo_conceptual} Modelo conceptual. Este diagrama ha sido generado en base a las relaciones que poseemos. Dado que anteriormente explicamos las entidades y sus relaciones, ahora nos detendremos más en las propiedades y detalles técnicos.
+
+%\figura
+
+A continuación, se irá mencionando cada una de las clases de nuestro modelo y sus atributos.
+
+\begin{itemize}
+    \item \underline{User}: es, como dijimos anteriormente, la entidad que gestionará a todos los usuarios. Algunos de sus atributos más relevantes son los siguientes.
+    \begin{itemize}
+        \item Atributos
+        \begin{itemize}
+            \item \underline{username}: nombre de usuario único en el sistema.
+            \item \underline{email}: correo electrónico.
+            \item \underline{password}: hash de la contraseña.
+            \item \underline{first\_name}: nombre.
+            \item \underline{last\_name}: apellidos.
+            \item \underline{last\_login}: fecha de última conexión.
+            \item \underline{is\_superuser}: booleano que es verdadero si el usuario es administrador.
+            \item \underline{is\_active}: booleano que es cierto cuando el usuario esté activo.
+            \item \underline{date\_joined}: fecha el que se registró.
+        \end{itemize}
+        \item Relaciones
+        \begin{itemize}
+            \item \underline{profile}: relación \underline{OneToOne} con \underline{Profile}.
+        \end{itemize}
+    \end{itemize}
+    \item \underline{Profile}: en esta entidad se guarda toda la información relevante del perfil del usuario.
+    \begin{itemize}
+        \item Atributos
+        \begin{itemize}
+            \item \underline{image}: link de la imagen del usuario.
+        \end{itemize}
+        \item Relaciones
+        \begin{itemize}
+            \item \underline{sections}: relación \underline{OneToMany} con \underline{Section}.
+            \item \underline{comments}: relación \underline{OneToMany} con \underline{Comment}.
+            \item \underline{statuses}: relación \underline{OneToMany} con \underline{Status}.
+            \item \underline{keywords}: relación \underline{ManyToMany} con \underline{Keyword}.
+        \end{itemize}
+    \end{itemize}
+    \item \underline{Section}: representa las secciones del usuario. Esta es una agrupación de feeds RSS. Por ello, cada sección tendrá asociado un usuario y uno o varios periódicos; estos, además, podrán estar en otras secciones.
+    \begin{itemize}
+        \item Atributos
+        \begin{itemize}
+            \item \underline{title}: título.
+            \item \underline{description}: descripción.
+        \end{itemize}
+        \item Relaciones
+        \begin{itemize}
+            \item \underline{user}: relación \underline{ForeignKey} con \underline{Profile}.
+            \item \underline{feeds}: relación \underline{ManyToMany} con \underline{Feed}.
+        \end{itemize}
+    \end{itemize}
+    \item \underline{Feed}: esta entidad representa a todos los feeds o periódicos online. Esta poseerá varias noticias y, como dijimos anteriormente, podrá estar en varias secciones.
+    \begin{itemize}
+        \item Atributos
+        \begin{itemize}
+            \item \underline{title}: nombre del feed.
+            \item \underline{link\_rss}: enlace al feed RSS.
+            \item \underline{link\_web}: enlace al link de la web del feed.
+            \item \underline{description}: descripción del feed.
+            \item \underline{language}: idioma del feed.
+            \item \underline{logo}: link del logo.
+        \end{itemize}
+        \item Relaciones
+        \begin{itemize}
+            \item \underline{sections}: relación \underline{ManyToMany} con \underline{Section}.
+            \item \underline{items}: relación \underline{OneToMany} con \underline{Item}.
+        \end{itemize}
+    \end{itemize}
+    \item \underline{Item}: representa a cada noticia. Esta, como ya hemos visto, posee numerosas relaciones, dado que es el núcleo de nuestro sistema.
+    \begin{itemize}
+        \item Atributos
+        \begin{itemize}
+            \item \underline{title}: título de la noticia.
+            \item \underline{link}: enlace.
+            \item \underline{description}: pequeña descripción que provee el feed RSS.
+            \item \underline{image}: imagen de la noticia.
+            \item \underline{article}: cuerpo de la noticia.
+            \item \underline{pubDate}: fecha de publicación.
+            \item \underline{creator}: autor.
+        \end{itemize}
+        \item Relaciones
+        \begin{itemize}
+            \item \underline{feed}: relación \underline{ForeignKey} con \underline{Feed}.
+            \item \underline{comments}: relación \underline{OneToMany} con \underline{Comment}.
+            \item \underline{statuses}: relación \underline{OneToMany} con \underline{Status}.
+            \item \underline{keywords}: relación \underline{ManyToMany} con \underline{Keyword}.
+        \end{itemize}
+    \end{itemize}
+    \item \underline{Status}: entidad que representa que estado posee una noticia para un usuario concreto. Todos sus atributos son booleanos; por defecto, se inicializarán a falso.
+    \item \begin{itemize}
+        \item Atributos
+        \begin{itemize}
+            \item \underline{view}: el usuario ha visto la noticia.
+            \item \underline{read}: el usuario ha leído la noticia o, por lo menos, ha entrado en ella.
+            \item \underline{web}: el usuario ha accedido a la web original de la noticia.
+            \item \underline{like}: el usuario ha marcado esta noticia como ‘Me gusta’.
+            \item \underline{saves}: el usuario ha guardado la noticia.
+        \end{itemize}
+        \item Relaciones
+        \begin{itemize}
+            \item \underline{user}: relación \underline{ForeignKey} con \underline{Profile}.
+            \item \underline{item}: relación \underline{ForeignKey} con \underline{Item}.
+        \end{itemize}
+    \end{itemize}
+    \item \underline{Comment}: representa un comentario de un usuario a una noticia.
+    \begin{itemize}
+        \item Atributos
+        \begin{itemize}
+            \item \underline{description}: cuerpo del comentario.
+            \item \underline{pubDate}: fecha en la que se publicó.
+        \end{itemize}
+        \item Relaciones
+        \begin{itemize}
+            \item \underline{user}: relación \underline{ForeignKey} con \underline{Profile}.
+            \item \underline{item}: relación \underline{ForeignKey} con \underline{Item}.
+        \end{itemize}
+    \end{itemize}
+    \item \underline{Keyword}: entidad que representa a una palabra clave y si esta caracteriza a un usuario, a una noticia o a ambos.
+    \begin{itemize}
+        \item Atributos
+        \begin{itemize}
+            \item \underline{term}: término.
+        \end{itemize}
+        \item Relaciones
+        \begin{itemize}
+            \item \underline{users}: relación \underline{ManyToMany} con \underline{Profile}.
+            \item \underline{items}: relación \underline{ManyToMany} con \underline{Item}.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
