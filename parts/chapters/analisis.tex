@@ -380,9 +380,91 @@ Una vez definido el catálogo de requistos, queda establecer cómo será dicha c
 Además, pensando en el futuro desarrollo, estos se agruparán en las diferentes entidades del sistema, como se ha visto en el punto \ref{sec:modelo_conceptual}. Para la comunicación, se usarán nombres descriptivos y en inglés, en un modo cercano al lenguaje máquina.
 
 \subsection{Perfil}
+En primer lugar, para que el usuario vea su perfil, éste ha de pedirlo, así el sistema se lo devolverá.
+
+\figura{}{img/diagram/sequence_diagram/profile/profile_view}{Diagrama de secuencia de profile\_view}{fig:profile_view}{}
+
+\newpage
+
+Si quiere modificar el perfil, el usuario debe pedirle al sistema un formulario base, donde estén sus datos para así, enviarlo una vez completo y modificarlo.
+
+\figura{}{img/diagram/sequence_diagram/profile/profile_edit}{Diagrama de secuencia de profile\_edit}{fig:profile_edit}{}
+
+\newpage
 
 \subsection{Section}
+El sistema proporcionará al usuario una vista donde poder ver todas las secciones.
 
+\figura{}{img/diagram/sequence_diagram/feed/feed_list}{Diagrama de secuencia de feed\_list}{fig:feed_list}{}
+
+\newpage
+El usuario puede ver secciones en concreto, pidiéndolo expresamente al sistema.
+
+\figura{}{img/diagram/sequence_diagram/section/section_view}{Diagrama de secuencia de section\_view}{fig:section_view}{}
+
+\newpage
+Podrá eliminarlas también.
+
+\figura{}{img/diagram/sequence_diagram/section/section_delete}{Diagrama de secuencia de section\_delete}{fig:section_delete}{}
+
+De la misma manera, podrá editarlas.
+
+\figura{}{img/diagram/sequence_diagram/section/section_edit}{Diagrama de secuencia de section\_edit}{fig:section_edit}{}
+
+\newpage
 \subsection{Feed}
+El usuario puede ver un feed en concreto o crearlo.
 
+\figura{}{img/diagram/sequence_diagram/feed/feed_view}{Diagrama de secuencia de feed\_view}{fig:feed_view}{}
+
+\figura{}{img/diagram/sequence_diagram/feed/feed_create}{Diagrama de secuencia de feed\_create}{fig:feed_create}{}
+
+\newpage
+De la misma manera, eliminarlo.
+
+\figura{}{img/diagram/sequence_diagram/feed/feed_delete}{Diagrama de secuencia de feed\_delete}{fig:feed_delete}{}
+
+\newpage
 \subsection{Item}
+El usuario puede pedirle al sistema que le de las últimas noticias o ver una noticia en concreto.
+
+\figura{}{img/diagram/sequence_diagram/item/item_list}{Diagrama de secuencia de item\_list}{fig:item_list}{}
+
+\figura{}{img/diagram/sequence_diagram/item/item_view}{Diagrama de secuencia de item\_view}{fig:item_view}{}
+
+\newpage
+Así como marcar una noticia como Me gusta o para guardarla.
+
+\figura{}{img/diagram/sequence_diagram/item/item_view_like}{Diagrama de secuencia de item\_view\_like}{fig:item_view_like}{}
+
+\figura{}{img/diagram/sequence_diagram/item/item_view_save}{Diagrama de secuencia de item\_view\_save}{fig:item_view_save}{}
+
+\newpage
+También se pueden ir la noticia de origen en su página web.
+
+\figura{}{img/diagram/sequence_diagram/item/item_view_web}{Diagrama de secuencia de item\_view\_web}{fig:item_view_web}{}
+
+\newpage
+Por otra parte, así funcionará el flujo de información para recomendar noticias.
+
+\figura{}{img/diagram/sequence_diagram/item/item_recommend}{Diagrama de secuencia de item\_recommend}{fig:item_recommend}{}
+
+\newpage
+También el sistema nos permitirá buscar por las palabras clave.
+
+\figura{}{img/diagram/sequence_diagram/item/item_query}{Diagrama de secuencia de item\_query}{fig:item_query}{}
+
+\newpage
+Además, podremos buscar noticias.
+
+\figura{}{img/diagram/sequence_diagram/item/item_search}{Diagrama de secuencia de item\_search}{fig:item_search}{}
+
+\newpage
+El sistema también nos permitirá ver el resumen de noticias diario.
+
+\figura{}{img/diagram/sequence_diagram/item/item_summary}{Diagrama de secuencia de item\_summary}{fig:item_summary}{}
+
+\newpage
+Por último, este es el flujo de comunicación para ver las noticias guardadas.
+
+\figura{}{img/diagram/sequence_diagram/item/item_saved}{Diagrama de secuencia de item\_saved}{fig:item_saved}{}
