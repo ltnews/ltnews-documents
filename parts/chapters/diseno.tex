@@ -21,6 +21,17 @@ El Modelo-Vista-Controlador, MVC en adelante, es un patrón de diseño que estru
 Este patrón es enormemente eficaz para la reutilización del código entre distintos módulos del sistema y la separación del software por su misión. Esto maximiza la cohesión y reduce el acoplamiento. Además, hace que el código sea más comprensible y facilita la labor de mantenimiento. Es por estos motivos por los que se ha escogido dicho patrón.
 
 \subsubsection{Controlador-Servicio}
+El Controlador, como se ha dicho, es el punto neurálgico de la aplicación. Este implementará la lógica de la aplicación. Por ello, es este el que accede al modelo de datos. Con estos, transformados y adaptados, construimos la plantilla de datos, que será transferida a la Vista.
+
+Dada la importancia de este hecho, será necesario mantener ordenado el controlador. Si no es así, se puede convertir el Controlador en un \textit{totum revolutum}: en un método se puede encontrar una consulta a base de datos, una manipulación de dicho datos y su entrega posterior a una plantilla.
+
+Una manera de simplificar el controlador es delegar alguna de sus funciones en otros componentes. Es crear nuevos elementos que tengan una misión y se encarguen exclusivamente de eso para lo que han sido creados. Esta es una práctica cada vez más común dentro del marco del desarrollo. Botón de muestra es la creación de arquitecturas basadas en microservicios: componentes creados para una misión \textit{ad hoc}.
+
+Así, el servicio tendrá una doble misión. La primera es la interacción con la base de datos. Se convertirá así para el controlador en una interfaz programática o API. Será transparente para el Controlador todo lo concerniente a la gestión de los datos: conexión y desconexión con la base de datos, consultas y actualizaciones de datos, concurrencias e hilos. No es que el servicio se encargue de todo esto, sino que es él el que interactúa con el cliente de base de datos correspondiente para ofrecer dichos servicios.
+
+La segunda misión del servicio es ofrecer unos datos acordes para trabajar con ellos. Para ello, se suelen transformar los resultados en objetos. A esta técnica se la llama: \textit{Data Transfer Object} o DTO. Esto facilita la interacción con los datos, ya que son tratados como objetos del propio lenguaje.
+
+En aras a lo cual, el Controlador usa al servicio para toda la gestión con la base de datos. Con esta delegación, solo es necesaria la manipulación de los datos y la entrega a la Vista. Además, el construir una API interna aporta al código mayor versatilidad y cohesión, ya que se encontrarán agrupados los ficheros concernientes a la relación con la base de datos.
 
 \subsubsection{Deacoplamiento Cliente-Servidor}
 
