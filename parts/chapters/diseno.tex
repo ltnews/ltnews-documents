@@ -9,7 +9,7 @@ Como se ha dicho, son soluciones a problemas ya estudiados y analizados desde el
 
 A continuación se encuentran los patrones utilizados. Están descritos de manera global, tal y como se puede encontrar en cualquier documentación. Esto quiere decir que no se descenderá a detalles de implementación.
 
-\subsubsection{Modelo-Vista-Controlador}
+\subsection{Modelo-Vista-Controlador}
 El Modelo-Vista-Controlador, MVC en adelante, es un patrón de diseño que estructura el código en tres componentes principales: datos, lógica de negocio e interfaz de usuario. Para ello, propone la construcción del software diferenciando bien estos tres elementos.
 
 \begin{itemize}
@@ -20,7 +20,7 @@ El Modelo-Vista-Controlador, MVC en adelante, es un patrón de diseño que estru
 
 Este patrón es enormemente eficaz para la reutilización del código entre distintos módulos del sistema y la separación del software por su misión. Esto maximiza la cohesión y reduce el acoplamiento. Además, hace que el código sea más comprensible y facilita la labor de mantenimiento. Es por estos motivos por los que se ha escogido dicho patrón.
 
-\subsubsection{Controlador-Servicio}
+\subsection{Controlador-Servicio}
 El Controlador, como se ha dicho, es el punto neurálgico de la aplicación. Este implementará la lógica de la aplicación. Por ello, es este el que accede al modelo de datos. Con estos, transformados y adaptados, construimos la plantilla de datos, que será transferida a la Vista.
 
 Dada la importancia de este hecho, será necesario mantener ordenado el controlador. Si no es así, se puede convertir el Controlador en un \textit{totum revolutum}: en un método se puede encontrar una consulta a base de datos, una manipulación de dicho datos y su entrega posterior a una plantilla.
@@ -33,7 +33,7 @@ La segunda misión del servicio es ofrecer unos datos acordes para trabajar con 
 
 En aras a lo cual, el Controlador usa al servicio para toda la gestión con la base de datos. Con esta delegación, solo es necesaria la manipulación de los datos y la entrega a la Vista. Además, el construir una API interna aporta al código mayor versatilidad y cohesión, ya que se encontrarán agrupados los ficheros concernientes a la relación con la base de datos.
 
-\subsubsection{Deacoplamiento Cliente-Servidor}
+\subsection{Deacoplamiento Cliente-Servidor}
 Ha sido un tema bastante estudiado la interacción entre lenguajes de programación de servidor en el cliente. Desde el inicio de las aplicaciones web, este problema se solucionó integrando herramientas al servidor que permitiesen añadir en tiempo de ejecución código al cliente. De esta filosofía, por ejemplo, nace PHP, lenguaje que se integra completamente dentro del HTML. Al igual ocurre con Java y sus JPA o con Python y sus Jinja Template.
 
 Sin embargo, a medida que evoluciona el frontend, este se va aportado valor a sí mismo. Se empiezan a utilizar herramientas de servidor, pero para la construcción del mismo. Dicho de otro modo, es ahora en la compilación donde se consigue un código de cliente coherente y funcional. Es este el motivo, por el que se empiezan a construir aplicaciones de cliente de manera hermética a cualquier servidor.
