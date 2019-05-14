@@ -5,15 +5,17 @@
 
 Cuando decidí hacer mi Trabajo Fin de Grado, tome uno de los temas que más me apasiona: el periodismo. La idea era hacer una aplicación que superase a todas las existentes -se entiende que solo desde el punto de vista conceptual. Finalmente lo conseguí, quedando un lector RSS inteligente.
 
-La aplicación cumplía todas las características que un usuario pide a un lector de noticias. Estas son: añadir cualquier fuente que posea sindicación de contenido, gestionar los \textit{feeds} y leer las noticias de estos al momento, llevando un control de lectura de las mismas. Además, poseía sobre esto añadidos interesantes como guardar noticias para leerlas más tarde o agrupar los \textit{feeds} en secciones.
+La aplicación cumplía todas las características que un usuario pide a un lector de noticias. Estas son: añadir cualquier fuente que posea sindicación de contenido, gestionar los \textit{feeds} y leer las noticias de estos al momento, llevando un control de lectura de las mismas. Añadía a lo anterior complementos interesantes como guardar noticias para leerlas más tarde o agrupar los \textit{feeds} en secciones.
 
-Además de lo anterior, poseía características adicionales que le daban el sobrenombre de: inteligente. Una de estas era la capacidad de relacionar noticias entre sí y mostrárselas al usuario mientras leía un noticia. Otra era la de extraer el perfil del usuario y recomendarle noticias en base a cómo utilizase la aplicación y a qué tipo de artículos solía leer. La tercera característica era la búsqueda de noticias en base a los criterios que se desease.
+Además de lo anterior, poseía características adicionales que le daban el sobrenombre de: inteligente. Una de estas era la capacidad de relacionar noticias entre sí y mostrárselas al usuario mientras leía un noticia. Otra, la extracción del perfil del usuario y la recomendación de noticias en base al uso de la aplicación y al tipo de artículos leídos. La tercera característica era la búsqueda de noticias en base a los criterios que se desease.
 
 Como se puede ver, no se encuentra actualmente un lector de noticias con estas características. ¿Por qué? El motivo es el coste de la infraestructura que ha de poseer la aplicación. Si pensamos en cualquier medio importante, veremos que su fichero RSS se actualiza de media cada diez minutos, publicando así una media de una quince noticias por hora. Si seguimos aritméticamente los cálculos, veremos que por día, sólo en España, se publican del orden de millones de artículos.
 
-Por ello, las tecnologías, infraestructura y algoritmos que utilicé quedaron obsoletos al poco tiempo, siendo necesario profesionalizar el proyecto si se quería una aplicación que el público final pudiese utilizar. Además, faltaba en esta una parte importante, que era la monetización de la misma.
+Por ello, las tecnologías, infraestructura y algoritmos que utilicé quedaron obsoletos al poco tiempo, siendo necesario profesionalizar el proyecto si se quería una aplicación que el público final pudiese utilizar. Además, faltaba en esta una parte importante: la monetización.
 
-Como se puede decidir, el Trabajo Fin de Máster consistirá en rehacer la aplicación utilizando tecnologías adaptadas a esta enorme ingesta de datos y utilizando un formato más profesional, del que más tarde hablaremos. Además, de enfocar el proyecto hacia una aplicación comercial con la que sea posible ganar dinero.
+Sin embargo, después de lo estudiado a lo largo del Máster, muchos planteamientos seguidos en el Trabajo Fin de Grado están obsoletos. Gran parte de estos se aglutinan a la hora de tomar requisitos de la aplicación. Como se puede ver, este era un proyecto de emprendimiento, de una necesidad real que percibía. Sin embargo, no había llegado a probarlo con los futuros usuarios, los que estarían dispuestos a pagar por el servicio ofertado. Para esto, se aplicará la metodología \textit{Running Lean}, con la que se testará la idea con el público objetivo.
+
+Como se puede dilucidar, el Trabajo Fin de Máster consistirá en estudiar y probar la idea de negocio bajo el marco LEAN. Una vez comprobada, se procederá a rehacer la aplicación utilizando tecnologías adaptadas a esta enorme ingesta de datos y utilizando un formato más profesional, del que más tarde hablaremos. Se desarrollarán sólo aquellas características que provengan del fruto del estudio, ya que se realizará un Producto Mínimo Viable. Además, la idea poseerá un cariz  comercial, ya que se desea ganar dinero son el sistema.
 
 
 \section{Objetivos}\label{sec:objetivos}
@@ -33,32 +35,32 @@ Los objetivos subyacentes a esta son el conocimiento de las metodologías que me
 	\item \textit{Running Lean} de Ash Maurya
 \end{itemize}
 
-En estos se definen los procesos de creación de la \textit{start-up}, creación del producto, atracción de clientes y de mejora continua. Me han parecido enormemente interesante y acertados para la aplicación en mi idea de negocio, por eso decidí aplicarlo.
+En estos se definen los procesos de creación de la \textit{start-up}, diseño del producto, atracción de clientes y de mejora continua. Me han parecido enormemente interesante y acertados para la aplicación en mi idea de negocio, por eso decidí aplicarlo.
 
-El segundo objetivo es el conocimiento más férreo del dominio del problema de la idea de negocio, es decir, el periodismo. Está viviendo un proceso de cambio en cuanto al mundo de las noticias. Ya no interesa conocer lo que ocurrió el día anterior, sino lo que pasa ahora mismo en cualquier parte del mundo. Es por ello, que la prensa ha tenido que pivotar para saciar el ansia de información de sus usuarios. Además de esto, han tenido que atraer a usuarios más jóvenes, que ven más atrayente conocer el mundo a través de las redes sociales, antes que a través de periodistas.
+El segundo objetivo es el conocimiento más férreo del dominio del problema de la idea de negocio, es decir, el periodismo. Este campo está viviendo un proceso de cambio en cuanto a necesidad de información se refiere. Los consumidores de noticias ya no están interesados en conocer lo que ocurrió el día anterior, sino lo que pasa en cualquier momento en cualquier parte del mundo. Es por ello que la prensa ha tenido que pivotar para saciar el ansia de informarse de sus usuarios. Además de esto, han sabido atraer a usuarios más jóvenes, que prefieren conocer el mundo a través de las redes sociales, antes que la crónica de los periodistas.
 
-En este proceso, además, se esconde una oscura pero cada vez más visible realidad: el mundo de la comunicación avanza varios pasos por detrás del ritmo \textit{impuesto} por la sociedad digital, por ello podemos ver múltiple deficiencias, que se explicarán a lo largo del documento. Es por ello también objetivo del presente estudio proponer mejoras al mismo.
+En este proceso, además, se esconde una oscura pero cada vez más visible realidad: el mundo de la comunicación avanza varios pasos por detrás del ritmo \textit{impuesto} por la sociedad digital. Este es el motivo por el que se se pueden ver múltiple deficiencias en la prensa actual, que se explicarán a lo largo del documento. Es por ello también objetivo del presente estudio proponer mejoras al mismo.
 
 \subsection{Objetivos técnicos}
 
-El objetivo técnico por antonomasia a adquirir en el Trabajo Fin de Máster es desarrollar una aplicación siguiendo las pautas marcadas por las grandes compañías, en cuanto a tecnologías, herramientas e infraestructuras se refiere. Teniendo este preámbulo se entenderán correctamente estos objetivos.
+Una vez se haya probado la idea, quedará desarrollarla. Para ello, se desarrollará la aplicación siguiendo las pautas marcadas por las grandes compañías, en cuanto a tecnologías, herramientas e infraestructuras se refiere. Teniendo en cuento este preámbulo se entenderán correctamente los objetivos subyacentes.
 
-El primer objetivo es el desarrollo de una aplicación utilizando la estrategia de desacople de capa de servidor y cliente. Esto no es más que ofrecer desde el \textit{backend} una API consumible desde cualquier cliente. Gracias a esto, se puede diferencias las tecnologías de cliente y servidor, haciéndolas independientes.
+El primer objetivo es el desarrollo de una aplicación utilizando la estrategia de desacople de capa de servidor y cliente. Esto no es más que ofrecer desde el \textit{backend} una API consumible para cualquier cliente. Gracias a esto, se pueden diferenciar las tecnologías de cliente y servidor, haciéndolas independientes.
 
-El segundo objetivo es desarrollar la capa de presentación utilizando un framework JavaScript. Esta estrategia es enormemente usada en el mundo del desarrollo web, ya que es posible realizar toda una aplicación \textit{frontend} con AJAX, es decir, sin recargas para extraer la información. Toda la comunicación con el servidor será asíncrona, por lo que la fluidez que percibirá el usuario será total.
+El segundo objetivo es desarrollar la capa de presentación utilizando un framework JavaScript. Esta estrategia es enormemente usada en el mundo del desarrollo web, ya que es posible realizar toda una aplicación \textit{frontend} con AJAX, es decir, sin recargas globales de la página para extraer la información. Toda la comunicación con el servidor será asíncrona, por lo que la fluidez que percibirá el usuario será total.
 
-El tercero será el desarrollo de una capa de inteligencia artificial que permita conocer tanto al usuario que interacciona con la aplicación así como el contenido que se muestra. Con ello, se podrá recomendar y extraer datos de ambos. Este, además de dar un valor añadido al desarrollo que se realice, lo hará enormemente interesante para un usuario con conocimiento del dominio del problema, ya que será posible extraer conclusiones.
+El tercero será el desarrollo de una capa de inteligencia artificial que permita conocer tanto al usuario que interacciona con la aplicación así como el contenido que se muestra. Con ello, se podrá recomendar y extraer datos de ambos: noticia y usuario. Esta capa, además de dar un valor añadido al software que se realice, lo hará enormemente interesante para un usuario con conocimiento del dominio del problema, ya que será posible extraer conclusiones de contexto.
 
-Por último, y en la medida de lo posible, se incoará un proceso de integración y entrega continua. Para ello, se utilizarán herramientas que nos permitan agilizar en la medida de lo posible el tiempo desde que un desarrollador hace un cambio hasta que el usuario lo percibe en la web.
+Por último, y en la medida de lo posible, se incoará un proceso de integración y entrega continua. Para ello, se utilizarán herramientas que permitan agilizar, en la medida de lo posible, el tiempo desde que un desarrollador hace un cambio hasta que el usuario lo percibe en la web.
 
 
 \section{Alcance}\label{sec:alcance}
 
 Es objeto del presente trabajo es el estudio, análisis e implementación de un proceso completo de negocio que va desde la concepción de la idea hasta la venta de la misma. Para ello, se utilizará el método indicado por Ash Maurya con su idea del \textit{Running Lean}, enormemente apoyada por emprendedores de todo el globo.
 
-Dentro de la implementación, realizado siempre un Producto Mínimo Viable, como indica Ash, se pretende realizar una lector RSS con características adicionales que le den un valor añadido como son el análisis de perfiles de usuarios, el análisis de medios y el análisis de noticias. El hacer hincapié en el \textit{análisis}, no es más que recordar lo que diferenciará nuestro producto del resto. El usuario, en definitiva, lo notará debido a la capacidad de realizar búsquedas en la aplicación, así como la recomendación de noticias.
+Dentro de la implementación, realizado siempre bajo el prima de Producto Mínimo Viable, como indica Ash, se pretende realizar una lector RSS con características adicionales que le den un valor añadido como son el análisis de perfiles de usuarios, el análisis de medios y el análisis de noticias. El hacer hincapié en el \textit{análisis}, no es más que recordar lo que diferenciará el producto del resto. El usuario, en definitiva, lo notará debido a la capacidad de realizar búsquedas en la aplicación, así como la recomendación de noticias.
 
-Dentro del marco actual, la aplicación estará pensada para los dispositivos actuales en toda la gama de resoluciones de pantallas. Además, al permitirse la posibilidad de añadir cualquier tipo de \textit{feed}, se añadirá a la plataforma múltiples idiomas, en la medida de lo posible.
+Dentro del marco actual, la aplicación estará pensada para los dispositivos actuales en toda la gama de resoluciones de pantallas. Además, al permitirse la posibilidad de añadir cualquier tipo de \textit{feed}, se añadirá a la plataforma la posibilidad de añadir medios en múltiples idiomas.
 
 
 \section{Estado del arte}\label{sec:arte}
@@ -82,33 +84,35 @@ Aplicación nacida en 2008 con el objetivo de llegar a los usuarios que empezaba
 
 \figura{0.25}{img/alternativas/feedly_logo}{Logo de Feedly}{fig:feedly_logo}{}
 
-Una de sus mejores ventajas es la sencillez de uso a la hora de añadir nuevas fuentes a nuestro \textit{feed}: es momentáneo. Otra es la vista que tiene dentro del apartado \textit{Today}. Aquí encontramos las noticias nuevas de los medios a los que estamos suscritos. Puede parecer una característica baladí o demasiado popular. Sin embargo, Feedly consigue hacerlo único siguiendo una  operativa que le da un valor añadido.
+Una de sus mejores ventajas es la sencillez de uso a la hora de añadir nuevas fuentes al \textit{feed}: es momentáneo. Otra es la vista que tiene dentro del apartado \textit{Today}. Aquí encontramos las noticias nuevas de los medios a los que estamos suscritos. Puede parecer una característica baladí o demasiado popular. Sin embargo, Feedly consigue hacerlo único siguiendo una operativa que le da un valor añadido con respecto al resto.
 
-Primero, que este no muestra las noticias que \textit{te has perdido} en orden cronológico puramente; entremezcla las secciones que tengas en pantallas y ahí si muestra las noticias en orden de publicación. Esto es enormemente útil ya que, por ejemplo, si tienes \textit{El País} o el \textit{ABC} en la sección \textit{Noticias}, lo normal es que tengas noticias cada diez minutos. Sin embargo, si posees otra sección, \textit{Fútbol}, donde se recogen \textit{feeds} con análisis de los partidos más importantes, lo normal es que tengas cinco noticias a la semana.
+Primero, que este no muestra las noticias que \textit{te has perdido} en orden cronológico puramente; entremezcla las secciones que tengas en pantallas y ahí sí muestra las noticias en orden de publicación. Esto es enormemente útil ya que, por ejemplo, si tienes \textit{El País} o el \textit{ABC} en la sección \textit{Noticias}, lo normal es que tengas noticias cada diez minutos. Sin embargo, si posees otra sección, \textit{Fútbol}, donde se recogen \textit{feeds} con análisis de los partidos más importantes, lo normal es que tengas cinco noticias a la semana. Siguiendo dicho ejemplo, Feedly mostrará igual la noticia de hace cinco minutos de \textit{El País} que a la de hace una semana de \textit{Ecos del Balón}.
 
 Abstrayendo del ejemplo, podemos ver que habrá secciones con noticias cada minuto y otras, cada semana. Con esta distribución, Feedly consigue que se le da igual importancia a ambas secciones mientras que te queden por leer noticias.
 
-Segundo, que no hay un \textit{scroll infinito} a la hora de leer noticias. Esto hace aburrido y desmotivante al lector la lectura. Lo que hace son barridas, es decir, que va seleccionando un número determinado de noticias por cada sección. Una vez visto estas pregunta al usuario si quiere seguir viendo más.
+\figura{}{img/alternativas/feedly_dashboard}{Página inicio de Feedly}{fig:feedly_dashboard}{}
 
-Este detalle junto a las múltiples integraciones que posee le hace enormemente usable y querido por el usuario, por lo que hace de esta aplicación la principal a combatir en cuanto a presencia en el sector se refiere.
+Segundo, que no hay un \textit{scroll infinito} a la hora de leer noticias. Esto hace aburrido y desmotivante al lector la lectura. Lo que hace son barridas, es decir, que va seleccionando un número determinado de noticias por cada sección. Una vez visto estas, pregunta al usuario si quiere seguir viendo más.
+
+Este detalle junto a las múltiples integraciones que posee le hace enormemente usable y querido por el usuario, por lo que hace de esta aplicación, la principal a combatir en cuanto a presencia en el sector se refiere.
 
 Puesto a poner pegas siempre se le achacan dos desventajas. La primera es que el usuario de esta aplicación suele ser una persona que ha de conocer, aunque sea levemente, el mundo de la sindicación de contenido. Esto hace que para un usuario con poco conocimiento de internet pueda parecer un mundo.
 
-\figura{}{img/alternativas/feedly_dashboard}{Página inicio de Feedly}{fig:feedly_dashboard}{}
-
-La otra característica a mejorar es la recomendación tanto de medios como de noticias. Cada vez se hace más eco en blogs especializados: \citeA{feedly_recommendations}. Como se puede ver, empieza a tomar cuerpo, pero falta mucho camino a recorrer.
+La otra característica a mejorar es la recomendación tanto de medios como de noticias. Actualmente no se ofrece ni por asomo esta funcionalidad y cada vez es más solicitada en blogs especializados, ejemplo del mismo el artículo de \citeA{feedly_recommendations}. Como se puede ver, empieza a tomar cuerpo, pero falta mucho camino a recorrer.
 
 \subsection{Flipboard}
 
-Aplicación nacida de la mano del iPad, de la primera tableta del mercado, en 2010. Debido a su auge, se decidió desde la compañía crecer a los dispositivos móviles de Apple. Por ello, nació la aplicación para iPhone y iPod. Igual de triunfante fue tal decisión que, tras un \textit{crowdfunding} en 2012, se decidió ir tras el mundo Android.
+Aplicación nacida de la mano del iPad, la primera tableta del mercado, en 2010. Debido a su auge, se decidió desde la compañía crecer a los dispositivos móviles de Apple. Por ello, nació la aplicación para iPhone e iPod. Igual de triunfante fue tal decisión que, tras un \textit{crowdfunding} en 2012, se decidió ir tras el mundo Android.
 
 \figura{0.25}{img/alternativas/flipboard_logo}{Logo de Feedly}{fig:flipboard_logo}{}
 
-Su enorme ventaja es la sencillez de uso total. Cualquier tipo de usuario puede configurarse su \textit{feed} sin necesidad de ningún conocimiento en el marco del mundo de las noticias ni tan siquiera técnico. En cuanto te registras, te dan una serie de secciones base que elegir. Una vez añadidas y dicho tus gustos, él se encargará de añadir o quitar medios en dichos feeds en cuanto a tus gustos se refiere.
+Su enorme ventaja es la sencillez de uso total. Cualquier tipo de usuario puede configurarse su \textit{feed} sin necesidad de ningún conocimiento técnico ni informativo adicional. Desde el registro en el sistema, se dan una serie de secciones base que elegir. Una vez añadidas e informado de los gustos, Flipboard se encargará de añadir o quitar medios en dichos feeds en cuanto a tus gustos se refiere.
 
-Hace totalmente transparente al usuario de la tecnología que se encuentra de fondo. Por lo que este ni puede crear secciones ni seleccionar feeds que no sean populares, es decir, por la URL del RSS o Atom.
+Hace totalmente transparente al usuario a la tecnología que se encuentra de fondo. Este es el motivo por el que no es posible crear secciones ni seleccionar medios más concretos utilizando su enlace de sindicación, es decir, por la URL del RSS o Atom.
 
-Al centrarse en el usuario, hace que la interfaz sea enormemente atractiva y el punto continuo de mejora. Es por ello que si se implementa la vista previa de la noticia en sí, es decir, en cuanto se pulsa, va directamente a la fuente original. Además, a la hora de mostrar las noticias, se muestran se hayan ya visto o no, además que en formato \textit{scroll continuo}.
+Al centrarse en el usuario, hace que la interfaz sea enormemente atractiva y el punto continuo de mejora. Al este su foco de atención, obvia puntos conflictivos y más técnicos. Uno de ellos es la vista previa de noticias. Es sabido que dentro del marco de sindicación de contenidos, son los medios los que deciden qué información añaden al \textit{feed}. Algunos les interesa captar usuarios a la web, por lo que la descripción de la noticia es casi nula; a otros, que el usuario se informe desde cualquier medio, por lo que añaden toda la noticia. Sabiendo esto, es el lector el que decide como lidiar con esta casuística, que conllevará diferentes problemas. Flipboard lo \textit{soluciona} llevando directamente al usuario al medio, sin previsualización de la noticia.
+
+Otro hecho llamativo es el flujo de estados de las noticias por los usuarios. Cada artículo, pasa por una serie de etapas: no-leído, leído, comentado o gustado, entre otros. Esto complica a la aplicación, dando un valor al lector. Al igual que lo anterior, Flipboard se lo ahorra: a la hora de mostrar las noticias, se muestran se hayan ya visto o no, además que en formato \textit{scroll continuo}.
 
 Además de lo anterior, cabe destacar la integración con las redes sociales, en concreto Twitter. Cada noticia se redirecciona con los tuits oficiales o de cuentas con cierto conocimiento de causa de lo que se está hablando.
 
