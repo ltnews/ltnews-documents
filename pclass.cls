@@ -28,6 +28,8 @@
 \usepackage{url}%Para direcciones web
 \RequirePackage[spanish,activeacute]{babel}%Traducci{\'o}n al espa{\~n}ol
 \RequirePackage {float}%Para situar los objetos
+\RequirePackage{lmodern, textcomp}%I suggest Latin Modern fonts (using lmodern together with textcomp package), which is similar to Computer Modern
+\RequirePackage {bookmark, hyperref}%Para enlaces e hipervínculos
 
 %DIFERENTES TIPOS DE LETRA
 %\usepackage{palatino}
