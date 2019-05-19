@@ -29,7 +29,8 @@
 \RequirePackage[spanish,activeacute]{babel}%Traducci{\'o}n al espa{\~n}ol
 \RequirePackage {float}%Para situar los objetos
 \RequirePackage{lmodern, textcomp}%I suggest Latin Modern fonts (using lmodern together with textcomp package), which is similar to Computer Modern
-\RequirePackage {bookmark, hyperref}%Para enlaces e hipervínculos
+\RequirePackage[hidelinks,pdfusetitle]{hyperref}%Para enlaces e hipervínculos
+
 
 %DIFERENTES TIPOS DE LETRA
 %\usepackage{palatino}
@@ -224,8 +225,26 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
+\hypersetup{
+    bookmarks=true,                       % show bookmarks bar?
+    unicode=false,                        % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,                      % show Acrobat’s toolbar?
+    pdfmenubar=true,                      % show Acrobat’s menu?
+    pdffitwindow=false,                   % window fit to page when opened
+    pdfstartview={FitH},                  % fits the width of the page to the window
+    %pdftitle=\@titulopro{},               % title
+    %pdfauthor=\@autorUno{},               % author
+    %pdfsubject=\@titulacion{},            % subject of the document
+    %pdfcreator=\@autorUno{},              % creator of the document
+    %pdfproducer={ETSII},                  % producer of the document
+    %pdfkeywords={ETSII,\@titulacion{}},   % list of keywords
+    pdfnewwindow=true,                    % links in new PDF window
+    colorlinks=false,                     % false: boxed links; true: colored links
+    linkcolor=red,                        % color of internal links (change box color with linkbordercolor)
+    citecolor=green,                      % color of links to bibliography
+    filecolor=magenta,                    % color of file links
+    urlcolor=cyan                         % color of external links
+}
 
 
 
