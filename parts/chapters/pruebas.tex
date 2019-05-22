@@ -3,41 +3,53 @@
 \chapter{Pruebas}\label{pruebas}
 \section{Pruebas unitarias}\label{sec:pruebas_unitarias}
 
-Los test unitarios prueban una funcionalidad en toda su completitud y tipología de casuísticas. Debido a la complejidad y gran tiempo que conlleva la realización de las pruebas, se han recudido estas a una parte representativa y en la parte del servidor.
+Los test unitarios prueban una funcionalidad en toda su completitud y tipología de casuísticas. Debido a la complejidad y gran tiempo que conlleva la realización de las pruebas, se han reducido estas a una parte representativa, tanto en número como en naturaleza. Este es el motivo por el que se han realizado exclusivamente en el lado del servidor, es decir, en el backend.
 
-Para desarrollarlas, por tanto, se ha utilizado el framework de pruebas que proporciona Django. Con él, solamente haciendo uso de la función \textit{Test}, se pueden ejecutar todas las pruebas a la vez. Se han comprobado principalmente los usos principales sobre una parte de la aplicación.
+Para desarrollarlas, por tanto, se ha utilizado el framework de pruebas que proporciona Django. Con este, solamente haciendo uso de la función \textit{Test}, se pueden ejecutar todas las pruebas a la vez. Se han comprobado principalmente los usos principales sobre una parte de la aplicación.
 
-En total se han realizado en torno a 20 prueba unitarias de dos entidades exclusivamente: \textit{Section} y \textit{Profile}. Estas poseen toda la lógica que se ofrece por la API probadas, haciendo uso de una nueva base de datos para ello. Además, contienen tanto las pruebas positivas y negativas. Eto quiere decir que de estas entidades de comprueban el correcto funcionamiento, así como los posibles que podrían acontecer.
+En total se han realizado en torno a 20 pruebas unitarias de dos entidades exclusivamente: \textit{Section} y \textit{Profile}. Estas comprueban toda la lógica que se ofrece por la API, haciendo uso de una nueva base de datos para ello. Además, contienen tanto las pruebas positivas y negativas. Esto quiere decir que se comprueban el correcto funcionamiento de estas entidades, así como los posibles errores que podrían acontecer.
 
 \section{Pruebas integradas}\label{sec:pruebas_integradas}
 
-Como se ha dicho, los tests unitarios comprueban una funcionalidad concreta del sistema. Aunque hubiera pruebas sobre cada característica concreta del sistema, esto no implicaría la comprobación total de la aplicación. Es por ello importante la comprobación de todas las funcionalidades en su conjunto. Estos son las pruebas integradas.
-
-\figura{0.5}{img/pruebas/travis}{Muestra de logs de Travis}{fig:travis}{}
+Como se ha dicho, los tests unitarios comprueban una funcionalidad concreta del sistema. Aunque hubiera pruebas sobre cada característica de la aplicación, esto no implicaría la comprobación de la aplicación en su conjunto. Es por ello importante el análisis de la interacción de los distintos componentes del sistema. Estas son las pruebas integradas.
 
 Estas se realizan en la aplicación utilizando un sistema externo: Travis. Este, con un fichero de configuración, visto en el apartado \ref{sec:estructra_proyecto}, compone la arquitectura del sistema y realiza todo el conjunto de pruebas de manera global. Así, se consigue integrar toda la funcionalidad en una misma ejecución.
 
-La siguiente imagen muestra los diferentes logs de las últimas ejecuciones de Travis. Se puede ver que hay algunos en error. Esto es debido a el cambio de composición de la aplicación: pasa de el montaje de cada componente individualmente a una servicios interconcectados y virtualizados con Docker.
+Travis analiza cada commit realizado sobre los proyectos que analiza. Así, cada vez que detecta un cambio en el repositorio de código, construye el sistema con las indicaciones que le han sido dadas y realiza las pruebas con esa versión del código. De esta manera, se consigue tener un reporte en tiempo real de qué versiones del software son coherentes con lo esperado y cuáles propician fallos en la aplicación.
+
+La siguiente imagen muestra los diferentes logs de las últimas ejecuciones de Travis. Se puede ver que hay algunos en error. Esto es debido al cambio de composición de la aplicación: pasa de el montaje de cada componente individualmente a una servicios interconectados y virtualizados con Docker.
+
+\figura{}{img/pruebas/travis}{Muestra de logs de Travis}{fig:travis}{}
+
+Al igual que ocurría con las pruebas unitarias, se ha realizado un esquema de pruebas integradas más como concepto que como aplicación real al proyecto. Este es el hecho por el que hay pocas pruebas funcionales del mismo y que no se haya continuado con el cambio de arquitectura.
 
 \section{Pruebas de aceptación}\label{sec:pruebas_aceptacion}
 
-Se ha hablado anteriormente de la figura del \textit{early adopter} como una pieza fundamental dentro del estudio y comprobación de la idea. Estas personas selectas, debido a su rol, se han encargado también de ir testando paultatinamente la aplicación. No de manera fría y accidentada, buscando fallos o faltas de usabilidad. Más bien han intentado usar la aplicación desde un primer momento en aras a convertirla en su futura referencia en cuanto a noticias se refiere.
+Se ha hablado anteriormente de la figura del \textit{early adopter} como una pieza fundamental dentro del estudio y comprobación de la idea. Estas personas selectas, debido a su rol, se han encargado también de ir testando paulatinamente la aplicación. No de manera fría y accidentada, buscando fallos o faltas de usabilidad. Más bien han intentado usar el sistema desde un primer momento en aras a convertirla en su futura referencia en cuanto a lector de noticias se refiere.
 
-Dicha utilización ha sido regular, aunque diferente en cada uno de ellos. En algunos consitía en un uso esporádico cada varios días. En otros se ha convertido casi en una costumbre semanal o mensual. Esto ha servido de acicate para la mejora de la calidad de los resultados y el acabado desde el punto de vista del diseño.
+Dicha utilización ha sido regular, aunque diferente en cada uno de ellos. En algunos consistía en un uso esporádico cada varios días. En otros se ha convertido casi en una costumbre semanal o mensual. Esto ha servido de acicate para la mejora de la calidad de los resultados y el acabado desde el punto de vista del diseño.
 
 Estos, además, daban su opinión de cambios acontecidos en la aplicación. Gracias a esto, se ha podido ir modificando las diferentes características del sistema y se ha tenido en un periodo de tiempo corto el feedback de estos perfiles. Como botón de muestra de su aportación encontramos: el diseño de los colores, la latencia de determinadas vistas o la sugerencia del resumen de noticias.
 
-Esto ha proporcionado al sistema de un flujo de comunicación directa con los clientes. En un futuro se estandarizará dicho proceso y se ampliará a cualquier usuario. Se hará como herramienta de feedback imprescindible para un desarrollo basado en la metodología Running Lean, como el indicaba en el punto \ref{sec:metodologia_lean}. Así, será el flujo completo: desde el lanzamiento de una nueva característica hasta el estudio de la recepción de la misma para controlar la gestión del cambio.
+Esto ha proporcionado al sistema de un flujo de comunicación directa con los clientes. Esto está basado en la metodología \textit{Running Lean}, como se indicaba en el punto \ref{sec:metodologia_lean}. Aporta un gran valor al aplicativo, ya que se hace partícipe al usuario de las decisiones.
+
+En un futuro se estandarizará dicho proceso y se ampliará de a los \textit{early adopters} a cualquier usuario. Se utilizará como herramienta de feedback imprescindible para cualquier desarrollo que se realice. Así, se poseerá el flujo completo de comunicación. Este comenzará desde el lanzamiento de una nueva característica y culminará con el estudio de la recepción de la misma. De esta manera, será posible controlar la gestión del cambio.
 
 \section{Estándares de código}\label{sec:estandares_codigo}
 
-Uno de los aspectos más importantes a la hora de llevar a cabo un proyecto dentro del área de la ingeniería del software es la calidad. De hecho, gran parte del éxito de una aplicación consiste en su calidad, en mayor o menor medida. No solo es importante cumplir los requisitos, con pruebas que nos aseguren su correcto funcionamiento. Es necesario también cumplir alguna serie de estándares o llevar el estilo del código a un determinado modelo. Esto nos asegura el seguimiento de ir en el buen camino dentro de un framework o lenguaje concreto. Esto, además, nos llevará a tener en cuenta cuestiones de seguridad, rendimiento o tamaño.
+Uno de los aspectos más importantes a la hora de llevar a cabo un proyecto dentro del área de la ingeniería del software es la calidad. De hecho, gran parte del éxito de una aplicación consiste en la perfección con la que se realiza en cada uno de sus aspectos. No solo es importante cumplir los requisitos, con pruebas que nos aseguren su correcto funcionamiento, hay que llegar a más atraer.
 
-Este ha sido uno de los aspectos enfocados en la calidad que más se ha tenido en cuenta a la hora de realizar el proyecto. Para ello, se han utilizado dos herramientas principales: Optimize que provee los IDE de Jetbrains y Codacy. Del primero decir que, al igual que cualquier IDE, en PyCharm se nos muestran errores de código en tiempo de compilación, posibles errores en tiempo de ejecución, así como advertencias a la hora de usar una función obsoleta. Sin embargo, con esta herramienta, podremos ver qué recomienda Python para nombrar las variables, cómo realizar de manera correcta un try/except, así como muchísimas más características.
+En mayor a menor medida, la calidad en el software hace al código más mantenible y orientado hacia una buena lógica. Muchos problemas que se presentan al desarrollador son antiguos y han sido solucionado con creces. Se hace necesario, por tanto, usar dichos patrones, arquitecturas y metodología que recomiendan la comunidad para conseguir dicho perfeccionamiento.
 
-Otra herramienta utilizada es Codacy. Esta analiza cualquier repositorio Git por cada commit que detecte, analizando tanto errores sintácticos, como problemas de seguridad que poseamos. Así, se ha intentado mejorar los repositorios del proyecto hasta llegar a la máxima certificación.
+Es necesario también cumplir alguna serie de estándares o llevar el estilo del código a un determinado modelo. Esto nos asegura ir en el buen camino dentro de un framework o lenguaje concreto. Esto, además, nos llevará a tener en cuenta cuestiones de seguridad, rendimiento o tamaño, que de otra manera con consideraríamos.
 
 \figura{}{img/pruebas/codacy_repositories}{Respositorios en Codacy}{fig:codacy_repositories}{}
+
+Este ha sido uno de los aspectos enfocados en la calidad que más se ha tenido en cuenta a la hora de realizar el proyecto. Para ello, se han utilizado dos herramientas principales: Optimize que provee los IDE de Jetbrains y Codacy, como sistema externo.
+
+Del primero decir que, al igual que cualquier IDE, en PyCharm se nos muestran errores de código en tiempo de compilación, posibles errores en tiempo de ejecución, así como advertencias a la hora de usar una función obsoleta. Hasta aquí, no apreciamos ninguna novedad. Sin embargo, con esta herramienta, podremos ver qué recomienda Python para nombrar las variables, cómo realizar de manera correcta un try/except o cualquier función por defecto del software, así como muchísimas más características.
+
+Otra herramienta utilizada es Codacy. Esta analiza cualquier repositorio Git por cada commit que detecte, analizando tanto errores sintácticos, como problemas de seguridad que poseamos. Así, se ha intentado mejorar los repositorios del proyecto hasta llegar a la máxima certificación.
 
 Como se ha dicho, Codacy comprueba varios aspectos. Uno de ellos es la seguridad. En este nos dice si nuestro sistema posee precauciones sobre determinado tipo de ataques. Como se puede observar, todo está correcto, debido a la potencia de los frameworks utilizados.
 
