@@ -149,23 +149,23 @@ En este apartado se mencionarán las tecnologías usadas en la parte del servido
 
 \subsubsection{PostgreSQL}
 
-Es imprescindible usar en este tipo de proyectos una base de datos consistente. Además, dada la naturaleza de la aplicación en cuestión, esta ha de ser Relacional. De todas las posibilidades que ofrece este gran mundo, Django recomienda usar esta debido a su naturaleza y fuerte interconexión.
+Es imprescindible usar en este tipo de proyectos una base de datos consistente. Además, dada la naturaleza de la aplicación en cuestión, esta ha de ser Relacional. De todas las posibilidades que ofrece este gran mundo, Django recomienda usar PostgreSQL debido a su naturaleza y fuerte interconexión con su framework.
 
-Postgres es un sistema gestor de base de batos de tipo relacional, como se ha dicho. Posee una gran escalabilidad, al usar una infraestructura propia de paralelización: multiprocesos en vez de multihilos. Esto implica que desacopla los posibles errores propios de la gestión de hilos, como son las condiciones de carrera.
+Postgres es un sistema gestor de base de batos de tipo relacional, como se ha dicho. Posee una gran escalabilidad, al usar una infraestructura propia de paralelización: multiprocesos en vez de multihilos. Esto implica que desacopla los posibles errores propios de la gestión de hilos, como son las condiciones de carrera. Es de código abierto y con un gran uso dentro de proyectos \textit{open source}.
 
 \subsubsection{Elasticsearch}
 
 Para implementar la Búsqueda y Recuperación de Información, descrito en el punto \ref{sec:tecnologias}, referente a las tecnologías, es necesario usar un Índice.
 
-Elasticsearch es un servidor de búsqueda, distribuido y accesible a través de una interfaz de tipo RESTful. Está desarrollado en Java, basándose en Lucene y es de código abierto. Propone una sintaxis basada en JSON para las búsquedas.
+Elasticsearch es un servidor de búsqueda, distribuido y accesible a través de una interfaz de tipo RESTful. Está desarrollado en Java, basándose concretamente en Lucene, y es de código abierto. Propone una sintaxis basada en JSON para las búsquedas.
 
-Se ha decidido usar sobre Índice como Algolia o Solr por dos motivos principales. El primero se debe a su coste, nulo en proyectos con implantación propia de dicha herramienta. El segundo es que se está poniendo a la cabeza en el desarrollo de índices generales en la comunidad.
+Se ha decidido usar sobre índices como Algolia o Solr por dos motivos principales. El primero se debe a su coste, ya que Elasticsearch es gratuito en implicaciones \textit{on premise}, es decir, con puesta en marcha y mantenimiento propio. El segundo motivo es el lugar dentro de la comunidad: se está poniendo a la cabeza en término de uso y preferencias de los desarrolladores.
 
 \subsubsection{Nginx}
 
-Una vez albergado y desarrollada la aplicación, es necesario hacerla accesible a través de Internet de manera segura y consistente. Para ello nos hace falta un servidor web o proxy inverso. Las dos grandes alternativas en este punto son Nginx y Apache.
+Una vez albergado y desarrollada la aplicación, es necesario hacerla accesible a través de Internet de manera segura y consistente. Para ello, hace falta un servidor web o proxy inverso. Las dos grandes alternativas en este punto son Nginx y Apache.
 
-Nginx es un tipo de servidor web ligero y con alto rendimiento. Es open source y permite, además, integración de servidor SMTP, así como soporte de HTTP, HTTP2, IPv6 y demás protocolos.
+Nginx es un tipo de servidor web ligero y con alto rendimiento. Es open source y permite, además, integración con servidores SMTP, así como soporte de HTTP, SSL, HTTP2, IPv6 y demás protocolos.
 
 Se ha decidido usar este por el gran rendimiento que ofrece sobre el Servidor HTTP Apache. Por otra parte, ofrece una gran comunicación y facilidad en la configuración en aplicaciones Full Stack.
 
@@ -173,21 +173,21 @@ Se ha decidido usar este por el gran rendimiento que ofrece sobre el Servidor HT
 
 Para hacer toda esta arquitectura independiente a cualquier sistema y con la configuración similar a entornos de desarrollo y producción es necesaria la virtualización de los servicios. Esto ha marcado un nuevo hito en el mundo del software: la abstracción entre sistemas operativos y la concentración de la configuración en un único fichero. Esto es Docker.
 
-Docker automatiza el despliegue de cualquier software en contenedores. Estos poseerán toda la configuración que necesita el desarrollo para funcionar. Es la evolución de la máquina virtual: se convierten en instancias Linux ligeras y aisladas.
+Docker automatiza el despliegue de cualquier software en contenedores. Estos poseerán toda la configuración que necesita cualquier desarrollo para funcionar. Se le considera la evolución lógica de la máquina virtual: se convierten en instancias Linux ligeras y aisladas, configurables desde ficheros de texto plano.
 
-Actualmente, no hay una alternativa clara a Docker. De hecho, tecnologías de orquestación de contenedores, tales como Swarm o Kubernetes, se basan en esta.
+Actualmente, no hay una alternativa clara a Docker, debido a su potencia y al hecho de ser una tecnología \textit{open source}. De hecho, tecnologías de orquestación de contenedores, tales como Swarm o Kubernetes, se basan en esta.
 
 \subsection{Gestión}
 
-En cuanto a la gestión del proyecto se refiere, podemos hablar de dos grandes ámbitos: desarrollo y seguimiento del proyecto.
+Finalmente, se hará mención a herramientas usadas para la administración. En cuanto a la gestión del proyecto se refiere, se hablará de dos grandes ámbitos: desarrollo y seguimiento del proyecto.
 
 \subsubsection{Desarrollo}
 
-Para el desarrollo del proyecto han sido necesarias las herramientas que se mencionarán adelante. La preferencia general de dicha elección se basa en dos premisas. La primera es la orientación de la comunidad del desarrollo y la segunda es la disponibilidad real de dichas herramientas. Además de utilizar tecnologías gratuitas, la universidad nos ofrece plataformas y programas en periodo de prueba.
+Para el desarrollo del proyecto han sido necesarias las herramientas que se mencionarán adelante. La preferencia general de dicha elección se basa en dos premisas. La primera es la orientación de la comunidad del desarrollo y la segunda es la disponibilidad real de dichas herramientas. Además de utilizar tecnologías gratuitas, se ha hecho uso de versiones de prueba de herramientas de pago ofrecidas por la universidad.
 
-En primer lugar son necesarios los programas para el desarrollo de las diferentes partes de la aplicación. Dado que cada módulo se desarrolla en un lenguaje concreto, se ha apostado por usar IDEs personalizados. Así, y debido a su potencial, se han usado todos aquellos necesarios creados por JetBrains. En el caso de no existir, se ha decidido acudir a Visual Studio Code.
+En primer lugar son necesarios los programas para el desarrollo de las diferentes partes de la aplicación. Dado que cada módulo se desarrolla en un lenguaje concreto, se ha apostado por usar IDEs personalizados. Así, y debido a su potencial, se han usado todos aquellos necesarios por lenguajes creados por JetBrains. En el caso de no existir, se ha decidido acudir a Visual Studio Code.
 
-Se ha usado también una herramienta para la realización de diagramas llamada Astah. Esto permite analizar lo que se necesita antes de implementarlo. Gracias a esta se harán todo tipo de diagramas: desde estados hasta clases. Se ha usado esta gracias a su gratuidad a estudiantes.
+Se ha usado también una herramienta para la realización de diagramas llamada AstahUML. Esto permite analizar lo que se necesita antes de implementarlo. Este programa posee soporte para todo tipo de diagramas: como son el de estados o de clases. Se ha usado esta gracias a su gratuidad para estudiantes.
 
 Para mantener una trazabilidad y respaldo del código, se han usado tecnologías de control de versiones. En concreto, la elegida ha sido Git, debido a su posición en la comunidad del desarrollo y a su funcionalidad y robustez. La plataforma remota donde se alojará dicho código sobre Git es GitHub. Ha sido elegida por ser la principal usada por la comunidad.
 
@@ -195,29 +195,29 @@ En cuanto a la comunicación y despliegue por el servidor, se ha elegido como VP
 
 \subsubsection{Seguimiento}
 
-Una vez llegado a las decisiones convenientes para desarrollar el producto, es necesario seguir una serie de pautas, marcarse unos hitos y tener la posibilidad de comprobar el avance del proyecto. Así, han de usarse una serie de herramientas para medir la evolución y seguir con acierto.
+Una vez llegado y concluidas las decisiones convenientes para desarrollar el producto, es necesario seguir una serie de pautas, marcarse unos hitos y tener la posibilidad de comprobar el avance del proyecto. Así, han de usarse una serie de herramientas para medir la evolución y seguir con acierto.
 
-Se han usado grosso modo dos: Toggl para la gestión del tiempo y Waffle para la gestión de las tareas. La primera permite comprobar las horas que lleva cada tarea. Esta permite etiquetar cada una, por lo que se podrá comprobar el tiempo dedicado a cada tipo de tarea (gestión, documentación, desarrollo, despliegue o investigación), así como el total dedicado al proyecto. Con la segunda se consigue agrupar las tareas en hitos y asociarlos a funcionalidades dentro del código. Además, ambas están relacionadas, por lo que simplifica dicha gestión, siendo esta la principal motivación para su uso.
+Se han usado grosso modo dos aplicaciones para ella: Toggl para la gestión del tiempo y Waffle para la gestión de las tareas. La primera permite comprobar las horas que lleva la consecución de cada tarea. Esta permite etiquetar cada una, por lo que se podrá comprobar el tiempo dedicado a cada tipo de tarea (gestión, documentación, desarrollo, despliegue o investigación, en el caso que se presenta), así como el total dedicado al proyecto. Con la segunda se consigue agrupar las tareas en hitos y asociarlos a funcionalidades dentro del código. Además, ambas están relacionadas, por lo que simplifica dicha gestión, siendo esta la principal motivación para su uso.
 
 Waffle es la implementación concreta del tablero canvas mencionado en el punto \ref{sec:metodologia_lean}. Si se aprecia la imagen \ref{fig:scrum_github}, vemos que es GitHub la plataforma mencionada para el tablero. Lo ocurrido se puede apreciar en el artículo de \citeA{waffle}. Esta herramienta deja de mantenerse por falta de recursos y recomienda su migración a GitHub.
 
 \section{Estructura del proyecto}\label{sec:estructra_proyecto}
 
-Como se ha ido diciendo a lo largo del documento, el proyecto utiliza Git. Así, se ha estructurado el trabajo en ramas según la metodología Git Flow. Este estructura el cualquier proyecto software con cinco ramas principales:
+Como se ha ido diciendo a lo largo del documento, el proyecto utiliza Git. Así, se ha estructurado el trabajo en ramas según la metodología Git Flow. Esta estructura cualquier proyecto software con cinco ramas principales:
 
 \begin{itemize}
     \item \textbf{master}: el código en esta rama es la versión estable y funcional que se encuentra funcionando en producción.
     \item \textbf{hostfix}: cualquier fallo detectado en producción se arregla aquí y se lleva a \textit{master} una vez solucionado: no antes.
-    \item \textbf{release}: sobre los cambios agrupados del desarrollo, se prueba integralmente antes de ser subidos a \textit{master}.
+    \item \textbf{release}: sobre los cambios agrupados del desarrollo, que se prueban integralmente antes de ser subidos a \textit{master}.
     \item \textbf{development}: agrupa los cambios en las diferentes características que se van trabajando.
     \item \textbf{feature}: cada una de las funcionalidades a añadir en el sistema.
 \end{itemize}
 
-Esto se puede ver gráficamente en la siguiente imagen.
+La explicación dada de cada una de las ramas e interacción entre ellas se pueden ver gráficamente en la siguiente imagen.
 
 \figura{0.75}{img/estructura/git_flow}{\textit{Git Flow}}{fig:git_flow}{}
 
-Teniendo esto en cuenta, se mostrará cómo se ha estructura cada repositorio de manera general en GitHub, para luego descender, de manera individual, a cada uno.
+Teniendo esto en cuenta, se mostrará cómo se estructura cada repositorio de manera general en GitHub, para luego descender, de manera individual, a cada uno.
 
 \subsection{GitHub}
 
