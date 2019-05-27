@@ -158,13 +158,17 @@ LT-News, como se ha dicho, es un lector de noticias inteligentes, capaz de detec
 
 El objetivo principal del proyecto es filtrar las noticias de los periódicos y quedarse solo con aquellas realmente interesantes para el usuario. El objetivo secundario y subyacente al anterior no es otro que el de no perder el tiempo.
 
+Con estas premisas de la idea de negocio, se ha construido un canvas, que representa cada una de sus partes, como se puede apreciar en el siguiente cuadro.
+
 \figura{}{img/canvas/canvas_inicial}{LEAN Canvas inicial}{fig:canvas_inicial}{}
 
+Con esta aproximación a todo el entramado de la idea, se van a hacer especial hincapié en los puntos principales: clientes, problemas y propuesta de valor único. En base a esto, se realizarán las hipótesis de problemas para poder contrastarlos.
+
 \subsection{Segmento de clientes}
-El cliente objetivo es lector actual de noticias, joven o de mediana edad con cultura e interés sobre temas de actualidad y con manejo de las nuevas tecnologías. 
+El cliente objetivo es el lector actual de noticias, joven o de mediana edad con cultura e interés sobre temas de actualidad y con manejo de las nuevas tecnologías. 
 
 \subsection{Problema}
-El top tres de problemas son los siguientes. Primero la gran cantidad de medios a elegir, por tanto, de noticias a leer. La segunda es que las noticias a leer noticias no son objetivas, es decir, hay las noticias falsas y el sesgo de los periódicos. La tercera es que, entre tanta cantidad de noticias, se pierden las noticias que realmente interesan.
+Se encuentran principalmente tres problemas con los que se enfrenta el usuario. Primero la gran cantidad de medios a elegir, por tanto, de noticias a leer. La segunda es que las noticias a leer no son objetivas, es decir, el usuario encuentra frecuentemente noticias falsas y otras afectadas por el sesgo de los medios. La tercera es que, entre tanta cantidad de noticias, se pierden las noticias que realmente interesan.
 
 \subsection{Propuesta de valor único}
 La UPV es el algoritmo de inteligencia artificial capaz de extraer el perfil del usuario y de las noticias y de relacionarlas entre sí. Dicho de otro modo, ahorrar tiempo a la vez que estar al día.
@@ -175,9 +179,9 @@ La UPV es el algoritmo de inteligencia artificial capaz de extraer el perfil del
     \begin{itemize}
         \item Es la hipótesis más arriesgada porque si la respuesta es que no, hay que pivotar completamente.
     \end{itemize}
-    \item A los lectores de noticias les preocupa que las noticias no sean objetivos.
+    \item A los lectores de noticias les preocupa que las noticias no sean objetivas.
     \begin{itemize}
-        \item Es una hipótesis que requiere ser probada para seguir validando el producto, aunque es una funcionalidad secundaria.
+        \item Es una hipótesis que requiere ser probada para seguir validando el producto, aunque es parte de una futura funcionalidad secundaria.
     \end{itemize}
     \item A los lectores de noticias les interesa estar al día de sus temas favoritos.
     \begin{itemize}
@@ -187,9 +191,9 @@ La UPV es el algoritmo de inteligencia artificial capaz de extraer el perfil del
 
 \section{Iteraciones}\label{sec:iteraciones}
 
-El resumen de las iteraciones realizadas sobre el producto se encuentra en esta tabla.
+El resumen de las iteraciones realizadas sobre el producto se encuentran en esta tabla.
 
-\cuadro{*5c}{Iteraciones realizadas}{tab:prueba}
+\cuadro{*5c}{Iteraciones realizadas}{tab:iteraciones}
 {
     
     \textbf{Iteración} & \textbf{Hipótesis} & \textbf{Fechas} & \textbf{Tests} & \textbf{Resultado} \\
@@ -200,15 +204,15 @@ El resumen de las iteraciones realizadas sobre el producto se encuentra en esta 
     Solución 1 & Soluciones & S/27-10 & 4 entrevistas & Se confirma \\ 
 }
 
-El principal pivote realizado es simplificar el Producto Mínimo Viable, ya que hay un problema que no afecta de igual manera a los early adopters, por tanto, aunque sea importante, no se incluirá en la primera versión. Todos los demás problemas se han confirmado al cien por cien.
+El principal pivote realizado es el de simplificar el Producto Mínimo Viable. Esto es debido a la realidad de que un problema no afecta de igual manera a los \textit{early adopters}. Por tanto, aunque el seguimiento de los temas favoritos sea importante, no se incluirá en la primera versión. Todos los demás problemas se han confirmado al cien por cien.
 
-Con respecto a las soluciones, se han confirmado, aunque los usuarios piden más características. Dado que en la primera versión ya se ha demostrado un MVP aceptable por los usuarios, se tomarán estas características para futuras versiones.
+Con respecto a las soluciones, se han confirmado, aunque los usuarios piden más características. Dado que en la primera versión ya se ha demostrado un MVP aceptable por los usuarios, se tomarán estas funcionalidades pedidas para futuras versiones.
 
-En relación a los \textit{early adopters}, he cambiado su percepción. Antes los consideraba como personas cultas interesadas por lo que ocurre en la actualidad y que siguen una serie de temas. Ahora, veo que es cualquier que ya use un lector RSS o aplicación de un periódico. En concreto, me centro en los que usen Feedly.
+En relación a los \textit{early adopters}, he cambiado su percepción. Antes los consideraba como personas cultas interesadas por lo que ocurre en la actualidad y que siguen una serie de temas. Ahora, veo que puede ser cualquiera que ya use un lector RSS o aplicación de un periódico. En concreto, me centro en los que usen Feedly.
 
 \subsection{Primera iteración}
 
-La primera iteración consistió en confirmar la primera hipótesis, es decir, confirmar el primer problema. Para ello, se hicieron dos entrevistas. De ellas no se sacaron ninguna conclusión, simplemente se redefinió lo que se consideraba por \textit{early adopters}. Hasta este momento eran jóvenes, por interés por la cultura y con gran uso de smartphone y ordenadores. Fue entonces cuando comprobé que estos eran más bien personas que ya usan un lector RSS o, sin más, una aplicación de información en su móvil.
+La primera iteración consistió en confirmar la primera hipótesis, es decir, confirmar el primer problema. Para ello, se hicieron dos entrevistas. De ellas no se sacaron ninguna conclusión, simplemente se redefinió lo que se consideraba por \textit{early adopter}. Hasta este momento se les tenía por personas que eran jóvenes, por interés por la cultura y con gran uso de smartphone y ordenadores. Fue entonces cuando comprobé que estos eran más bien personas que ya usan un lector RSS o, sin más, una aplicación de información en su móvil.
 
 Son estos mis \textit{early adopters} por un motivo: a estos usuarios les interesa estar al día de diferentes medios y ya han buscado una solución para estar al día, que no es otra que utilizar un lector RSS. Además, si llevan tiempo utilizándolo, se habrán dado cuenta del principal problema de este: la enorme cantidad de noticias a leer.
 
@@ -216,7 +220,7 @@ Son estos mis \textit{early adopters} por un motivo: a estos usuarios les intere
 
 \subsection{Segunda iteración}
 
-Viendo lo anterior, se ha decidió volver a preguntar lo mismo, pero a los verdaderos usuarios potenciales. Como se dijo, fue importante confirmar la primera hipótesis, ya que de esta partía todo el problema, y, por ende, todo el proyecto. Es por ello que se realizaron cuatro entrevistas siguiendo el siguiente esquema:
+Viendo lo anterior, se decidió volver a preguntar lo mismo, pero a los verdaderos usuarios potenciales. Como se dijo, fue importante confirmar la primera hipótesis, ya que de esta partía todo el problema, y, por ende, todo el proyecto. Es por ello que se realizaron cuatro entrevistas siguiendo el siguiente esquema:
 
 \begin{enumerate}
     \item Welcome
@@ -236,7 +240,7 @@ Viendo lo anterior, se ha decidió volver a preguntar lo mismo, pero a los verda
     \item Tell a Story
     \begin{enumerate}
         \item Contexto de la cantidad de noticias en la actualidad.
-        \item Leer en papel vs Leer Digital: actualidad vs concentración.
+        \item Leer en papel vs Leer en formato digital: actualidad vs concentración.
     \end{enumerate}
     \item Problem Ranking
     \begin{enumerate}
@@ -260,9 +264,9 @@ Viendo lo anterior, se ha decidió volver a preguntar lo mismo, pero a los verda
 \end{enumerate}
 
 
-Sobre esto se ha conseguido confirmar la primera hipótesis de manera rotunda, aunque la segunda y la tercera no ha quedado del todo claras. Es claro que problema principal existe y la gente que ya lee en sindicadores de contenido ha intentado plantear soluciones en su día a día para solventarlo.
+Sobre esto se ha conseguido confirmar la primera hipótesis de manera rotunda, aunque la segunda y la tercera no ha quedado del todo claras. Es claro que el problema principal existe y la gente que ya lee en sindicadores de contenido ha intentado plantear soluciones en su día a día para solventarlo.
 
-Sobre las entrevistas y el feedback recibido en clase, sí que se han modificado los canales. Antes eran un poco genéricos; ahora, intentan llegar más a los early adopter. Por tanto, se va a intentar que publiquen la aplicación en blog de aplicaciones, se van a mencionar en blogs y foros especializados en el tema y se va a intentar hacer SEO de la aplicación con los tags: aplicación, noticias, inteligente. Algunas de estas podrían ser:
+Sobre las entrevistas y el feedback recibido en clase, sí que se han modificado los canales. Antes eran un poco genéricos; ahora, intentan llegar más a los \textit{early adopter}. Por tanto, se va a intentar que publiquen la aplicación en blogs de aplicaciones, se van a mencionar en blogs y foros especializados en el tema y se va a intentar hacer SEO de la aplicación con los tags: aplicación, noticias, inteligente. Algunas de estas podrían ser:
 
 \begin{itemize}
     \item El Androide Libre - \textsl{https://elandroidelibre.elespanol.com}
@@ -279,7 +283,7 @@ La tercera iteración consistió en confirmar, de manera sistemática y similar 
 Aquí también salieron algunas características adicionales para añadir al producto que se considerarán en el futuro, ya que no están dentro del producto mínimo viable y son las siguientes:
 
 \begin{itemize}
-    \item Sacar de una noticia su relación al tema de fondo o contexto. Para esto es necesario llegar a contenido de calidad.
+    \item Sacar de una noticia su relación con temas de fondo o contexto en el que se encuentra. Para esto es necesario llegar a contenido de calidad.
     \item Una aproximación podría ser relacionar temas de las noticias con Wikipedia o fuentes relevantes y más profundas.
     \item Para móviles Android, hacer que la aplicación tenga Widgets, ya que algunos usuarios estaban interesados.
     \item Sobre los resultados de las entrevistas, hemos cambiado la formulación de los dos primeros problemas.
@@ -293,11 +297,11 @@ Como se ha dicho, después de haber validado las dos primeras hipótesis como Pr
 
 \begin{itemize}
     \item confirmar la opinión sobre la tercera hipótesis,
-    \item saber su futuro comportamiento con respecto a la aplicación,
-    \item qué le ven en falta.
+    \item conocer el comportamiento por los usuarios de algunas características del sistemas,
+    \item saber qué funcionalidad echan los potenciales interesados en falta.
 \end{itemize}
 
-Se les preguntó, sacado de lo anteriormente, datos demográficos y confirmación de las tres hipótesis. No fueron solamente preguntas exclusivas, ya que no me darían ningún dato. Se les incluyo un lugar donde introducir texto sobre cómo intentan resolver su problema. Así se puede ver cuánto le interesa realmente eso que ha respondido.
+Se les preguntó, sacado del guión de entrevistas, datos demográficos y confirmación de las tres hipótesis. No fueron solamente preguntas exclusivas, ya que no me darían ningún dato. Se les incluyó un lugar donde se solicitaban la expresión de opiniones al respecto o modus operandi actuales. Clave fueron las preguntas sobre cómo intentan resolver alguno de sus problemas. Así se puede ver cuánto le interesa realmente eso que ha respondido.
 
 El resumen fue el siguiente (la encuesta está en https://goo.gl/forms/UJHY6o6lV3JxmM712).
 
@@ -326,20 +330,22 @@ Con esto, nos queda el siguiente Canvas:
 \subsection{Quinta iteración}
 Por último, una vez confirmados los problemas, se hicieron dos entrevistas de solución a usuarios potenciales de la aplicación, dispuestos a probar todas las versiones de este. Estos son realmente \textit{early adopters}, dispuestos a pagar en cuanto salga al mercado si ven un producto fiable.
 
-Para esto, se procederá a enseñar una demo. Esta se hará primero con la \textit{Landing Page}. En esta se ha intentado mostrar las futuras características del proyecto, así como recoger datos de usuarios. Esta se encuentra en varios idiomas, con idea de empezar a distribuirla por personas de habla inglesa o incluso francesa, ya que se pasó la encuesta a amigos que viven en estos países.
-Esta es la página resultante:
+Para esto, se procederá a enseñar una demo. Esta se hará primero con la \textit{Landing Page}. En esta se ha intentado mostrar las futuras características del proyecto, así como recoger datos de usuarios. Esta se encuentra en varios idiomas, con idea de empezar a distribuirla por personas de habla inglesa o incluso francesa. El motivo de esto último se debe a mi cercanía con personas que residen y pertenecen a estos países.
+
+Con lo dicho, la página resultante quedó de la siguiente manera:
 
 \figura{}{img/landing/landing_1}{Landing Page 1}{fig:landing_1}{}
 \figura{}{img/landing/landing_2}{Landing Page 2}{fig:landing_2}{}
 \figura{}{img/landing/landing_3}{Landing Page 3}{fig:landing_3}{}
 
-Por otra parte, se le dio tráfico, para saber la opinión de los posibles usuarios.
+Por otra parte, se le dio tráfico, para saber el comportamiento de los posibles usuarios. Este fue analizado utilizando la herramienta de Google Analytics.
 
 \figura{}{img/analytics/analytics_1}{Google Analytics 1}{fig:analytics_1}{}
 \figura{}{img/analytics/analytics_2}{Google Analytics 2}{fig:analytics_2}{}
 \figura{}{img/analytics/analytics_3}{Google Analytics 3}{fig:analytics_3}{}
 
 Con esto, se hicieron las entrevistas de solución. La estructura de la entrevista fue la siguiente:
+
 \begin{enumerate}
     \item Welcome
     \begin{enumerate}
@@ -358,7 +364,7 @@ Con esto, se hicieron las entrevistas de solución. La estructura de la entrevis
     \item Tell a Story
     \begin{enumerate}
         \item Contexto de la cantidad de noticias en la actualidad
-        \item Leer en papel vs Leer Digital: actualidad vs concentración
+        \item Leer en papel vs Leer en formato digital: actualidad vs concentración
     \end{enumerate}
     \item Demo
     \begin{enumerate}
@@ -383,11 +389,11 @@ Con esto, se hicieron las entrevistas de solución. La estructura de la entrevis
 En sendas entrevistas, se volvieron a confirmar la solución, explicando lo que se iba a realizar y cómo se implementaría. Pareció correcto, estando los \textit{early adopters} expectantes a futuras versiones.
 
 \subsection{Quinta iteración}
-Finalmente, validado ya el canvas, tanto a nivel de solución como de problemas, tanto cualitativa como cuantitativamente, ha variado en algunos aspectos que vamos a considerar. Todo lo demás, en definitiva, se ha explicado al principio del apartado.
+Finalmente, validado ya el canvas, tanto a nivel de solución como de problemas, tanto cualitativa como cuantitativamente, este ha variado en algunos aspectos que vamos a considerar. Todo lo demás, en definitiva, se ha explicado al principio del apartado.
 
-El mayor cambio ha consistido en la variación de concepto del usuario potencial, esto gracias a las entrevistas realizadas. Otro gran cambio ha sido la formulación de problemas del usuario, que se han adaptado a un lenguaje más cercano a este, así como el evitar generalidades. De esto, como se ha visto, ha sido reducido para conseguir un MVP más conciso.
+El mayor cambio ha consistido es la variación de concepto del usuario potencial, esto gracias a las entrevistas realizadas. Otro gran cambio ha sido la formulación de los problemas del usuario, que se han adaptado a un lenguaje más cercano a este, así como el evitar generalidades. Del fruto de estas directrices, ha quedado un MVP más conciso y acercable a los usuarios.
 
-De las soluciones, se ha mantenido como estaba inicialmente, ya que ha sido validado por los usuarios. Esto se debe a que previamente a estos experimentos, se buscó las mejores soluciones posibles.
+Con respecto a las soluciones, se han mantenido como estaban inicialmente, ya que han sido validadas por los usuarios. Esto se debe a que previamente a estos experimentos, se buscó las mejores soluciones posibles atendiendo a los problemas que se conocían a priori.
 
 \figura{}{img/canvas/canvas_final}{LEAN Canvas final}{fig:canvas_final}{}
 
@@ -395,6 +401,6 @@ De las soluciones, se ha mantenido como estaba inicialmente, ya que ha sido vali
 
 La mayor conclusión no ha sido otra que el centrarse durante todo el proceso creativo y sistemático en el posible usuario. Esto ha sido posible gracias a entrevistas personales, cercanía con los posibles usuarios, adaptación del lenguaje técnico, así como otras técnicas sacadas por Ash Maurya en Running Lean.
 
-De otra manera, personalmente, hubiese adoptado por otra técnica. Esta hubiese sido construir el producto como entendía e intentar después venderlo. Ante opiniones de usuarios, hubiese desarrollado sin ton ni son, solo por el simple hecho de vender.
+De otra manera, personalmente, hubiese adoptado por otra técnica. Esta hubiese sido construir el producto como entendía e intentar después venderlo. Ante opiniones de usuarios, hubiese desarrollado estas \textit{sin ton ni son}, solo por el simple hecho de vender y de hacer que estuviesen contentos.
 
-Así, en cambio, sin haber construido nada, sin invertir tiempo ni cabeza en la implementación, ya vislumbro que el lo que comprará un posible usuario. Esto hace el trabajo más eficiente, así como más humilde. Humilde por el hecho de no canonizar mis ideas preconcebidas, sino pasarlas por el crisol de la opinión de los demás.
+Así, en cambio, sin haber construido nada, sin invertir tiempo ni cabeza en la implementación, ya vislumbro que es lo que comprará un posible usuario. Esto hace el trabajo más eficiente, así como más humilde. Humilde por el hecho de no canonizar mis ideas preconcebidas, sino pasarlas por el crisol de la opinión de los demás.
