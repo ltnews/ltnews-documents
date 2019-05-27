@@ -141,14 +141,16 @@ Para el desarrollo de esta doble metodología, se ha hecho uso de la plataforma 
 
 \section{Planificación temporal}\label{sec:planificacion_temporal}
 
-En este apartado se encuentra tanto la planificación como la duración real, una vez finalizado el desarrollo. Como se ha dicho, la planificación utilizada ha sido utilizando la metodología ágil. A continuación, se recoge la planificación por sprints.
+En este apartado se encuentra tanto la planificación en tiempo como la duración real, una vez finalizado el desarrollo. Como se ha dicho, la planificación utilizada ha sido utilizando la metodología ágil.
+
+A continuación, se recoge la planificación por sprints.
 
 \cuadro{llr}{Planificación de Sprints}{tab:sprints}
 {
     \textbf{ID} & \textbf{Nombre} & \textbf{Estimación} \\
 
     S0 & Fase previa & 70:00:00 \\
-    S1 & Investigacion & 30:00:00 \\
+    S1 & Investigación & 30:00:00 \\
     S2 & Funcionalidad completa & 100:00:00 \\
     S3 & Virtualización de los servicios & 30:00:00 \\
     S4 & Capa Inteligencia Artificial & 70:00:00 \\
@@ -172,8 +174,7 @@ A su vez, los sprints se han de desglosar en fases concretas en cuanto al desarr
      & 3.3. Modelo conceptual & 5:00:00 \\
      \textbf{4. Diseño} & & \textbf{20:00:00} \\
      & 4.1. Detalles técnicos & 10:00:00 \\
-     & 4.2. Modelo de datos & 5:00:00 \\
-     & 4.3. Mockups & 5:00:00 \\
+     & 4.2. Modelo de datos & 10:00:00 \\
      \textbf{5. Formación} & & \textbf{30:00:00} \\
      & 5.1. Django Rest Framework & 5:00:00 \\
      & 5.2. VueJS & 10:00:00 \\
@@ -191,28 +192,29 @@ A su vez, los sprints se han de desglosar en fases concretas en cuanto al desarr
 
 \section{Roles del proyecto}\label{sec:roles_proyecto}
 
-Tal y como dijimos antes, en nuestro proyecto se unifican los roles de SCRUM en una única persona. Sin embargo, esto no quita que esta persona tenga que asumir a lo largo del proyecto una serie de roles, en función del tipo de tareas a realizar. Sin embargo, para simplificar dichos roles, se han unificado en la responsabilidad de Jefe de Proyecto.
+Tal y como dijimos antes, en nuestro proyecto se unifican los roles de SCRUM en una única persona. Sin embargo, esto no quita que este perfil tenga que asumir a lo largo del proyecto una serie de roles, en función del tipo de tareas a realizar. Sin embargo, para simplificar dichos roles, se han unificado en la responsabilidad de Jefe de Proyecto.
 
 Por ello, las responsabilidad adquiridas y sus misiones serán las que aparecen a continuación.
+
 \begin{itemize}
     \item Jefe de proyecto: encargado de la gestión y planificación del proyecto, de reunirse con el cliente y de tomar decisiones sobre el equipo.
     \item Analista: encargado de recolectar los requisitos y necesidades del proyecto, así como la de diseñar el sistema de información.
-    \item Desarrollador: se encarga de implementar los requisitos, es decir, de desarrollar el software.
+    \item Desarrollador: se encarga de implementar los requisitos desarrollando para ello el software.
     \item Tester: su misión es la asegurar la calidad de los productos obtenidos, en concreto, se encarga de elaborar y ejecutar las pruebas.
 \end{itemize}
 
 \section{Planificación económica}\label{sec:planificacion_economica}
 
-Para la planificación económica se han considerado los gastos asociados a la ejecución del proyecto, sin ingresos asociados. Aunque el proyecto buscará en un futuro tener beneficios no entra este aspecto dentro del ámbito del Trabajo Fin de Máster.
+Para la planificación económica se han considerado los gastos asociados a la ejecución del proyecto, sin ingresos relacionados directamente. Aunque el proyecto buscará en un futuro tener beneficios, no entra este aspecto dentro del ámbito del Trabajo Fin de Máster.
 
 Habrá que considerar, por tanto, dos tipos de costes, dependiendo si hacen referencia a las personas físicas, o a materiales e infraestructuras necesarias para llevar a cabo el proyecto.
 
 \subsection{Costes directos}
-Dentro de este tipo de costes se consideran exclusivamente los costes de personal. Tal y como se ha dicho en el apartado \ref{sec:roles_proyecto}, para este es necesario una serie de roles, cada uno de los cuales posee un salario distinto.
+Dentro de este tipo de costes se consideran exclusivamente los costes de personal. Tal y como se ha dicho en el apartado \ref{sec:roles_proyecto}, para este es necesario una serie de roles, cada uno de los cuales posee un salario y dedicación diferentes.
 
-Así, dentro de estos costes se van a tener en cuenta los sueldos de los distintos tipos de trabajadores durante el desarrollo del proyecto. Para esto, nos se ha de basarse en el Boletín Oficial del Estado publicado en abril de 2009, referente a salarios mínimos, \cite{boe_salarios}. En nuestro caso, utilizaremos los datos del sector de las TIC.
+Así, dentro de estos costes, se van a tener en cuenta los sueldos de los distintos tipos de trabajadores durante el desarrollo del proyecto. Para conseguir esto, se utilizará el Boletín Oficial del Estado publicado en abril de 2009, referente a salarios mínimos, como se puede apreciar en \citeA{boe_salarios}. En el caso actual, conlleva el uso y búsqueda ce los datos del sector de las TIC.
 
-Para todos los casos, se considerará que un año pose<e 250 días hábiles, que supone 2.000 horas. Ahora, analicemos cada rol en concreto.
+Para todos los casos, se considerará que un año posee 250 días hábiles, que suponen 2.000 horas. Así, analizando cada rol en concreto, se obtienen los siguientes datos.
 
 \begin{itemize}
     \item Jefe de Proyecto: su sueldo mínimo es de 36.600€ que a la hora hace 18,3€
@@ -222,6 +224,7 @@ Para todos los casos, se considerará que un año pose<e 250 días hábiles, que
 \end{itemize}
 
 Además, a estos costes, se han de aplicar los impuestos que paga la empresa para cualquier trabajador en España. Todos son porcentajes que se aplican a la base de cotización. Estos son los siguiente:
+
 \begin{itemize}
     \item Contingencias comunes
     \begin{itemize}
@@ -281,7 +284,7 @@ Las licencias, como el hardware, requieren también de una amortización. Así, 
     \end{itemize}
 \end{itemize}
 
-Para el servidor, hemos adoptado el plan más básico de DigitalOcean. Esto hace unos 5€/mes, que en euros son 4,45€/mes.
+Para el servidor, hemos adoptado el plan más básico de DigitalOcean. Esto hace unos 5\$/mes, que en el cambio a euros son 4,45€/mes.
 
 \subsection{Presupuesto}
 Con el conocimiento de los gastos, se procederá a dar un presupuesto del proyecto. Antes, se consideran que es necesario un colchón para pagos no previstos. Este será de un 15\% del subtotal. Además de esto, hemos de tener en cuenta el I.V.A. Por ello, la cantidad resultante será la siguiente.
@@ -290,30 +293,30 @@ Con el conocimiento de los gastos, se procederá a dar un presupuesto del proyec
 {
     & \textbf{Tiempo} & \textbf{Coste unitario} & \textbf{Coste total} \\
 
-    \textbf{Personal} & \textbf{horas} & & \textbf{3.755,47} \\
+    \textbf{Personal} & \textbf{horas} & \textbf{euros} & \textbf{3.755,47€} \\
     \hline
-    Jefe de proyecto & 25 & 24,19 & 604,82 \\ 
-    Analista & 100 & 14,25 & 1.425,12 \\
-    Desarrollador & 150 & 10,21 & 1.530,88 \\ 
-    Tester & 25 & 7,79 & 194,66 \\
+    Jefe de proyecto & 25 & 24,19 & 604,82€ \\ 
+    Analista & 100 & 14,25 & 1.425,12€ \\
+    Desarrollador & 150 & 10,21 & 1.530,88€ \\ 
+    Tester & 25 & 7,79 & 194,66€ \\
 
-    \textbf{Hardware} & \textbf{meses} & & \textbf{309,58} \\
+    \textbf{Hardware} & \textbf{meses} & \textbf{euros} & \textbf{309,58€} \\
     \hline
-    ASUS A555L & 14 & 16,46 & 230,41 \\ 
-    Xiaomi Mi A2 Lite & 10 & 7,92 & 79,16 \\
+    ASUS A555L & 14 & 16,46 & 230,41€ \\ 
+    Xiaomi Mi A2 Lite & 10 & 7,92 & 79,16€ \\
 
-    \textbf{Software} & \textbf{meses} & & \textbf{471,61} \\
+    \textbf{Software} & \textbf{meses} & \textbf{euros} & \textbf{471,61€} \\
     \hline
-    Windows 10 Home & 14 & 1,41 & 19,69 \\ 
-    Office 365 Professional & 14 & 7,00 & 98,00 \\
-    PyCharm & 10 & 16,58 & 165,83 \\
-    WebStorm & 10 & 16,58 & 165,83 \\ 
-    Digital Ocean & 5 & 4,45 & 22,25 \\
+    Windows 10 Home & 14 & 1,41 & 19,69€ \\ 
+    Office 365 Professional & 14 & 7,00 & 98,00€ \\
+    PyCharm & 10 & 16,58 & 165,83€ \\
+    WebStorm & 10 & 16,58 & 165,83€ \\ 
+    Digital Ocean & 5 & 4,45 & 22,25€ \\
     
     \hline
-    & & \textbf{Subtotal} & \textbf{4.536,65} \\
-    & & Contingencias & 680,50 \\
-    & & \textbf{Total} & \textbf{5.217,15} \\
+    & & \textbf{Subtotal} & \textbf{4.536,65€} \\
+    & & Contingencias & 680,50€ \\
+    & & \textbf{Total} & \textbf{5.217,15€} \\
 }
 
 Por tanto, el coste total del proyecto asciende a 5.217,15€, contando todos costes y un margen de contingencia.
