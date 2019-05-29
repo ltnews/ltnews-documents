@@ -143,52 +143,70 @@ Para el desarrollo de esta doble metodología, se ha hecho uso de la plataforma 
 
 En este apartado se encuentra tanto la planificación en tiempo como la duración real, una vez finalizado el desarrollo. Como se ha dicho, la planificación utilizada ha sido utilizando la metodología ágil.
 
-A continuación, se recoge la planificación por sprints.
+A continuación, se recoge la planificación por sprints con sus fechas de inicio y fin, así como su duración real en el tiempo y una variación del error.
 
-\cuadro{llr}{Planificación de Sprints}{tab:sprints}
+\cuadro{llrrr}{Planificación de Sprints: duración}{tab:sprints_fechas}
 {
-    \textbf{ID} & \textbf{Nombre} & \textbf{Estimación} \\
+    \textbf{ID} & \textbf{Nombre} & \textbf{Fecha inicio} & \textbf{Fecha fin} & \textbf{Semanas} \\
 
-    S0 & Fase previa & 70:00:00 \\
-    S1 & Investigación & 30:00:00 \\
-    S2 & Funcionalidad completa & 100:00:00 \\
-    S3 & Virtualización de los servicios & 30:00:00 \\
-    S4 & Capa Inteligencia Artificial & 70:00:00 \\
+    S0 & Fase previa & 08/04/2018 & 06/06/2018 & 8  \\
+    S1 & Investigación & 06/06/2018 & 23/09/2018 & 16 \\
+    S2 & Funcionalidad completa & 23/09/2018 & 31/03/2019 & 27 \\
+    S3 & Virtualización de los servicios & 31/03/2019 & 05/05/2019 & 5 \\
+    S4 & Capa Inteligencia Artificial & 05/05/2019 & 26/06/2019 & 7 \\
 }
+
+\cuadro{llrrr}{Planificación de Sprints: horas}{tab:sprints_horas}
+{
+    \textbf{ID} & \textbf{Nombre} & \textbf{Estimación} & \textbf{Duración} & \textbf{Variación} \\
+
+    S0 & Fase previa & 70:00:00 & 66:57:53 & 4,34\% \\
+    S1 & Investigación & 30:00:00 & 60:26:29 & -101,47\% \\
+    S2 & Funcionalidad completa & 100:00:00 & 70:26:20 & 29,56\% \\
+    S3 & Virtualización de los servicios & 30:00:00 & 46:58:15 & -56,57\% \\
+    S4 & Capa Inteligencia Artificial & 70:00:00 & 55:57:54 & 20,05\% \\
+    & & \textbf{300:00:00} & \textbf{300:46:55} & \textbf{-0,26\%} \\
+}
+
+Como se puede apreciar, ha habido un desajuste global en los sprints. Esto se ha debido a numerosas consideraciones. En primer lugar, se estimaba un fase de investigación de productos y tecnologías menor. Sin embargo, debido a la cantidad de estas y a su desconocimiento, ha implicado mayor tiempo. Otro punto a considerar ha sido la virtualización de lo servicios con Docker: se estimaba un menor tiempo, no siendo así finalmente, por la complejidad de un sistema Full-Stack.
+
+En general, estos dos acontecimientos han cambiado el rumbo del proyecto y de algunas de sus prioridades: se estimaba tener en la mitad de tiempo el Producto Mínimo viable para centrarse en la capa de Inteligencia Artificial, no siendo así finalmente.
 
 A su vez, los sprints se han de desglosar en fases concretas en cuanto al desarrollo del producto se refiere. Por ello, la planificación más coherente con respecto a cualquier producto software es la siguiente.
 
-\cuadro{llr}{Planificación temporal}{tab:planificacion}
+\cuadro{llr|rr}{Planificación temporal}{tab:planificacion}
 {
-    \textbf{Fase} & \textbf{Subfase} & \textbf{Estimación} \\
+    \textbf{Fase} & \textbf{Subfase} & \textbf{Estimación} & \textbf{Duración} & \textbf{Variación} \\
 
-    \textbf{1. Planificación} & & \textbf{10:00:00} \\
-    \textbf{2. Estudio} & & \textbf{30:00:00} \\
-     & 2.1. Estudio de LEAN & 10:00:00 \\
-     & 2.2. Realización de modelos & 5:00:00 \\
-     & 2.3. Entrevistas & 10:00:00 \\
-     & 2.4. Estudio de los datos & 5:00:00 \\
-     \textbf{3. Análisis} & & \textbf{50:00:00} \\
-     & 3.1. Documentación & 40:00:00 \\
-     & 3.2. Elicitación de requisitos & 5:00:00 \\
-     & 3.3. Modelo conceptual & 5:00:00 \\
-     \textbf{4. Diseño} & & \textbf{20:00:00} \\
-     & 4.1. Detalles técnicos & 10:00:00 \\
-     & 4.2. Modelo de datos & 10:00:00 \\
-     \textbf{5. Formación} & & \textbf{30:00:00} \\
-     & 5.1. Django Rest Framework & 5:00:00 \\
-     & 5.2. VueJS & 10:00:00 \\
-     & 5.3. ElasticSearch & 10:00:00 \\
-     & 5.4. Docker & 5:00:00 \\
-     \textbf{6. Implementación} & & \textbf{100:00:00} \\
-     & 6.1. Back-End & 25:00:00 \\
-     & 6.2. Front-End & 50:00:00 \\
-     & 6.3. AI-Layer & 25:00:00 \\
-     \textbf{7. Pruebas} & & \textbf{25:00:00} \\
-     \textbf{8. Despliegue} & & \textbf{25:00:00} \\
-     \textbf{9. Presentación} & & \textbf{10:00:00} \\
-     \textbf{TOTAL} & & \textbf{300:00:00} \\
+    \textbf{1. Planificación} & & \textbf{10:00:00} & 7:33:31 & 24,41\% \\
+    \textbf{2. Estudio} & & \textbf{30:00:00} & 50:00:00 & -66,67\% \\
+     & 2.1. Estudio de LEAN & 10:00:00 & 17:00:00 & -70,00\% \\
+     & 2.2. Realización de modelos & 5:00:00 & 8:00:00 & -60,00\% \\
+     & 2.3. Entrevistas & 10:00:00 & 15:00:00 & -50,00\% \\
+     & 2.4. Estudio de los datos & 5:00:00 & 10:00:00 & -100,00\% \\
+     \textbf{3. Análisis} & & \textbf{50:00:00} & 56:50:13 & -13,67\% \\
+     & 3.1. Documentación & 40:00:00 & 51:50:13 & -29,59\% \\
+     & 3.2. Elicitación de requisitos & 5:00:00 & 3:00:00 & 40,00\% \\
+     & 3.3. Modelo conceptual & 5:00:00 & 2:00:00 & 60,00\% \\
+     \textbf{4. Diseño} & & \textbf{20:00:00} & 10:00:00 & 50,00\% \\
+     & 4.1. Detalles técnicos & 10:00:00 & 5:00:00 & 50,00\% \\
+     & 4.2. Modelo de datos & 10:00:00 & 5:00:00 & 50,00\% \\
+     \textbf{5. Formación} & & \textbf{30:00:00} & 23:32:03 & 21,55\% \\
+     & 5.1. Django Rest Framework & 5:00:00 & 8:14:13 & -64,74\% \\
+     & 5.2. VueJS & 10:00:00 & 5:53:01 & 41,16\% \\
+     & 5.3. ElasticSearch & 10:00:00 & 2:21:12 & 76,47\% \\
+     & 5.4. Docker & 5:00:00 & 7:03:37 & -41,21\% \\
+     \textbf{6. Implementación} & & \textbf{100:00:00} & 109:59:4 & -9,99\% \\
+     & 6.1. Back-End & 25:00:00 & 34:44:07 & -38,94\% \\
+     & 6.2. Front-End & 50:00:00 & 57:53:31 & -15,78\% \\
+     & 6.3. AI-Layer & 25:00:00 & 17:22:03 & 30,53\% \\
+     \textbf{7. Pruebas} & & \textbf{25:00:00} & 5:47:21 & 76,84\% \\
+     \textbf{8. Despliegue} & & \textbf{25:00:00} & 27:04:01 & -8,27\% \\
+     \textbf{9. Presentación} & & \textbf{10:00:00} & 10:00:00 & 0,00\% \\
+     \textbf{TOTAL} & & \textbf{300:00:00} & 300:46:51 & -0,26\% \\
 }
+
+A nivel de tareas se puede apreciar con mayor precisión lo anterior. En concreto, se ha excedido en tiempo el estudio de la idea bajo el marco LEAN, y el desarrollo de las capas de Frontend y Backend, dejando sin recursos temporales a la capa de IA.
 
 \section{Roles del proyecto}\label{sec:roles_proyecto}
 
