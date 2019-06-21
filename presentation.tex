@@ -19,6 +19,10 @@
 \useoutertheme{infolines}
 \useinnertheme{rectangles}
 
+% Paquetes
+\usepackage{lmodern,textcomp}
+\usepackage{smartdiagram}
+
 % Opciones
 \setbeamertemplate{navigation symbols}{}
 
@@ -64,13 +68,6 @@
                 \end{itemize}
 			\end{block}
         \end{frame}
-
-        {
-            \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{img/lean/running_lean}}
-            \setbeamertemplate{navigation symbols}{}
-            \begin{frame}[plain]
-            \end{frame}
-        }
 	
 		\begin{frame}{Periodismo}
 			\begin{block}{Situación actual}
@@ -92,19 +89,47 @@
 				Realización de una aplicación que implemente las propuestas.
 			\end{block}
 		\end{frame}
+
+		\begin{frame}{Alternativas}
+			\begin{columns}[onlytextwidth]
+				\begin{column}{0.3\textwidth}
+					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/feedly_logo}
+				\end{column}
+				\begin{column}{0.3\textwidth}
+					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/flipboard_logo}
+				\end{column}
+				\begin{column}{0.3\textwidth}
+					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/gnews_logo}
+				\end{column}
+			\end{columns}
+		\end{frame}
 	
 	
 	\section{Estudio}
+		{
+			\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{img/lean/running_lean}}
+			\setbeamertemplate{navigation symbols}{}
+			\begin{frame}[plain]
+			\end{frame}
+		}
+
 		\begin{frame}{Canvas inicial}
             \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas_inicial}
         \end{frame}
 
-        \begin{frame}{Hipótesis de problemas}
-            \begin{itemize}
-                \item A los lectores de noticias les preocupa la gran cantidad de noticias.
-                \item A los lectores de noticias les preocupa que las noticias no sean objetivas.
-                \item A los lectores de noticias les interesa estar al día de sus temas favoritos.
-            \end{itemize}
+		\begin{frame}{Hipótesis de problemas}
+			\smartdiagramset{
+				bubble center node font = \scriptsize,
+				bubble node font = \scriptsize,
+				bubble center node size =2.5cm,
+				bubble node size =1.75cm,
+			}
+			\tikzset{bubble node/.append style={text width=1.75cm,align=center}}
+
+			\begin{center}
+			\smartdiagram[bubble diagram]{
+				Preocupación del usuario, Gran cantidad de noticias, Objetividad de las noticias, Seguimiento de temas}
+			\end{center}
         \end{frame}
 
         \begin{frame}{Iteraciones realizadas}
@@ -124,5 +149,44 @@
         
 		\begin{frame}{Canvas final}
             \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas_final}
+		\end{frame}
+	
+	\section{Planificación}
+		\begin{frame}{Metodologías}
+			\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/scrum/scrum_vs_kanban}
+		\end{frame}
+
+        \begin{frame}{Planificación Temporal}
+            \resizebox{\textwidth}{!}{
+                \begin{tabular}{llrrr}
+                    \hline
+					\textbf{ID} & \textbf{Nombre} & \textbf{Estimación} & \textbf{Duración} & \textbf{Variación} \\
+					S0 & Fase previa & 70:00:00 & 66:57:53 & 4,34\% \\
+					S1 & Investigación & 30:00:00 & 60:26:29 & -101,47\% \\
+					S2 & Funcionalidad completa & 100:00:00 & 70:26:20 & 29,56\% \\
+					S3 & Virtualización de los servicios & 30:00:00 & 46:58:15 & -56,57\% \\
+					S4 & Capa Inteligencia Artificial & 70:00:00 & 55:57:54 & 20,05\% \\
+					& & \textbf{300:00:00} & \textbf{300:46:55} & \textbf{-0,26\%} \\
+                    \hline
+                \end{tabular}
+            }
+        \end{frame}
+
+        \begin{frame}{Planificación Económica}
+            \resizebox{\textwidth}{!}{
+                \begin{tabular}{lrr}
+                    \hline
+					& \textbf{Coste total} \\
+					Personal & 3.755,47€ \\
+					Hardware & 309,58€ \\
+					Software & 471,61€ \\
+					
+					\hline
+					Subtotal & 4.536,65€ \\
+					Contingencias & 680,50€ \\
+					\textbf{Total} & \textbf{5.217,15€} \\
+                    \hline
+                \end{tabular}
+            }
         \end{frame}
 \end{document}
