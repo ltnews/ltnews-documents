@@ -25,6 +25,13 @@
 
 % Opciones
 \setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{button}{\tikz
+     \node[
+     inner xsep=10pt,
+     draw=structure!80,
+     fill=structure!50,
+     rounded corners=4pt]  {\Large\insertbuttontext};}
+
 
 \lstset{
 	literate={á}{{\'o}}1
@@ -189,4 +196,36 @@
                 \end{tabular}
             }
         \end{frame}
+	
+	\section{Diseño}
+		{
+			\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{img/diagram/class_diagram}}
+			\setbeamertemplate{navigation symbols}{}
+			\begin{frame}[plain]
+			\end{frame}
+		}
+
+		{
+			\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{img/architecture/architecture_diagram}}
+			\setbeamertemplate{navigation symbols}{}
+			\begin{frame}[plain]
+			\end{frame}
+		}
+	
+	\section{Implementación}
+		\begin{frame}{Tecnologías}
+			\begin{center}
+				\smartdiagramset{circular distance=3cm, font=\large, text width=3.5cm, module minimum width=3.5cm, module minimum height=1.5cm, arrow tip=to}
+				\smartdiagram[circular diagram]{Web Scrapping, Recuperación de información, Sistemas de recomendación}
+			\end{center}
+		\end{frame}
+
+		\begin{frame}{Demo}
+			\begin{center}
+				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/architecture/youtube}
+			\end{center}
+			\begin{center}
+				\href{https://bit.ly/2ZqCkrJ}{\beamergotobutton{https://bit.ly/2ZqCkrJ}}
+			\end{center}
+		\end{frame}
 \end{document}
