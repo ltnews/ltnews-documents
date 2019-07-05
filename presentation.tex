@@ -9,7 +9,7 @@
 \usepackage[T1]{fontenc}    % Usar la codificación T1
 
 % Datos
-\title{Metodología Running Lean aplicada a un lector de noticias inteligente}
+\title[Running Lean en un lector RSS]{Metodología Running Lean aplicada a un lector de noticias inteligente}
 \author{Andrés M. Jiménez Ríos}
 \institute[TFM]{Trabajo Fin de Máster}
 
@@ -74,15 +74,39 @@
                     \item Alex Osterwalder - \textit{Bussiness Model Canvas}
                 \end{itemize}
 			\end{block}
-        \end{frame}
+		\end{frame}
+		
+		{
+			\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{img/lean/running_lean}}
+			\setbeamertemplate{navigation symbols}{}
+			\begin{frame}[plain]
+			\end{frame}
+		}
 	
-		\begin{frame}{Periodismo}
+		\begin{frame}{Periodismo digital}
 			\begin{block}{Situación actual}
-				La falta de contenido de calidad, las redes sociales y las \textit{fake news}.
+				Falta de contenido de calidad, repercusión social y \textit{fake news}.
 			\end{block}
-			\begin{block}{Mundo digital}
-				Su propuestas son la sindicación de contenido, las redes sociales y aplicaciones propias.
+			\begin{block}{Propuesta digital}
+				Sindicación de contenido, redes sociales y aplicaciones propias.
 			\end{block}
+			\begin{block}{Problemas encontrados}
+				Cantidad de noticias, sesgos mediáticos y seguimiento de intereses.
+			\end{block}
+		\end{frame}
+
+		\begin{frame}{Aplicaciones de noticias}
+			\begin{columns}[onlytextwidth]
+				\begin{column}{0.3\textwidth}
+					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/feedly_logo}
+				\end{column}
+				\begin{column}{0.3\textwidth}
+					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/flipboard_logo}
+				\end{column}
+				\begin{column}{0.3\textwidth}
+					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/gnews_logo}
+				\end{column}
+			\end{columns}
 		\end{frame}
 
 		\begin{frame}{Propuesta}
@@ -96,37 +120,16 @@
 				Realización de una aplicación que implemente las propuestas.
 			\end{block}
 		\end{frame}
-
-		\begin{frame}{Alternativas}
-			\begin{columns}[onlytextwidth]
-				\begin{column}{0.3\textwidth}
-					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/feedly_logo}
-				\end{column}
-				\begin{column}{0.3\textwidth}
-					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/flipboard_logo}
-				\end{column}
-				\begin{column}{0.3\textwidth}
-					\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/alternativas/gnews_logo}
-				\end{column}
-			\end{columns}
-		\end{frame}
 	
 	
-	\section{Estudio}
-		{
-			\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{img/lean/running_lean}}
-			\setbeamertemplate{navigation symbols}{}
-			\begin{frame}[plain]
-			\end{frame}
-		}
-
-		\begin{frame}{Lean Canvas}
+	\section{Canvas}
+		\begin{frame}[label=canvas]{Lean Canvas}
 			\begin{center}
 				\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas}
 			\end{center}
 		\end{frame}
 
-		\begin{frame}{Canvas inicial}
+		\begin{frame}{Alcance}
 			\begin{block}{Problema}
 				Cantidad de noticias, \textit{fake news} y intereses.
 			\end{block}
@@ -137,7 +140,65 @@
 				El algoritmo que hace ahorrar tiempo.
 			\end{block}
 		\end{frame}
+		
+		\againframe{canvas}
 
+		\begin{frame}{Solución}
+			\begin{block}{Extracción}
+				Funciones propias de un feed RSS.
+			\end{block}
+			\begin{block}{Análisis}
+				Sacar metadatos de las noticias.
+			\end{block}
+			\begin{block}{Recomendación}
+				Relación de noticias y usuarios.
+			\end{block}
+		\end{frame}
+		
+		\againframe{canvas}
+
+		\begin{frame}{Estructura de costes}
+			\begin{columns}[onlytextwidth]
+				\begin{column}{0.45\textwidth}
+					\begin{block}{Costes}
+						\begin{itemize}
+							\item Servidores
+							\item Personal
+						\end{itemize}
+					\end{block}
+				\end{column}
+				\begin{column}{0.45\textwidth}
+					\begin{block}{Ingresos}
+						\begin{itemize}
+							\item Publicidad
+							\item Plan premium
+						\end{itemize}
+					\end{block}
+				\end{column}
+			\end{columns}
+		\end{frame}
+		
+		\againframe{canvas}
+
+		\begin{frame}{Indicadores}
+			\smartdiagramset{
+				planet text width=2.5cm,
+				satellite font=\small,
+				bubble text opacity = 1,
+				uniform connection color = true
+			}
+			\begin{center}
+				\scalebox{0.8}{
+					\smartdiagram[constellation diagram]{KPI, Tiempo en app, Número de usuarios, Suscripciones, Canales de llegada}
+				}
+			\end{center}
+        \end{frame}
+        
+		\begin{frame}{Canvas inicial}
+            \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas_inicial}
+		\end{frame}
+
+	\section{Iteraciones}
 		\begin{frame}{Hipótesis de problemas}
 			\smartdiagramset{
 				bubble center node font = \scriptsize,
@@ -166,64 +227,93 @@
                     \hline
                 \end{tabular}
             }
-        \end{frame}
+		\end{frame}
+
+		\begin{frame}{Primera iteración}
+            \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas_it_1}
+		\end{frame}
+
+		\begin{frame}{Segunda iteración}
+            \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas_it_2}
+		\end{frame}
+
+		\begin{frame}{Tercera iteración}
+            \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas_it_3}
+		\end{frame}
+
+		\begin{frame}{Cuarta iteración}
+            \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas_it_4}
+		\end{frame}
+
+		\begin{frame}{Quinta iteración}
+			\begin{block}{Solución}
+				\begin{itemize}
+					\item Extracción: validada
+					\item Análisis: validada
+					\item Recomendación: validada
+				\end{itemize}
+			\end{block}
+		\end{frame}
         
 		\begin{frame}{Canvas final}
             \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/canvas/canvas_final}
 		\end{frame}
-
-		\begin{frame}{Solución}
-			\begin{block}{Extracción}
-				Funciones propias de un feed RSS.
-			\end{block}
-			\begin{block}{Análisis}
-				Sacar metadatos de las noticias.
-			\end{block}
-			\begin{block}{Recomendación}
-				Relación de noticias y usuarios.
-			\end{block}
-		\end{frame}
-
-		\begin{frame}{Estructura de costes}
-			\begin{columns}[onlytextwidth]
-				\begin{column}{0.45\textwidth}
-					\begin{block}{Costes}
-						\begin{itemize}
-							\item Servidores
-							\item Personal
-						\end{itemize}
-					\end{block}
-				\end{column}
-				\begin{column}{0.45\textwidth}
-					\begin{block}{Ingresos}
-						\begin{itemize}
-							\item Publicidad
-							\item Plan premium
-						\end{itemize}
-					\end{block}
-				\end{column}
-			\end{columns}
-		\end{frame}
-
-		\begin{frame}{Indicadores}
-			\smartdiagramset{
-				planet text width=2.5cm,
-				satellite font=\small,
-				bubble text opacity = 1,
-				uniform connection color = true
-			}
-			\begin{center}
-				\scalebox{0.8}{
-					\smartdiagram[constellation diagram]{KPI, Tiempo en app, Número de usuarios, Suscripciones, Canales de llegada}
-				}
-			\end{center}
-        \end{frame}
 	
-	\section{Planificación}
-		\begin{frame}{Metodologías}
-			\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{img/scrum/scrum_vs_kanban}
+	\section{MVP}
+		\begin{frame}{Solución aplicada}
+			\begin{center}
+				\smartdiagramset{circular distance=3cm, font=\large, text width=3.5cm, module minimum width=3.5cm, module minimum height=1.5cm, arrow tip=to}
+				\smartdiagram[circular diagram]{Web Scrapping, Recuperación de información, Sistemas de recomendación}
+			\end{center}
 		\end{frame}
 
+		\begin{frame}{Demo}
+			\begin{center}
+				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/architecture/youtube}
+			\end{center}
+			\begin{center}
+				\href{https://bit.ly/2ZqCkrJ}{\beamergotobutton{https://bit.ly/2ZqCkrJ}}
+			\end{center}
+		\end{frame}
+	
+
+	\section{Conclusiones}
+		\begin{frame}{Resultados}
+			\begin{block}{Positivos}
+				\begin{itemize}
+					\item Gran acercamiento a los problemas de los usuarios.
+					\item Buena elección de la solución.
+				\end{itemize}
+			\end{block}
+			\begin{block}{Negativos}
+				\begin{itemize}
+					\item Fallo en la definición de \textit{early adopter}.
+					\item Mala elección de los canales.
+				\end{itemize}
+			\end{block}
+		\end{frame}
+		
+		\begin{frame}{Conclusión}
+			\begin{itemize}
+				\item El dominio del problema está por explotar a raíz de lo estudiado.
+				\item La metodología \textit{Running Lean} ha sido acertada en su ejecución.
+				\item Hay una pauta clara que seguir: posible plan de negocio.
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}{Plan de negocio}
+			\begin{block}{Corto Plazo}
+				Publicidad e integración de redes sociales.
+			\end{block}
+			\begin{block}{Medio Plazo}
+				Rol de analista y plan premium.
+			\end{block}
+			\begin{block}{Largo Plazo}
+				Distinción de analistas y API.
+			\end{block}
+		\end{frame}
+	
+	\section{Anexos}
         \begin{frame}{Planificación Temporal}
             \resizebox{\textwidth}{!}{
                 \begin{tabular}{llrrr}
@@ -256,9 +346,8 @@
                     \hline
                 \end{tabular}
             }
-        \end{frame}
-	
-	\section{Diseño}
+		\end{frame}
+		
 		{
 			\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{img/diagram/class_diagram}}
 			\setbeamertemplate{navigation symbols}{}
@@ -272,51 +361,4 @@
 			\begin{frame}[plain]
 			\end{frame}
 		}
-	
-	\section{Implementación}
-		\begin{frame}{Tecnologías}
-			\begin{center}
-				\smartdiagramset{circular distance=3cm, font=\large, text width=3.5cm, module minimum width=3.5cm, module minimum height=1.5cm, arrow tip=to}
-				\smartdiagram[circular diagram]{Web Scrapping, Recuperación de información, Sistemas de recomendación}
-			\end{center}
-		\end{frame}
-
-		\begin{frame}{Demo}
-			\begin{center}
-				\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/architecture/youtube}
-			\end{center}
-			\begin{center}
-				\href{https://bit.ly/2ZqCkrJ}{\beamergotobutton{https://bit.ly/2ZqCkrJ}}
-			\end{center}
-		\end{frame}
-
-	\section{Conclusión}
-		\begin{frame}{Resultados}
-			\begin{block}{Metodología}
-				\begin{itemize}
-					\item Comunicación sobre desarrollo.
-					\item Libro sobre Google.
-					\item Tutor sobre el proceso.
-				\end{itemize}
-			\end{block}
-			\begin{block}{Proyecto}
-				\begin{itemize}
-					\item Maduración como ingeniero.
-					\item Reto tecnológico.
-					\item Importancia del equipo.
-				\end{itemize}
-			\end{block}
-		\end{frame}
-		
-		\begin{frame}{Plan de negocio}
-			\begin{block}{Corto Plazo}
-				Publicidad e integración de redes sociales.
-			\end{block}
-			\begin{block}{Medio Plazo}
-				Rol de analista y plan premium.
-			\end{block}
-			\begin{block}{Largo Plazo}
-				Distinción de analistas y API.
-			\end{block}
-		\end{frame}
 \end{document}
